@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SingleFile Cleaner v2</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; background: #1a1a2e; color: #eee; min-height: 100vh; padding: 30px; }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 24px; margin-bottom: 6px; color: #78c922; }
+  .subtitle { color: #999; margin-bottom: 30px; font-size: 14px; }
+
+  .drop-zone {
+    border: 2px dashed #555; border-radius: 12px; padding: 50px 30px;
+    text-align: center; cursor: pointer; transition: all 0.3s;
+    background: #16213e; margin-bottom: 20px;
+  }
+  .drop-zone:hover, .drop-zone.dragover { border-color: #78c922; background: #1a2a4a; }
+  .drop-zone p { font-size: 16px; color: #aaa; }
+  .drop-zone .icon { font-size: 40px; margin-bottom: 10px; }
+
+  .section-label { color: #78c922; font-size: 13px; font-weight: 700; margin: 20px 0 8px; text-transform: uppercase; letter-spacing: 1px; }
+  .options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+  .option { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: #16213e; border-radius: 8px; font-size: 13px; }
+  .option.new { border: 1px solid #78c922; }
+  .option input[type="checkbox"] { accent-color: #78c922; width: 16px; height: 16px; }
+  .option label { cursor: pointer; flex: 1; }
+  .tag { display: inline-block; font-size: 9px; background: #78c922; color: #000; padding: 1px 5px; border-radius: 3px; margin-left: 6px; font-weight: 700; vertical-align: middle; }
+
+  .stats {
+    display: none; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px;
+  }
+  .stat { background: #16213e; border-radius: 8px; padding: 14px; text-align: center; }
+  .stat .val { font-size: 22px; font-weight: 700; color: #78c922; }
+  .stat .lbl { font-size: 11px; color: #888; margin-top: 4px; }
+
+  .actions { display: none; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+  .btn {
+    padding: 10px 22px; border: none; border-radius: 6px; font-size: 14px;
+    font-weight: 600; cursor: pointer; transition: all 0.2s;
+  }
+  .btn-primary { background: #78c922; color: #fff; }
+  .btn-primary:hover { background: #7edd25; }
+  .btn-secondary { background: #333; color: #ccc; }
+  .btn-secondary:hover { background: #444; }
+
+  .preview {
+    display: none; background: #0d1117; border: 1px solid #333; border-radius: 8px;
+    padding: 16px; max-height: 500px; overflow: auto; font-size: 12px;
+    font-family: 'Cascadia Code', 'Fira Code', monospace; white-space: pre-wrap;
+    word-break: break-all; color: #c9d1d9; line-height: 1.5;
+  }
+
+  .log { margin-top: 16px; font-size: 12px; color: #888; line-height: 1.8; }
+  .log .removed { color: #f85149; }
+  .log .kept { color: #78c922; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>SingleFile Cleaner v2</h1>
+  <p class="subtitle">ลบ base64, script, font, Divi framework CSS, wrapper divs ออกจากไฟล์ SingleFile — เหลือแค่โครงสร้าง + CSS เฉพาะหน้า</p>
+
+  <div class="drop-zone" id="dropZone">
+    <div class="icon">📄</div>
+    <p>ลากไฟล์ .html มาวางตรงนี้ หรือคลิกเพื่อเลือกไฟล์</p>
+    <input type="file" id="fileInput" accept=".html,.htm" style="display:none">
+  </div>
+
+  <div class="section-label">ลบ base64 / embedded data</div>
+  <div class="options">
+    <div class="option">
+      <input type="checkbox" id="optBase64Img" checked>
+      <label for="optBase64Img">ลบ base64 images (แทนด้วย waiting.jpg)</label>
+    </div>
+    <div class="option">
+      <input type="checkbox" id="optBase64Font" checked>
+      <label for="optBase64Font">ลบ base64 fonts + @font-face ว่าง</label>
+    </div>
+    <div class="option">
+      <input type="checkbox" id="optCssVars" checked>
+      <label for="optCssVars">ลบ --sf-img CSS variables</label>
+    </div>
+    <div class="option">
+      <input type="checkbox" id="optScripts" checked>
+      <label for="optScripts">ลบ &lt;script&gt; ทั้งหมด</label>
+    </div>
+    <div class="option">
+      <input type="checkbox" id="optSvg" checked>
+      <label for="optSvg">ลบ inline SVG</label>
+    </div>
+    <div class="option">
+      <input type="checkbox" id="optYoutube" checked>
+      <label for="optYoutube">ย่อ YouTube iframe srcdoc</label>
+    </div>
+    <div class="option">
+      <input type="checkbox" id="optHidden" checked>
+      <label for="optHidden">ลบ element ที่ซ่อน (sf-hidden)</label>
+    </div>
+    <div class="option">
+      <input type="checkbox" id="optComments" checked>
+      <label for="optComments">ลบ HTML comments</label>
+    </div>
+  </div>
+
+  <div class="section-label">ลบ Divi / WordPress framework <span class="tag">NEW</span></div>
+  <div class="options">
+    <div class="option new">
+      <input type="checkbox" id="optDiviCss" checked>
+      <label for="optDiviCss">ลบ generic Divi CSS (เก็บแค่ numbered selectors)</label>
+    </div>
+    <div class="option new">
+      <input type="checkbox" id="optDiviWrappers" checked>
+      <label for="optDiviWrappers">ยุบ Divi wrapper divs (section/row/column/module)</label>
+    </div>
+    <div class="option new">
+      <input type="checkbox" id="optStripHead" checked>
+      <label for="optStripHead">ลบ &lt;head&gt; (meta, link, title)</label>
+    </div>
+    <div class="option new">
+      <input type="checkbox" id="optStripHeader" checked>
+      <label for="optStripHeader">ลบ &lt;header&gt; (เมนู — สร้างแล้ว)</label>
+    </div>
+    <div class="option new">
+      <input type="checkbox" id="optStripFooter" checked>
+      <label for="optStripFooter">ลบ &lt;footer&gt; (copyright bar — สร้างแล้ว)</label>
+    </div>
+    <div class="option new">
+      <input type="checkbox" id="optStripDataAttr" checked>
+      <label for="optStripDataAttr">ลบ data-* attributes</label>
+    </div>
+    <div class="option new">
+      <input type="checkbox" id="optStripEmptyEls" checked>
+      <label for="optStripEmptyEls">ลบ empty elements + Grammarly tags</label>
+    </div>
+    <div class="option new">
+      <input type="checkbox" id="optStripIds" checked>
+      <label for="optStripIds">ลบ id ของ Divi (เก็บ anchor ids ไว้)</label>
+    </div>
+  </div>
+
+  <div class="stats" id="stats">
+    <div class="stat">
+      <div class="val" id="origSize">-</div>
+      <div class="lbl">ขนาดเดิม</div>
+    </div>
+    <div class="stat">
+      <div class="val" id="newSize">-</div>
+      <div class="lbl">ขนาดหลังแปลง</div>
+    </div>
+    <div class="stat">
+      <div class="val" id="reduction">-</div>
+      <div class="lbl">ลดลง</div>
+    </div>
+  </div>
+
+  <div class="actions" id="actions">
+    <button class="btn btn-primary" id="btnDownloadHtml">Download HTML ที่ cleaned</button>
+    <button class="btn btn-primary" id="btnDownloadCss">Download เฉพาะ CSS (numbered)</button>
+    <button class="btn btn-secondary" id="btnCopyHtml">Copy HTML</button>
+    <button class="btn btn-secondary" id="btnPreview">Preview</button>
+  </div>
+
+  <div class="preview" id="preview"></div>
+  <div class="log" id="log"></div>
+</div>
+
+<script>
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+let cleanedHtml = '';
+let cleanedCss = '';
+let originalName = '';
+
+dropZone.addEventListener('click', () => fileInput.click());
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('dragover'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropZone.classList.remove('dragover');
+  if (e.dataTransfer.files.length) processFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', e => { if (e.target.files.length) processFile(e.target.files[0]); });
+
+function processFile(file) {
+  originalName = file.name.replace(/\.html?$/i, '');
+  const reader = new FileReader();
+  reader.onload = e => clean(e.target.result, file.size);
+  reader.readAsText(file);
+}
+
+function formatSize(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+  return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+}
+
+function isChecked(id) {
+  return document.getElementById(id).checked;
+}
+
+function logStep(logs, label, before, after) {
+  const diff = before - after;
+  if (diff > 0) logs.push(`<span class="removed">- ${label}: -${formatSize(diff)}</span>`);
+}
+
+function clean(html, origBytes) {
+  const logs = [];
+  let content = html;
+
+  // ========== PHASE 1: Remove embedded binary data ==========
+
+  // 1. base64 images → waiting.jpg
+  if (isChecked('optBase64Img')) {
+    const before = content.length;
+    content = content.replace(/data:image\/[^;]+;base64,[A-Za-z0-9+\/=]+/g, 'waiting.jpg');
+    logStep(logs, 'base64 images', before, content.length);
+  }
+
+  // 2. base64 fonts
+  if (isChecked('optBase64Font')) {
+    const before = content.length;
+    content = content.replace(/data:font\/[^;]+;base64,[A-Za-z0-9+\/=]+/g, '');
+    content = content.replace(/data:application\/x-font[^;]*;base64,[A-Za-z0-9+\/=]+/g, '');
+    content = content.replace(/data:application\/font[^;]*;base64,[A-Za-z0-9+\/=]+/g, '');
+    content = content.replace(/data:application\/vnd\.ms-fontobject;base64,[A-Za-z0-9+\/=]+/g, '');
+    content = content.replace(/data:application\/octet-stream;base64,[A-Za-z0-9+\/=]+/g, '');
+    content = content.replace(/@font-face\s*\{[^}]*url\(\s*\)[^}]*\}/g, '');
+    logStep(logs, 'base64 fonts', before, content.length);
+  }
+
+  // 3. --sf-img CSS variables
+  if (isChecked('optCssVars')) {
+    const before = content.length;
+    content = content.replace(/--sf-img-\d+:\s*url\([^)]*\);?\s*/g, '');
+    content = content.replace(/background-image:\s*var\(--sf-img-\d+\)\s*!important;?\s*/g, '');
+    logStep(logs, 'sf-img variables', before, content.length);
+  }
+
+  // 4. scripts
+  if (isChecked('optScripts')) {
+    const before = content.length;
+    content = content.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '');
+    logStep(logs, 'scripts', before, content.length);
+  }
+
+  // 5. inline SVG
+  if (isChecked('optSvg')) {
+    const before = content.length;
+    content = content.replace(/<svg\b[\s\S]*?<\/svg>/gi, '');
+    logStep(logs, 'inline SVG', before, content.length);
+  }
+
+  // 6. YouTube iframe srcdoc
+  if (isChecked('optYoutube')) {
+    const before = content.length;
+    content = content.replace(
+      /(<iframe[^>]*(?:youtube|youtu\.be)[^>]*)srcdoc="[^"]*"/gi,
+      '$1'
+    );
+    logStep(logs, 'YouTube srcdoc', before, content.length);
+  }
+
+  // 7. hidden elements
+  if (isChecked('optHidden')) {
+    const before = content.length;
+    content = content.replace(/<[^>]+class="[^"]*sf-hidden[^"]*"[^>]*>[\s\S]*?<\/[^>]+>/gi, '');
+    logStep(logs, 'hidden elements', before, content.length);
+  }
+
+  // 8. HTML comments
+  if (isChecked('optComments')) {
+    const before = content.length;
+    content = content.replace(new RegExp('<!' + '--[\\s\\S]*?-->', 'g'), '');
+    logStep(logs, 'comments', before, content.length);
+  }
+
+  // ========== PHASE 2: Strip Divi / WordPress framework ==========
+
+  // 9. Strip generic Divi CSS — keep only numbered selectors
+  if (isChecked('optDiviCss')) {
+    const before = content.length;
+    content = content.replace(/<style[^>]*>([\s\S]*?)<\/style>/gi, (fullMatch, cssContent) => {
+      // Split CSS into individual rules by finding selector { ... } blocks
+      // Keep rules that have numbered Divi selectors like _0, _1, etc.
+      const kept = [];
+      // Match CSS rules: selector(s) { properties }
+      // Also handle @media blocks
+      const rules = splitCssRules(cssContent);
+      for (const rule of rules) {
+        const trimmed = rule.trim();
+        if (!trimmed) continue;
+        // Keep @media blocks if they contain numbered selectors
+        if (trimmed.startsWith('@media')) {
+          if (/(?:et_pb_|et_pb_social_media_follow_network_)\w*_\d+/.test(trimmed)) {
+            kept.push(trimmed);
+          }
+          continue;
+        }
+        // Keep rules with numbered selectors (page-specific)
+        if (/(?:et_pb_|et_pb_social_media_follow_network_)\w*_\d+/.test(trimmed)) {
+          kept.push(trimmed);
+          continue;
+        }
+        // Keep rules with .pitch, .heading, .title that are page-specific
+        if (/\.(pitch|heading|title)/.test(trimmed) && !/^[a-z]/.test(trimmed)) {
+          kept.push(trimmed);
+          continue;
+        }
+      }
+      if (kept.length === 0) return '';
+      return '<style>' + kept.join('\n') + '</style>';
+    });
+    logStep(logs, 'generic Divi CSS', before, content.length);
+  }
+
+  // 10. Strip <head>
+  if (isChecked('optStripHead')) {
+    const before = content.length;
+    content = content.replace(/<head[\s\S]*?<\/head>/gi, '');
+    logStep(logs, '<head>', before, content.length);
+  }
+
+  // 11. Strip <header>
+  if (isChecked('optStripHeader')) {
+    const before = content.length;
+    content = content.replace(/<header\b[\s\S]*?<\/header>/gi, '');
+    logStep(logs, '<header> (menu)', before, content.length);
+  }
+
+  // 12. Strip <footer>
+  if (isChecked('optStripFooter')) {
+    const before = content.length;
+    content = content.replace(/<footer\b[\s\S]*?<\/footer>/gi, '');
+    logStep(logs, '<footer>', before, content.length);
+  }
+
+  // 13. Strip data-* attributes
+  if (isChecked('optStripDataAttr')) {
+    const before = content.length;
+    content = content.replace(/\s+data-[a-z0-9_-]+(?:="[^"]*")?/gi, '');
+    logStep(logs, 'data-* attributes', before, content.length);
+  }
+
+  // 14. Collapse Divi wrapper divs
+  if (isChecked('optDiviWrappers')) {
+    const before = content.length;
+    // Remove opening wrapper divs (keep class for context, but simplify)
+    // Pattern: <div class="et_pb_row et_pb_row_3 ...">  →  keep as marker comment
+    // We'll use DOM parsing approach via regex
+
+    // Remove purely structural wrappers that have no content meaning
+    // entry-content, et-l, et_builder_inner_content, page-container, et-main-area, main-content
+    const wrapperClasses = [
+      'entry-content', 'et-l', 'et-l--post', 'et_builder_inner_content',
+      'et_pb_text_inner', 'et_pb_promo_description',
+      'et_pb_fullwidth_header_container', 'header-content-container', 'header-content',
+      'et_pb_header_content_wrapper', 'et_pb_fullwidth_header_overlay',
+      'et_pb_fullwidth_header_scroll', 'et_pb_divider_internal',
+      'et_pb_gallery_items', 'et_pb_code_inner',
+      'et_contact_bottom_container', 'et_pb_button_wrapper',
+      'et-pb-controllers', 'et-pb-slider-arrows',
+      'so-panel', 'so-widget-mo-heading', 'so-widget-mo-heading-default',
+      'clearfix', 'et_pb_contact', 'et-pb-contact-message',
+    ];
+
+    // Remove <div> wrappers that are purely structural (no visual meaning)
+    for (const cls of wrapperClasses) {
+      // Remove opening tag with this class
+      const openRe = new RegExp(`<div[^>]*class="[^"]*\\b${cls}\\b[^"]*"[^>]*>`, 'gi');
+      content = content.replace(openRe, '');
+    }
+
+    // Remove article wrapper
+    content = content.replace(/<\/?article[^>]*>/gi, '');
+
+    // Remove id-only structural wrappers
+    content = content.replace(/<div\s+id="(?:page-container|et-main-area|main-content)"[^>]*>/gi, '');
+
+    // Simplify et_pb_section → section marker
+    content = content.replace(
+      /<div[^>]*class="([^"]*et_pb_section[^"]*)"[^>]*>/gi,
+      (m, classes) => {
+        // Extract section number
+        const numMatch = classes.match(/et_pb_section_(\d+)/);
+        const num = numMatch ? numMatch[1] : '?';
+        const isParallax = classes.includes('parallax');
+        const isFullwidth = classes.includes('fullwidth');
+        return `\n<!-- SECTION ${num}${isFullwidth ? ' (fullwidth)' : ''}${isParallax ? ' (parallax)' : ''} -->`;
+      }
+    );
+
+    // Simplify et_pb_row → row marker
+    content = content.replace(
+      /<div[^>]*class="([^"]*et_pb_row[^"]*)"[^>]*>/gi,
+      (m, classes) => {
+        const numMatch = classes.match(/et_pb_row_(\d+)/);
+        const num = numMatch ? numMatch[1] : '?';
+        return `\n<!-- ROW ${num} -->`;
+      }
+    );
+
+    // Simplify et_pb_column → column marker
+    content = content.replace(
+      /<div[^>]*class="([^"]*et_pb_column[^"]*)"[^>]*>/gi,
+      (m, classes) => {
+        const sizeMatch = classes.match(/et_pb_column_([\d_]+)\b/);
+        const size = sizeMatch ? sizeMatch[1].replace(/_/g, '/') : '?';
+        return `<!-- COL ${size} -->`;
+      }
+    );
+
+    // Simplify et_pb_module containers → just keep content
+    content = content.replace(
+      /<div[^>]*class="([^"]*et_pb_module[^"]*)"[^>]*>/gi,
+      (m, classes) => {
+        // Extract the module type (et_pb_text, et_pb_image, et_pb_toggle, etc.)
+        const typeMatch = classes.match(/et_pb_(text|image|toggle|gallery|divider|contact_form|cta|code|social_media_follow)\w*/);
+        const type = typeMatch ? typeMatch[0] : 'module';
+        return `<!-- ${type} -->`;
+      }
+    );
+
+    // Clean up orphaned closing </div> tags — remove excess
+    // Count opens vs closes and remove extras
+    content = removeExtraDivCloses(content);
+
+    logStep(logs, 'Divi wrapper divs', before, content.length);
+  }
+
+  // 15. Strip empty elements + Grammarly tags
+  if (isChecked('optStripEmptyEls')) {
+    const before = content.length;
+    // Grammarly tags
+    content = content.replace(/<g\b[^>]*>[\s\S]*?<\/g>/gi, '');
+    // Empty spans, strongs, ps (with optional whitespace only)
+    content = content.replace(/<(span|strong|b|em|i|p)\b[^>]*>\s*<\/\1>/gi, '');
+    // Repeat for nested empties
+    content = content.replace(/<(span|strong|b|em|i|p)\b[^>]*>\s*<\/\1>/gi, '');
+    // Empty divs
+    content = content.replace(/<div\b[^>]*>\s*<\/div>/gi, '');
+    logStep(logs, 'empty elements + Grammarly', before, content.length);
+  }
+
+  // 16. Strip Divi IDs (keep meaningful anchors)
+  if (isChecked('optStripIds')) {
+    const before = content.length;
+    // Remove id attributes that are Divi-generated (menu-item-*, et_pb_*, post-*)
+    content = content.replace(/\s+id="(?:menu-item-|et_pb_|post-|panel-|footer-)\d*[^"]*"/gi, '');
+    // Remove id="main-footer", id="footer-bottom", etc.
+    content = content.replace(/\s+id="(?:main-footer|footer-bottom|footer-info|et-top-navigation|top-menu-nav|top-menu|et_mobile_nav_menu|logo|page-container|et-main-area|main-content|main-header)"/gi, '');
+    logStep(logs, 'Divi IDs', before, content.length);
+  }
+
+  // ========== FINAL CLEANUP ==========
+
+  // Remove excessive whitespace and blank lines
+  content = content.replace(/\n\s*\n\s*\n/g, '\n\n');
+  content = content.replace(/^\s+$/gm, '');
+  content = content.replace(/\n{3,}/g, '\n\n');
+  content = content.trim();
+
+  cleanedHtml = content;
+
+  // Extract only numbered CSS for the CSS-only download
+  const cssBlocks = [];
+  const styleRegex = /<style[^>]*>([\s\S]*?)<\/style>/gi;
+  let match;
+  while ((match = styleRegex.exec(content)) !== null) {
+    let css = match[1].trim();
+    if (css.length > 0) cssBlocks.push(css);
+  }
+  cleanedCss = cssBlocks.join('\n\n/* ─── next block ─── */\n\n');
+
+  // Stats
+  const newBytes = new Blob([content]).size;
+  const pct = ((1 - newBytes / origBytes) * 100).toFixed(1);
+
+  document.getElementById('origSize').textContent = formatSize(origBytes);
+  document.getElementById('newSize').textContent = formatSize(newBytes);
+  document.getElementById('reduction').textContent = pct + '%';
+  document.getElementById('stats').style.display = 'grid';
+  document.getElementById('actions').style.display = 'flex';
+  document.getElementById('log').innerHTML = `<strong>Log:</strong><br>` + logs.join('<br>');
+  document.getElementById('preview').style.display = 'none';
+
+  dropZone.querySelector('p').textContent = `✅ ${originalName} — โหลดสำเร็จ!`;
+}
+
+/**
+ * Split CSS text into individual rules (handles nested @media)
+ */
+function splitCssRules(css) {
+  const rules = [];
+  let depth = 0;
+  let current = '';
+
+  for (let i = 0; i < css.length; i++) {
+    const ch = css[i];
+    current += ch;
+
+    if (ch === '{') {
+      depth++;
+    } else if (ch === '}') {
+      depth--;
+      if (depth <= 0) {
+        rules.push(current.trim());
+        current = '';
+        depth = 0;
+      }
+    }
+  }
+  if (current.trim()) rules.push(current.trim());
+  return rules;
+}
+
+/**
+ * Remove orphaned closing </div> tags that no longer have matching openers
+ */
+function removeExtraDivCloses(html) {
+  // Simple approach: count div opens and closes, remove excess closes
+  let result = '';
+  let openCount = 0;
+  const parts = html.split(/(<\/?div[^>]*>)/gi);
+
+  for (const part of parts) {
+    if (/^<div[\s>]/i.test(part)) {
+      openCount++;
+      result += part;
+    } else if (/^<\/div>/i.test(part)) {
+      if (openCount > 0) {
+        openCount--;
+        result += part;
+      }
+      // else skip orphaned close
+    } else {
+      result += part;
+    }
+  }
+  return result;
+}
+
+// ========== UI Event Handlers ==========
+
+document.getElementById('btnDownloadHtml').addEventListener('click', () => {
+  download(cleanedHtml, `${originalName}-cleaned.html`, 'text/html');
+});
+
+document.getElementById('btnDownloadCss').addEventListener('click', () => {
+  download(cleanedCss, `${originalName}-styles.css`, 'text/css');
+});
+
+document.getElementById('btnCopyHtml').addEventListener('click', () => {
+  navigator.clipboard.writeText(cleanedHtml).then(() => {
+    const btn = document.getElementById('btnCopyHtml');
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = 'Copy HTML', 1500);
+  });
+});
+
+document.getElementById('btnPreview').addEventListener('click', () => {
+  const el = document.getElementById('preview');
+  if (el.style.display === 'none') {
+    const text = cleanedHtml.length > 50000
+      ? cleanedHtml.substring(0, 50000) + '\n\n... (truncated) ...'
+      : cleanedHtml;
+    el.textContent = text;
+    el.style.display = 'block';
+  } else {
+    el.style.display = 'none';
+  }
+});
+
+function download(content, filename, type) {
+  const blob = new Blob([content], { type });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
+</body>
+</html>

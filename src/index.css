@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #78c922;
+  --color-primary-hover: #7edd25;
+  --color-dark: #666666;
+  --color-heading: #333333;
+  --color-header-bg: rgba(43, 43, 43, 0.68);
+  --color-header-fixed: #2b2b2b;
+  --color-footer-bg: #222222;
+  --color-footer-bottom: #161616;
+  --color-section-bg: #f7f7f7;
+  --font-family-heading: "Lato", Helvetica, Arial, Lucida, sans-serif;
+  --font-family-body: "Open Sans", Helvetica, Arial, Lucida, sans-serif;
+}
+
+/* Base styles - MUST be in @layer base so Tailwind utilities can override */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Open Sans", Helvetica, Arial, Lucida, sans-serif;
+    color: #666;
+    background-color: #fff;
+    line-height: 1.7em;
+    font-weight: 500;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Component styles - in @layer components so utilities can still override */
+@layer components {
+  /* Divi-style button */
+  .btn-divi {
+    display: inline-block;
+    padding: 0.3em 1em;
+    border: 2px solid #78c922;
+    border-radius: 6px;
+    font-family: "Lato", Helvetica, Arial, Lucida, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: background-color 300ms ease, border-color 300ms ease, color 300ms ease;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .btn-divi::after {
+    content: "\203A";
+    margin-left: 0.3em;
+    font-size: 1.6em;
+    opacity: 0;
+    transition: all 0.3s ease;
+    display: inline-block;
+    vertical-align: -0.1em;
+  }
+
+  .btn-divi:hover::after {
+    opacity: 1;
+    margin-left: 0.6em;
+  }
+
+  /* Dark bg button (slider, contact form, donate) */
+  .btn-divi-dark {
+    color: #ffffff;
+    border-color: #78c922;
+    background-color: rgba(0, 0, 0, 0.55);
+    font-size: 20px;
+    text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.4);
+  }
+
+  .btn-divi-dark:hover {
+    background-color: #7edd25;
+    border-color: #78c922;
+    color: #ffffff;
+  }
+
+  /* Green outline button (on white bg) */
+  .btn-divi-green {
+    color: #000000;
+    border-color: #78c922;
+    background: transparent;
+    font-size: 20px;
+  }
+
+  .btn-divi-green:hover {
+    color: #ffffff;
+    background: #78c922;
+    border-color: #78c922;
+  }
+
+  /* White outline button (on dark bg / slider) */
+  .btn-divi-white {
+    color: #ffffff;
+    border-color: #78c922;
+    background-color: rgba(0, 0, 0, 0.55);
+    text-shadow: 0em 0.1em 0.1em rgba(0, 0, 0, 0.4);
+  }
+
+  .btn-divi-white:hover {
+    background-color: #7edd25;
+    border-color: #78c922;
+    color: #ffffff;
+  }
+
+  /* Section divider line - Divi style */
+  .section-divider {
+    position: relative;
+    max-width: 10%;
+    margin: 0 auto 30px;
+    height: 5px;
+  }
+
+  .section-divider::before {
+    content: "";
+    border-top: 5px solid #78c922;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
