@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/shared/Header";
 import Footer from "./components/shared/Footer";
 import Home from "./pages/Home";
@@ -12,13 +12,7 @@ import LocalLivelihoods from "./pages/LocalLivelihoods";
 import WildlifeConservation from "./pages/WildlifeConservation";
 import EcosystemServices from "./pages/EcosystemServices";
 
-// Pages that have their own custom footer (don't show shared Footer)
-const pagesWithOwnFooter = ["/contact"];
-
 function Layout() {
-  const location = useLocation();
-  const hideSharedFooter = pagesWithOwnFooter.includes(location.pathname);
-
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -36,7 +30,7 @@ function Layout() {
           <Route path="/donate" element={<Donate />} />
         </Routes>
       </main>
-      {!hideSharedFooter && <Footer />}
+      <Footer />
     </div>
   );
 }
