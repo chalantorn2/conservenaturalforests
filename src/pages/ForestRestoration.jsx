@@ -7,7 +7,6 @@ import FrameworkSection from "../components/forest-restoration/FrameworkSection"
 import SpeciesSection from "../components/forest-restoration/SpeciesSection";
 import MangroveSection from "../components/forest-restoration/MangroveSection";
 import ExploreSection from "../components/forest-restoration/ExploreSection";
-import NetworkSection from "../components/home/NetworkSection";
 import ContactDonateSection from "../components/shared/ContactDonateSection";
 
 export default function ForestRestoration() {
@@ -25,7 +24,6 @@ export default function ForestRestoration() {
       <SpeciesSection />
       <MangroveSection />
       <ExploreSection />
-      <NetworkSection />
       <ContactDonateSection variant="dark-card" />
     </div>
   );

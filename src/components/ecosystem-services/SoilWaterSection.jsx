@@ -48,7 +48,7 @@ export default function SoilWaterSection() {
           </div>
           <div className="lg:w-1/2" style={{ marginTop: "80px" }}>
             <img
-              src="/waiting.jpg"
+              src="/Ecosystem_Services/Pai-River.jpg.jpeg"
               alt="Soil and water conservation"
               className="w-full"
               style={{ borderRadius: "6px" }}

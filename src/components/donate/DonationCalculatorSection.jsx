@@ -2,7 +2,10 @@ import { useState } from "react";
 
 const impactOptions = [
   { value: "money", label: "I know how much money I want to donate." },
-  { value: "trees", label: "I know how many trees I want planted on my behalf." },
+  {
+    value: "trees",
+    label: "I know how many trees I want planted on my behalf.",
+  },
   { value: "area", label: "I know the area of land I want to restore." },
   { value: "co2", label: "I know how much CO\u2082 I want to offset." },
 ];
@@ -78,7 +81,7 @@ export default function DonationCalculatorSection() {
       id="donate-section"
       className="relative bg-fixed bg-cover bg-center"
       style={{
-        backgroundImage: "url(/waiting.jpg)",
+        backgroundImage: "url(/Donate/Donate-Header.jpg.jpeg)",
         paddingTop: "43px",
         paddingBottom: "66px",
       }}
@@ -268,11 +271,13 @@ export default function DonationCalculatorSection() {
                     Your Impact:
                   </h3>
                   <p>
-                    <strong>Number of Trees:</strong> {calc.trees.toLocaleString()}
+                    <strong>Number of Trees:</strong>{" "}
+                    {calc.trees.toLocaleString()}
                   </p>
                   <p>
-                    <strong>Area Covered:</strong> {calc.areaM2.toLocaleString()}{" "}
-                    m&sup2; ({calc.areaHa} hectares)
+                    <strong>Area Covered:</strong>{" "}
+                    {calc.areaM2.toLocaleString()} m&sup2; ({calc.areaHa}{" "}
+                    hectares)
                   </p>
                   <p>
                     <strong>CO&#8322; Captured:</strong>{" "}
@@ -389,8 +394,7 @@ export default function DonationCalculatorSection() {
                     e.currentTarget.style.backgroundColor = "#78c922";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor =
-                      "rgba(0,0,0,0.45)";
+                    e.currentTarget.style.backgroundColor = "rgba(0,0,0,0.45)";
                   }}
                 >
                   Submit
@@ -400,7 +404,7 @@ export default function DonationCalculatorSection() {
               {/* QR Code */}
               <div className="mt-6 text-center">
                 <img
-                  src="/waiting.jpg"
+                  src="/Donate/CNF-QR-Code.jpeg"
                   alt="QR Code for Donation"
                   style={{
                     maxWidth: "300px",

@@ -3,7 +3,6 @@ import HeroSection from "../components/local-livelihoods/HeroSection";
 import EducationSection from "../components/local-livelihoods/EducationSection";
 import AgroforestrySection from "../components/local-livelihoods/AgroforestrySection";
 import FireManagementSection from "../components/local-livelihoods/FireManagementSection";
-import NetworkSection from "../components/home/NetworkSection";
 import ContactDonateSection from "../components/shared/ContactDonateSection";
 
 export default function LocalLivelihoods() {
@@ -17,7 +16,6 @@ export default function LocalLivelihoods() {
       <EducationSection />
       <AgroforestrySection />
       <FireManagementSection />
-      <NetworkSection />
       <ContactDonateSection variant="light" />
     </div>
   );

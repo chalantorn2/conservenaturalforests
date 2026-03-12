@@ -24,7 +24,7 @@ export default function ParallaxInfoSection() {
     <section
       className="relative bg-fixed bg-cover bg-center"
       style={{
-        backgroundImage: "url(/waiting.jpg)",
+        backgroundImage: "url(/Visit-Us/Fruit-Spread.jpg.jpeg)",
         padding: "0",
       }}
     >
@@ -34,7 +34,9 @@ export default function ParallaxInfoSection() {
       />
       <div className="relative z-10 max-w-[1080px] mx-auto px-6 py-12">
         {/* PRICE */}
-        <div style={{ ...darkBoxStyle, marginTop: "50px", paddingBottom: "20px" }}>
+        <div
+          style={{ ...darkBoxStyle, marginTop: "50px", paddingBottom: "20px" }}
+        >
           <h1 style={headingInDark}>PRICE</h1>
           <p style={{ textAlign: "justify" }}>
             We ask for a minimum 1000 baht per person for the day. CNF is a

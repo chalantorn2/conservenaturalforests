@@ -1,16 +1,27 @@
-# React + Vite
+# Conserve Natural Forests - Website Rebuild
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## สถานะปัจจุบัน (อัพเดท: มีนาคม 2025)
 
-Currently, two official plugins are available:
+สัปดาห์นี้เป็นช่วง **สร้างโครงสร้างเว็บไซต์** โดยนำหน้าตาจากเว็บเดิม (WordPress) มาสร้างใหม่ทั้งหมด
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### หน้าที่ทำเสร็จแล้ว
+- Home (หน้าแรก)
+- Contact (ติดต่อ)
+- Apply for an Internship (สมัครฝึกงาน)
+- Forest Restoration (ฟื้นฟูป่า)
+- Local Livelihoods (ชุมชนท้องถิ่น)
+- Wildlife Conservation (อนุรักษ์สัตว์ป่า)
+- Our Team (ทีมงาน)
+- Visit Us (เยี่ยมชม)
+- Donate (บริจาค)
 
-## React Compiler
+### หน้าที่ยังเหลือ
+- Ecosystem Services (รวมถึงหน้าย่อย: Carbon, Biodiversity, Soil & Water)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### เรื่องรูปภาพ
+ตอนนี้รูปภาพทั้งหมดในเว็บยังเป็น **รูป placeholder** (รูปชั่วคราว) อยู่ รวมถึงโลโก้ด้วย สัปดาห์นี้โฟกัสที่โครงสร้างและเนื้อหาของเว็บก่อน รูปภาพจริงจะใส่เพิ่มทีหลัง
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### ขั้นตอนถัดไป
+1. สร้างหน้า Ecosystem Services ที่ยังเหลือ
+2. ใส่รูปภาพจริงแทนรูป placeholder ทั้งหมด
+3. ตรวจสอบเนื้อหาและรายละเอียดต่างๆ ให้ตรงกับเว็บเดิม

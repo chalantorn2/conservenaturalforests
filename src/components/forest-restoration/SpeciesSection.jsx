@@ -5,6 +5,7 @@ const species = [
     name: "Benjamin's Fig",
     scientific: "Ficus benjamina",
     thai: "Ton Sai Yooi Bai Lehm / \u0e15\u0e49\u0e19\u0e44\u0e17\u0e23\u0e22\u0e49\u0e2d\u0e22\u0e43\u0e1a\u0e41\u0e2b\u0e25\u0e21",
+    image: "/Forest_Restoration/Benjamins-Fig.png",
     facts: [
       "Fruits attract birds, bats, and fig wasps",
       "Often used as houseplants",
@@ -16,6 +17,7 @@ const species = [
     name: "Burmese Pink Cassia",
     scientific: "Cassia reginera",
     thai: "Kan-la-pa-pruek / \u0e01\u0e31\u0e25\u0e1b\u0e1e\u0e24\u0e01\u0e29",
+    image: "/Forest_Restoration/Burmese-Pink-Cassia.png",
     facts: [
       "One of Thailand's Nine Auspicious Trees",
       "Said to be a source of good luck",
@@ -26,6 +28,7 @@ const species = [
     name: "Burmese Rosewood",
     scientific: "Dalbergia oliveri",
     thai: "Rang-dang / \u0e23\u0e31\u0e07\u0e41\u0e14\u0e07",
+    image: "/Forest_Restoration/Burmese-Rosewood.png",
     facts: [
       "Critically endangered",
       "Once worth more than gold per ounce",
@@ -37,6 +40,7 @@ const species = [
     name: "Cluster Fig",
     scientific: "Ficus racemosa",
     thai: "Ma Dua U Tum Pon / \u0e15\u0e49\u0e19\u0e21\u0e30\u0e40\u0e14\u0e37\u0e48\u0e2d\u0e2d\u0e38\u0e17\u0e38\u0e21\u0e1e\u0e23",
+    image: "/Forest_Restoration/Cluster-Fig.png",
     facts: [
       "Fire-resilient",
       "Attracts birds and other seed dispersers",
@@ -48,6 +52,7 @@ const species = [
     name: "Ebony (Ceylon)",
     scientific: "Diospyrus ebenum",
     thai: "Ma-kluea / \u0e21\u0e30\u0e40\u0e01\u0e25\u0e37\u0e2d",
+    image: "/Forest_Restoration/Ebony-Ceylon.png",
     facts: [
       "Extremely dense wood - sinks in water",
       "Durable, valuable timber",
@@ -58,6 +63,7 @@ const species = [
     name: "Golden Shower",
     scientific: "Cassia fistula",
     thai: "Ton-koon / \u0e15\u0e19\u0e04\u0e39\u0e19",
+    image: "/Forest_Restoration/Golden-Shower.png",
     facts: [
       "National tree of Thailand",
       "National flower of Thailand",
@@ -69,6 +75,7 @@ const species = [
     name: "Golden Teak",
     scientific: "Tectona grandis",
     thai: "Ton Sak / \u0e15\u0e49\u0e19\u0e2a\u0e31\u0e01",
+    image: "/Forest_Restoration/Golden-Teak3.png",
     facts: [
       "Attracts bees and other pollinators",
       "Wide crown; fast-growing",
@@ -80,6 +87,7 @@ const species = [
     name: "Gurjan",
     scientific: "Dipterocarpus turbinatus",
     thai: "Ton-yang-na / \u0e15\u0e49\u0e19\u0e22\u0e32\u0e07\u0e19\u0e32",
+    image: "/Forest_Restoration/Gurjan.png",
     facts: [
       "Critically endangered",
       "Valuable timber",
@@ -90,6 +98,7 @@ const species = [
     name: "Hairy Fig",
     scientific: "Ficus hispida",
     thai: "Ma Dua Pong / \u0e15\u0e49\u0e19\u0e21\u0e30\u0e40\u0e14\u0e37\u0e48\u0e2d\u0e1b\u0e25\u0e49\u0e2d\u0e07",
+    image: "/Forest_Restoration/Hairy-Fig.png",
     facts: [
       "Drought and frost tolerant",
       "Grows in poor soils",
@@ -101,6 +110,7 @@ const species = [
     name: "Himalayan Cherry",
     scientific: "Prunus cerasoides",
     thai: "Naang Payah Sua Krong / \u0e15\u0e49\u0e19\u0e19\u0e32\u0e07\u0e1e\u0e0d\u0e32\u0e40\u0e2a\u0e37\u0e2d\u0e42\u0e04\u0e23\u0e48\u0e07",
+    image: "/Forest_Restoration/Himalayan-Cherry.png",
     facts: [
       "Dense, weed-suppressing crowns",
       "Grows fast in poor areas",
@@ -112,6 +122,7 @@ const species = [
     name: "Indian Oak",
     scientific: "Barringtonia acutangula",
     thai: "Jik-nam / \u0e08\u0e34\u0e01\u0e19\u0e49\u0e32",
+    image: "/Forest_Restoration/Indian-Oak.png",
     facts: [
       "Medicinal properties",
       "Antifungal",
@@ -123,6 +134,7 @@ const species = [
     name: "Jackfruit",
     scientific: "Artocarpus heterophyllus",
     thai: "Ka-nun / \u0e02\u0e19\u0e38\u0e19",
+    image: "/Forest_Restoration/Jackfruit.png",
     facts: [
       "Largest tree-borne fruit: up to 55 kgs!",
       "Fast-growing",
@@ -134,6 +146,7 @@ const species = [
     name: "Java Plum",
     scientific: "Syzygium cumini",
     thai: "Ton Wah / \u0e15\u0e49\u0e19\u0e2b\u0e27\u0e49\u0e32",
+    image: "/Forest_Restoration/Java-Plum.png",
     facts: [
       "Fire-resilient",
       "Drought and frost-tolerant",
@@ -145,6 +158,7 @@ const species = [
     name: "Lady Ta-Khian Tree",
     scientific: "Hopea odorata",
     thai: "Ta-kian-thong / \u0e15\u0e30\u0e40\u0e04\u0e35\u0e22\u0e19\u0e17\u0e2d\u0e07",
+    image: "/Forest_Restoration/Lady-Ta-Khian-Tree.png",
     facts: [
       "Believed to house the spirit of Lady Ta-Khian",
       "Valued for tannins and timber",
@@ -156,8 +170,9 @@ const species = [
     name: "Longan",
     scientific: "Dimocarpus longan",
     thai: "Lam Yai / \u0e15\u0e49\u0e19\u0e25\u0e33\u0e43\u0e22",
+    image: "/Forest_Restoration/Longan.png",
     facts: [
-      'Edible Fruit',
+      "Edible Fruit",
       'Also known as "Dragon\'s Eyes"',
       "Strong hardy wood used for furniture",
       "Medicinal uses: Anti-inflammatory",
@@ -167,16 +182,14 @@ const species = [
     name: "Lychee",
     scientific: "Litchi chinensis",
     thai: "Lynjee / \u0e25\u0e34\u0e49\u0e19\u0e08\u0e35",
-    facts: [
-      "Widely eaten fruits",
-      "Drought tolerant",
-      "Fast-growing",
-    ],
+    image: "/Forest_Restoration/Lychee.png",
+    facts: ["Widely eaten fruits", "Drought tolerant", "Fast-growing"],
   },
   {
     name: "Makha",
     scientific: "Azfelia xylocarpa",
     thai: "Ma Kah / \u0e15\u0e49\u0e19\u0e21\u0e30\u0e04\u0e48\u0e32",
+    image: "/Forest_Restoration/Makha.png",
     facts: [
       "Nitrogen-fixer",
       "Drought tolerant",
@@ -188,6 +201,7 @@ const species = [
     name: "Mango",
     scientific: "Mangifera indica",
     thai: "Ma Muang / \u0e15\u0e49\u0e19\u0e21\u0e30\u0e21\u0e48\u0e27\u0e07",
+    image: "/Forest_Restoration/Mango.png",
     facts: [
       "Edible fruit",
       "Attracts wildlife",
@@ -199,6 +213,7 @@ const species = [
     name: "Neem",
     scientific: "Azadirachta indica",
     thai: "Sadao / \u0e15\u0e49\u0e19\u0e2a\u0e30\u0e40\u0e14\u0e32",
+    image: "/Forest_Restoration/Neem.png",
     facts: [
       'Also known as the "Miracle Tree"',
       "Wide variety of medicinal uses",
@@ -210,6 +225,7 @@ const species = [
     name: "Orchid Tree",
     scientific: "Bauhinia purpurea",
     thai: "Ton Chong Koh / \u0e15\u0e49\u0e19\u0e0a\u0e07\u0e42\u0e04",
+    image: "/Forest_Restoration/Orchid-Tree.png",
     facts: [
       "Drought and frost tolerant",
       "Deep root system",
@@ -221,6 +237,7 @@ const species = [
     name: "Sappan",
     scientific: "Caesalpinia sappan",
     thai: "Ton-fhang / \u0e15\u0e49\u0e19\u0e1d\u0e32\u0e07",
+    image: "/Forest_Restoration/Sappan.png",
     facts: [
       "Famous for its red dye brazilin",
       "Antibacterial",
@@ -231,16 +248,14 @@ const species = [
     name: "Taengwood",
     scientific: "Shorea obtusa",
     thai: "Ton-taeng / \u0e15\u0e49\u0e19\u0e41\u0e15\u0e07",
-    facts: [
-      "Valuable timber",
-      "Fire-resilient",
-      "Drought tolerant",
-    ],
+    image: "/Forest_Restoration/Taengwood.png",
+    facts: ["Valuable timber", "Fire-resilient", "Drought tolerant"],
   },
   {
     name: "Tropical Almond",
     scientific: "Terminalia catappa",
     thai: "Ton Hu Kwang / \u0e15\u0e49\u0e19\u0e2b\u0e39\u0e01\u0e27\u0e32\u0e07",
+    image: "/Forest_Restoration/Tropical-Almond.png",
     facts: [
       "Fast-growing",
       "Edible seeds",
@@ -252,11 +267,8 @@ const species = [
     name: "Tummy Wood",
     scientific: "Toona ciliata",
     thai: "Ton Yom Hom / \u0e15\u0e49\u0e19\u0e22\u0e21\u0e2b\u0e2d\u0e21",
-    facts: [
-      "Valuable timber",
-      "Fast-growing",
-      "Attracts pollinators",
-    ],
+    image: "/Forest_Restoration/Tummy-Wood.png",
+    facts: ["Valuable timber", "Fast-growing", "Attracts pollinators"],
   },
 ];
 
@@ -321,6 +333,19 @@ export default function SpeciesSection() {
 
           {/* Species Info */}
           <div className="w-full md:w-1/2">
+            {current.image && (
+              <div style={{ textAlign: "center", marginBottom: "16px" }}>
+                <img
+                  src={current.image}
+                  alt={current.name}
+                  style={{
+                    maxHeight: "240px",
+                    borderRadius: "6px",
+                    display: "inline-block",
+                  }}
+                />
+              </div>
+            )}
             <div
               style={{
                 backgroundColor: "#f9f9f9",
@@ -330,8 +355,7 @@ export default function SpeciesSection() {
               }}
             >
               <p>
-                <strong>Scientific name:</strong>{" "}
-                <em>{current.scientific}</em>
+                <strong>Scientific name:</strong> <em>{current.scientific}</em>
               </p>
               <p style={{ marginTop: "4px" }}>
                 <strong>Thai name:</strong> {current.thai}

@@ -6,7 +6,7 @@ export default function HeroSection() {
     >
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url(/waiting.jpg)" }}
+        style={{ backgroundImage: "url(/Ecosystem_Services/Ecosystem-Banner1.jpg.jpeg)" }}
       />
       <div
         className="absolute inset-0"

@@ -1,22 +1,22 @@
 const partners = [
   {
     name: "Arbor Day",
-    logo: "/waiting.jpg",
+    logo: "/Home/Arbor-Day.png",
     url: "https://www.arborday.org/",
   },
   {
     name: "EcoMatcher",
-    logo: "/waiting.jpg",
+    logo: "/Home/EcoMatcherLogo.png",
     url: "https://www.ecomatcher.com/cnf/",
   },
   {
     name: "Plant for the Planet",
-    logo: "/waiting.jpg",
+    logo: "/Home/PFTP.png",
     url: "https://www1.plant-for-the-planet.org/conserve-natural-forests",
   },
   {
     name: "One Tree Planted",
-    logo: "/waiting.jpg",
+    logo: "/Home/One-Tree-Planted-480x478.png",
     url: "https://onetreeplanted.org/",
   },
 ];

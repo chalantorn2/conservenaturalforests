@@ -11,7 +11,10 @@ export default function AboutVisitSection() {
       id="about-visit"
       style={{ paddingTop: "29px", paddingBottom: "43px" }}
     >
-      <div className="max-w-[1080px] mx-auto px-6" style={{ paddingTop: "40px" }}>
+      <div
+        className="max-w-[1080px] mx-auto px-6"
+        style={{ paddingTop: "40px" }}
+      >
         {/* Title + Divider */}
         <h1
           className="text-center"
@@ -43,21 +46,37 @@ export default function AboutVisitSection() {
             <p style={{ textAlign: "justify" }}>
               Come join us for a day! Our original project site and tree nursery
               are tucked away in a quiet, beautiful valley with the Pai River
-              running through it. CNF invites anyone who would like to learn more
-              about tropical forests, ecological restoration, sustainable
-              tourism, and Asian elephant conservation &ndash; and we believe the
-              best way of learning is doing! From seed to tree, prepare to get
-              your hands dirty doing the good work.
+              running through it. CNF invites anyone who would like to learn
+              more about tropical forests, ecological restoration, sustainable
+              tourism, and Asian elephant conservation &ndash; and we believe
+              the best way of learning is doing! From seed to tree, prepare to
+              get your hands dirty doing the good work.
             </p>
           </div>
           <div className="lg:w-2/5">
             {/* Gallery grid */}
             <div className="grid grid-cols-3 gap-2">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
+              {[
+                {
+                  src: "/Visit-Us/Vistors-Planting.jpg.jpeg",
+                  alt: "Visitors Planting",
+                },
+                {
+                  src: "/Visit-Us/Hippo-Cooking.jpg.jpeg",
+                  alt: "Hippo Cooking",
+                },
+                { src: "/Visit-Us/Passionfruit.jpg.jpeg", alt: "Passionfruit" },
+                {
+                  src: "/Visit-Us/Fruit-on-Table-480x320.jpg.jpeg",
+                  alt: "Fruit on Table",
+                },
+                { src: "/Visit-Us/Gin-Tray.jpg.jpeg", alt: "Gin Tray" },
+                { src: "/Visit-Us/Noodles.jpg.jpeg", alt: "Noodles" },
+              ].map((img, i) => (
                 <img
                   key={i}
-                  src="/waiting.jpg"
-                  alt={`Gallery ${i}`}
+                  src={img.src}
+                  alt={img.alt}
                   className="w-full aspect-square object-cover"
                   style={{ borderRadius: "6px" }}
                 />
@@ -77,8 +96,8 @@ export default function AboutVisitSection() {
             When the monsoon rains arrive, we plant our trees in the right place
             at the right time! This means that no matter when you visit, you
             will experience an essential part of the process. Like the Pai river
-            &ndash; fast and strong during the monsoons, slow and lazy during the
-            dry season &ndash; each time is important for different reasons.
+            &ndash; fast and strong during the monsoons, slow and lazy during
+            the dry season &ndash; each time is important for different reasons.
           </p>
         </div>
       </div>
@@ -109,7 +128,7 @@ export default function AboutVisitSection() {
           </div>
           <div className="lg:w-2/5">
             <img
-              src="/waiting.jpg"
+              src="/Visit-Us/Rice-1.jpg.jpeg"
               alt="Pick up point"
               className="w-full object-cover"
               style={{ borderRadius: "6px" }}
@@ -130,7 +149,7 @@ export default function AboutVisitSection() {
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-2/5">
             <img
-              src="/waiting.jpg"
+              src="/Visit-Us/Pumpkin.jpg.jpeg"
               alt="Project site"
               className="w-full object-cover"
               style={{ borderRadius: "6px" }}
@@ -167,9 +186,9 @@ export default function AboutVisitSection() {
             ask everyone first to add a seed to our nursery and then to plant a
             seedling in the forest. This is the most important part of the day
             &ndash; it provides a way for tourists to give back to the
-            environment and simultaneously enrich our demonstration forest. After
-            the tree planting, we will answer any final questions and drive
-            everyone back to the Rim Pai Market in Pai around 17:00.
+            environment and simultaneously enrich our demonstration forest.
+            After the tree planting, we will answer any final questions and
+            drive everyone back to the Rim Pai Market in Pai around 17:00.
           </p>
         </div>
 
@@ -188,11 +207,11 @@ export default function AboutVisitSection() {
             <strong>IMPORTANT NOTE:</strong> There is an adult female elephant
             named Kamee who is free to roam the land and do as she pleases. She
             was relocated to our site in 2017 after many years of hard work and
-            she is now retired. You will likely see her feeding or bathing in the
-            river during your visit, but we ask that you kindly give her space.
-            She is not here to entertain guests, we will not compel her to join
-            us, and interactions will be kept to minimum for her safety and
-            well-being as well as ours.
+            she is now retired. You will likely see her feeding or bathing in
+            the river during your visit, but we ask that you kindly give her
+            space. She is not here to entertain guests, we will not compel her
+            to join us, and interactions will be kept to minimum for her safety
+            and well-being as well as ours.
           </p>
         </div>
       </div>

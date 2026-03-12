@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
 
 const galleryImages = [
-  { alt: "Bee" },
-  { alt: "Butterfly" },
-  { alt: "Kamee Front" },
-  { alt: "Steady Tortoise" },
-  { alt: "Woodpecker" },
+  { src: "/Wildlife_Conservation/Bee.jpg.jpeg", alt: "Bee" },
+  { src: "/Wildlife_Conservation/Butterfly.jpg.jpeg", alt: "Butterfly" },
+  { src: "/Wildlife_Conservation/Kamee-Closeup.jpg.jpeg", alt: "Kamee Front" },
+  { src: "/Wildlife_Conservation/Steady-Tortoise.jpg.jpeg", alt: "Steady Tortoise" },
+  { src: "/Wildlife_Conservation/Woodpecker.jpg.jpeg", alt: "Woodpecker" },
 ];
 
 export default function IntroSection() {
@@ -65,7 +65,7 @@ export default function IntroSection() {
             {galleryImages.map((img, idx) => (
               <img
                 key={idx}
-                src="/waiting.jpg"
+                src={img.src}
                 alt={img.alt}
                 style={{
                   position: "absolute",

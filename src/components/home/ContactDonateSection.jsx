@@ -24,7 +24,7 @@ export default function ContactDonateSection() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: "url(/waiting.jpg)",
+          backgroundImage: "url(/Home/Greenhouse.jpg.jpeg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",

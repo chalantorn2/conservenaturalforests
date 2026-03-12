@@ -8,8 +8,6 @@ import CarbonFootprintSection from "../components/donate/CarbonFootprintSection"
 import TreesImpactSection from "../components/donate/TreesImpactSection";
 import DonationCalculatorSection from "../components/donate/DonationCalculatorSection";
 import ContactFormSection from "../components/donate/ContactFormSection";
-import NetworkSection from "../components/home/NetworkSection";
-
 export default function Donate() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -26,7 +24,6 @@ export default function Donate() {
       <TreesImpactSection />
       <DonationCalculatorSection />
       <ContactFormSection />
-      <NetworkSection />
     </div>
   );
 }

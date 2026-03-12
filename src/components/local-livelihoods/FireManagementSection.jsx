@@ -1,10 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
 
 const galleryImages = [
-  { alt: "Burning Hills" },
-  { alt: "Roadside Fire" },
-  { alt: "Motorbike in Smoke" },
-  { alt: "Burnt Ground" },
+  { src: "/Local_Livelihoods/Burning-Hills.jpg.jpeg", alt: "Burning Hills" },
+  { src: "/Local_Livelihoods/Roadside-Fire.jpg.jpeg", alt: "Roadside Fire" },
+  { src: "/Local_Livelihoods/Motorbike-in-Smoke.jpg.jpeg", alt: "Motorbike in Smoke" },
+  { src: "/Local_Livelihoods/Burnt-Ground.jpg.jpeg", alt: "Burnt Ground" },
 ];
 
 export default function FireManagementSection() {
@@ -62,14 +62,14 @@ export default function FireManagementSection() {
       >
         <div className="w-1/2">
           <img
-            src="/waiting.jpg"
+            src="/Local_Livelihoods/Particulate-Matter-Pai.png"
             alt="Particulate Matter Pai"
             style={{ width: "100%", height: "auto" }}
           />
         </div>
         <div className="w-1/2">
           <img
-            src="/waiting.jpg"
+            src="/Local_Livelihoods/Daily-Fire-Count.png"
             alt="Daily Fire Count"
             style={{ width: "100%", height: "auto" }}
           />
@@ -161,7 +161,7 @@ export default function FireManagementSection() {
             {galleryImages.map((img, idx) => (
               <img
                 key={idx}
-                src="/waiting.jpg"
+                src={img.src}
                 alt={img.alt}
                 style={{
                   position: "absolute",

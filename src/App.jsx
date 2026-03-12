@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/shared/Header";
 import Footer from "./components/shared/Footer";
+import NetworkSection from "./components/home/NetworkSection";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Internship from "./pages/Internship";
@@ -30,6 +31,7 @@ function Layout() {
           <Route path="/donate" element={<Donate />} />
         </Routes>
       </main>
+      <NetworkSection />
       <Footer />
     </div>
   );

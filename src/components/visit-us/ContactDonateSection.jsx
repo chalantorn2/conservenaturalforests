@@ -20,7 +20,7 @@ export default function ContactDonateSection() {
   return (
     <section
       className="relative bg-fixed bg-cover bg-center"
-      style={{ backgroundImage: "url(/waiting.jpg)" }}
+      style={{ backgroundImage: "url(/Visit-Us/Greenhouse.jpg.jpeg)" }}
     >
       <div
         className="absolute inset-0"
@@ -32,8 +32,7 @@ export default function ContactDonateSection() {
           <div className="lg:w-1/2">
             <h1
               style={{
-                fontFamily:
-                  '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+                fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                 fontSize: "24px",
                 fontWeight: 700,
                 color: "#fff",
@@ -134,8 +133,7 @@ export default function ContactDonateSection() {
           <div className="lg:w-1/2" style={{ marginTop: "41px" }}>
             <h2
               style={{
-                fontFamily:
-                  '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+                fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                 fontSize: "24px",
                 lineHeight: "1.2em",
                 color: "#fff",
@@ -146,8 +144,7 @@ export default function ContactDonateSection() {
             </h2>
             <div
               style={{
-                fontFamily:
-                  '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+                fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                 fontSize: "16px",
                 color: "#fff",
               }}

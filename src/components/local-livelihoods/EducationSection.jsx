@@ -1,14 +1,14 @@
 import { useState, useEffect, useCallback } from "react";
 
 const galleryImages = [
-  { alt: "Kids Writing" },
-  { alt: "Kids in Hut" },
-  { alt: "Kids Watching Tortoises" },
-  { alt: "Hippo and Kids with Tortoises" },
-  { alt: "Hippo Kids Tour" },
-  { alt: "Kids and Monk" },
-  { alt: "Lady Collecting Leaves" },
-  { alt: "Lady Selling Bananas" },
+  { src: "/Local_Livelihoods/Kids-Writing-1.jpg.jpeg", alt: "Kids Writing" },
+  { src: "/Local_Livelihoods/Kids-in-Hut-1.jpg.jpeg", alt: "Kids in Hut" },
+  { src: "/Local_Livelihoods/Kids-Watching-Tortoises-1.jpg.jpeg", alt: "Kids Watching Tortoises" },
+  { src: "/Local_Livelihoods/Hippo-and-Kids-with-Tortoises-1.jpg.jpeg", alt: "Hippo and Kids with Tortoises" },
+  { src: "/Local_Livelihoods/Hippo-Kids-Tour-1.jpg.jpeg", alt: "Hippo Kids Tour" },
+  { src: "/Local_Livelihoods/Kids-and-Monk-1.jpg.jpeg", alt: "Kids and Monk" },
+  { src: "/Local_Livelihoods/Lady-Collecting-Leaves-1.jpg.jpeg", alt: "Lady Collecting Leaves" },
+  { src: "/Local_Livelihoods/Lady-Selling-Bananas-1.jpg.jpeg", alt: "Lady Selling Bananas" },
 ];
 
 export default function EducationSection() {
@@ -99,7 +99,7 @@ export default function EducationSection() {
             {galleryImages.map((img, idx) => (
               <img
                 key={idx}
-                src="/waiting.jpg"
+                src={img.src}
                 alt={img.alt}
                 style={{
                   position: "absolute",

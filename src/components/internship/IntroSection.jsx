@@ -14,12 +14,13 @@ export default function IntroSection() {
                 color: "#000",
               }}
             >
-              Our International Internship Program provides an opportunity for both
-              undergraduate and graduate students from a variety of backgrounds to
-              join our project and gain valuable experience working in the nonprofit
-              NGO sector. This program will challenge its participants to further
-              their professional development in their area of expertise, while also
-              learning new skills in a dynamic environment.
+              Our International Internship Program provides an opportunity for
+              both undergraduate and graduate students from a variety of
+              backgrounds to join our project and gain valuable experience
+              working in the nonprofit NGO sector. This program will challenge
+              its participants to further their professional development in
+              their area of expertise, while also learning new skills in a
+              dynamic environment.
             </p>
           </div>
           {/* Right - Gallery Placeholder */}
@@ -29,7 +30,7 @@ export default function IntroSection() {
               style={{ borderRadius: "6px" }}
             >
               <img
-                src="/waiting.jpg"
+                src="/Internship/Wesley-and-Kamee.jpg.jpeg"
                 alt="Internship gallery"
                 className="w-full h-auto"
                 style={{ aspectRatio: "510/340" }}

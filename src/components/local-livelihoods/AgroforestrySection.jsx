@@ -7,7 +7,7 @@ export default function AgroforestrySection() {
       {/* Parallax Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: "url(/waiting.jpg)" }}
+        style={{ backgroundImage: "url(/Local_Livelihoods/Ecosystems-Header.jpg.jpeg)" }}
       />
 
       <div className="relative max-w-[1080px] mx-auto px-6">

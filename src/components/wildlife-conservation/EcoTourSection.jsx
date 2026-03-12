@@ -6,7 +6,7 @@ export default function EcoTourSection() {
       {/* Parallax Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: "url(/waiting.jpg)" }}
+        style={{ backgroundImage: "url(/Wildlife_Conservation/Kamee-Behind.jpg.jpeg)" }}
       />
 
       <div className="relative max-w-[1080px] mx-auto px-6" style={{ paddingBottom: "27px" }}>

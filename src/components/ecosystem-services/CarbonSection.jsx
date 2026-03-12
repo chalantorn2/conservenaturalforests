@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 const textStyle = {
   fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
   fontSize: "16px",
@@ -7,7 +9,19 @@ const textStyle = {
 
 const rowPadding = { paddingTop: "9px", paddingBottom: "42px" };
 
+const slides = [
+  "/Ecosystem_Services/Slide-1.jpg.jpeg",
+  "/Ecosystem_Services/Slide-2.jpg.jpeg",
+  "/Ecosystem_Services/Slide-3.jpg.jpeg",
+];
+
 export default function CarbonSection() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => setCurrent((c) => (c + 1) % slides.length), 4000);
+    return () => clearInterval(timer);
+  }, []);
   return (
     <section id="carbon">
       {/* Title + intro paragraph */}
@@ -62,12 +76,36 @@ export default function CarbonSection() {
             </p>
           </div>
           <div className="lg:w-1/2" style={{ marginTop: "60px" }}>
-            <img
-              src="/waiting.jpg"
-              alt="Carbon sequestration"
-              className="w-full"
-              style={{ borderRadius: "6px" }}
-            />
+            <div className="relative overflow-hidden" style={{ borderRadius: "6px" }}>
+              {slides.map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt={`Carbon sequestration ${i + 1}`}
+                  className="w-full"
+                  style={{
+                    display: i === current ? "block" : "none",
+                  }}
+                />
+              ))}
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+                {slides.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrent(i)}
+                    className="rounded-full"
+                    style={{
+                      width: "10px",
+                      height: "10px",
+                      backgroundColor: i === current ? "#78c922" : "rgba(255,255,255,0.6)",
+                      border: "none",
+                      cursor: "pointer",
+                      transition: "background-color 300ms",
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

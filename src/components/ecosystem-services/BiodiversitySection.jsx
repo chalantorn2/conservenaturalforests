@@ -4,7 +4,7 @@ export default function BiodiversitySection() {
       {/* Parallax Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: "url(/waiting.jpg)" }}
+        style={{ backgroundImage: "url(/Ecosystem_Services/Roots.jpg.jpeg)" }}
       />
 
       <div

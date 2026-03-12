@@ -1,10 +1,26 @@
 import { Link } from "react-router-dom";
 
 const projectCards = [
-  { title: "Forest Restoration", to: "/forest-restoration" },
-  { title: "Local Livelihoods", to: "/local-livelihoods" },
-  { title: "Wildlife Conservation", to: "/wildlife-conservation" },
-  { title: "Ecosystem Services", to: "/ecosystem-services" },
+  {
+    title: "Forest Restoration",
+    to: "/forest-restoration",
+    image: "/Donate/Topdown-Nursery.jpg.jpeg",
+  },
+  {
+    title: "Local Livelihoods",
+    to: "/local-livelihoods",
+    image: "/Donate/Kids-Learning.jpg.jpeg",
+  },
+  {
+    title: "Wildlife Conservation",
+    to: "/wildlife-conservation",
+    image: "/Donate/Steady-Tortoise.jpg.jpeg",
+  },
+  {
+    title: "Ecosystem Services",
+    to: "/ecosystem-services",
+    image: "/Donate/Waterfall.jpg.jpeg",
+  },
 ];
 
 const btnStyle = {
@@ -52,7 +68,7 @@ export default function ProjectCardsSection() {
                 }}
               >
                 <img
-                  src="/waiting.jpg"
+                  src={card.image}
                   alt={card.title}
                   className="w-full aspect-[4/3] object-cover"
                 />

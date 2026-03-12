@@ -5,7 +5,7 @@ export default function HeroSection() {
       style={{
         minHeight: "625px",
         height: "100vh",
-        backgroundImage: "url(/waiting.jpg)",
+        backgroundImage: "url(/Internship/Internship-Header.jpg.jpeg)",
         backgroundSize: "cover",
         backgroundPosition: "50%",
         backgroundColor: "#7ebec5",
@@ -15,7 +15,10 @@ export default function HeroSection() {
         className="absolute inset-0"
         style={{ backgroundColor: "rgba(0,0,0,0.42)" }}
       />
-      <div className="relative z-10 text-center px-4" style={{ maxWidth: "800px" }}>
+      <div
+        className="relative z-10 text-center px-4"
+        style={{ maxWidth: "800px" }}
+      >
         <h1
           style={{
             fontFamily: '"Lato", Helvetica, Arial, Lucida, sans-serif',

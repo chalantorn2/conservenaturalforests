@@ -2,10 +2,10 @@ import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 
 const galleryImages = [
-  { alt: "Kamee and Mahout" },
-  { alt: "Kamee Behind" },
-  { alt: "Kamee Closeup" },
-  { alt: "Kamee Front" },
+  { src: "/Wildlife_Conservation/Kamee-and-Mahout.jpg.jpeg", alt: "Kamee and Mahout" },
+  { src: "/Wildlife_Conservation/Kamee-Behind.jpg.jpeg", alt: "Kamee Behind" },
+  { src: "/Wildlife_Conservation/Kamee-Closeup.jpg.jpeg", alt: "Kamee Closeup" },
+  { src: "/Wildlife_Conservation/vt.jpeg", alt: "Kamee Front" },
 ];
 
 export default function ElephantDetailSection() {
@@ -41,7 +41,7 @@ export default function ElephantDetailSection() {
             {galleryImages.map((img, idx) => (
               <img
                 key={idx}
-                src="/waiting.jpg"
+                src={img.src}
                 alt={img.alt}
                 style={{
                   position: "absolute",

@@ -6,7 +6,6 @@ import CarbonSection from "../components/ecosystem-services/CarbonSection";
 import BiodiversitySection from "../components/ecosystem-services/BiodiversitySection";
 import SoilWaterSection from "../components/ecosystem-services/SoilWaterSection";
 import MapsSection from "../components/ecosystem-services/MapsSection";
-import NetworkSection from "../components/home/NetworkSection";
 import ContactDonateSection from "../components/shared/ContactDonateSection";
 
 export default function EcosystemServices() {
@@ -31,7 +30,6 @@ export default function EcosystemServices() {
       <BiodiversitySection />
       <SoilWaterSection />
       <MapsSection />
-      <NetworkSection />
       <ContactDonateSection variant="light" />
     </div>
   );

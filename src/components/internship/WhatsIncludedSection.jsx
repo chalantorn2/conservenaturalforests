@@ -15,7 +15,7 @@ export default function WhatsIncludedSection() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: "url(/waiting.jpg)",
+          backgroundImage: "url(/Internship/Yellow-Banners.jpg.jpeg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -49,7 +49,8 @@ export default function WhatsIncludedSection() {
                 <p
                   className="text-center"
                   style={{
-                    fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+                    fontFamily:
+                      '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                     fontSize: "16px",
                     lineHeight: "2em",
                     color: "#fff",

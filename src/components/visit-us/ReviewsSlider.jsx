@@ -100,7 +100,7 @@ export default function ReviewsSlider() {
               <button
                 onClick={() =>
                   setCurrentSlide(
-                    (prev) => (prev - 1 + reviews.length) % reviews.length
+                    (prev) => (prev - 1 + reviews.length) % reviews.length,
                   )
                 }
                 className="absolute left-2 top-1/2 -translate-y-1/2"
@@ -146,9 +146,7 @@ export default function ReviewsSlider() {
                       borderRadius: "50%",
                       border: "none",
                       backgroundColor:
-                        i === currentSlide
-                          ? "#78c922"
-                          : "rgba(0,0,0,0.2)",
+                        i === currentSlide ? "#78c922" : "rgba(0,0,0,0.2)",
                       cursor: "pointer",
                       transition: "background-color 300ms",
                     }}
@@ -167,7 +165,7 @@ export default function ReviewsSlider() {
               rel="noopener noreferrer"
             >
               <img
-                src="/waiting.jpg"
+                src="/Visit-Us/TC_white_winner-gif_L_2024.gif"
                 alt="Tripadvisor Traveller's Choice Awards 2024"
                 style={{ maxWidth: "300px", margin: "0 auto" }}
               />

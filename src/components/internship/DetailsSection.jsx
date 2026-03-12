@@ -4,7 +4,7 @@ export default function DetailsSection() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: "url(/waiting.jpg)",
+          backgroundImage: "url(/Internship/Interns-in-Pickup.jpg.jpeg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -55,11 +55,12 @@ export default function DetailsSection() {
           <p className="text-justify mb-6">
             Our organization operates primarily in two locations: Pai, a small
             town in the Mae Hong Son province of northern Thailand, and Tarutao
-            National Park, a southern island chain in the Satun Province. Housing,
-            meals, and transportation are provided. We also assist new interns
-            with the visa application process, which, in most cases, will allow
-            individuals to stay in Thailand from ninety days up to one year. The
-            minimum duration for an internship with CNF is at least one month.
+            National Park, a southern island chain in the Satun Province.
+            Housing, meals, and transportation are provided. We also assist new
+            interns with the visa application process, which, in most cases,
+            will allow individuals to stay in Thailand from ninety days up to
+            one year. The minimum duration for an internship with CNF is at
+            least one month.
           </p>
           <p className="text-justify mb-6">
             If you are interested in projects related to wildlife and

@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
 const projects = [
-  { name: "FOREST RESTORATION", to: "/forest-restoration" },
-  { name: "LOCAL LIVELIHOODS", to: "/local-livelihoods" },
-  { name: "WILDLIFE CONSERVATION", to: "/wildlife-conservation" },
-  { name: "ECOSYSTEM SERVICES", to: "/ecosystem-services" },
+  { name: "FOREST RESTORATION", to: "/forest-restoration", image: "/Our_Team/Topdown-Nursery.jpg.jpeg" },
+  { name: "LOCAL LIVELIHOODS", to: "/local-livelihoods", image: "/Our_Team/Kids-Learning.jpg.jpeg" },
+  { name: "WILDLIFE CONSERVATION", to: "/wildlife-conservation", image: "/Our_Team/Steady-Tortoise.jpg.jpeg" },
+  { name: "ECOSYSTEM SERVICES", to: "/ecosystem-services", image: "/Our_Team/Waterfall.jpg.jpeg" },
 ];
 
 export default function ProjectCardsSection() {
@@ -46,7 +46,7 @@ export default function ProjectCardsSection() {
                 }}
               >
                 <img
-                  src="/waiting.jpg"
+                  src={project.image}
                   alt={project.name}
                   style={{
                     width: "100%",

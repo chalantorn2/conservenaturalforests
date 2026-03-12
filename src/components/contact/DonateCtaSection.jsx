@@ -6,7 +6,7 @@ export default function DonateCtaSection() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: "url(/waiting.jpg)",
+          backgroundImage: "url(/Contact/Greenhouse.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -41,8 +41,8 @@ export default function DonateCtaSection() {
                 lineHeight: "1.7em",
               }}
             >
-              Conserve Natural Forests was built and continues to grow thanks
-              to the generosity of like-minded people who support our work. We
+              Conserve Natural Forests was built and continues to grow thanks to
+              the generosity of like-minded people who support our work. We
               would not be where we are today without their help. If you would
               like to know more about how you can contribute toward restoring
               Thailand's beautiful ecosystems and saving endangered species,

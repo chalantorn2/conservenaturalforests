@@ -10,7 +10,7 @@ export default function CarbonFootprintSection() {
     <section
       className="relative bg-fixed bg-cover bg-center"
       style={{
-        backgroundImage: "url(/waiting.jpg)",
+        backgroundImage: "url(/Donate/Ecosystems-Header.jpg.jpeg)",
         paddingTop: "66px",
         paddingBottom: "54px",
       }}
@@ -40,8 +40,8 @@ export default function CarbonFootprintSection() {
             <p style={{ textAlign: "justify" }}>
               Calculating your carbon footprint and the best way to reduce it
               can be very complicated. Reducing consumption and committing to
-              sustainable alternatives are not only recommended &ndash; they
-              are necessary and urgent. Some of these changes are relatively
+              sustainable alternatives are not only recommended &ndash; they are
+              necessary and urgent. Some of these changes are relatively
               straightforward &ndash; carpooling, biking, electric cars, no
               wasted food, buying local, and more. Some are less
               straightforward, but arguably more important: contacting your
@@ -61,8 +61,8 @@ export default function CarbonFootprintSection() {
               >
                 Click here
               </a>{" "}
-              to find a handy calculator you can use to work out your own
-              carbon footprint.
+              to find a handy calculator you can use to work out your own carbon
+              footprint.
             </p>
           </div>
         </div>

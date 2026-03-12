@@ -1,13 +1,13 @@
 import { useState, useEffect, useCallback } from "react";
 
 const galleryImages = [
-  { alt: "Digging" },
-  { alt: "Holding Banner" },
-  { alt: "Army Planting Day" },
-  { alt: "Army Listening" },
-  { alt: "Miguel in Pickup" },
-  { alt: "Army with Shovels" },
-  { alt: "School with Banner" },
+  { src: "/Forest_Restoration/Digging.jpg.jpeg", alt: "Digging" },
+  { src: "/Forest_Restoration/Holding-Banner.jpg.jpeg", alt: "Holding Banner" },
+  { src: "/Forest_Restoration/Army-Planting-Day.jpg.jpeg", alt: "Army Planting Day" },
+  { src: "/Forest_Restoration/Army-Listening.jpg.jpeg", alt: "Army Listening" },
+  { src: "/Forest_Restoration/Miguel-in-Pickup.jpg.jpeg", alt: "Miguel in Pickup" },
+  { src: "/Forest_Restoration/Army-with-Shovels.jpg.jpeg", alt: "Army with Shovels" },
+  { src: "/Forest_Restoration/School-with-Banner.jpg.jpeg", alt: "School with Banner" },
 ];
 
 export default function IntroGallerySection() {
@@ -82,7 +82,7 @@ export default function IntroGallerySection() {
             {galleryImages.map((img, idx) => (
               <img
                 key={idx}
-                src="/waiting.jpg"
+                src={img.src}
                 alt={img.alt}
                 style={{
                   position: "absolute",

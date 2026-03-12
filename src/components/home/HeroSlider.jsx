@@ -6,31 +6,31 @@ const slides = [
     title: "IT STARTS WITH ONE TREE",
     buttonText: "FOREST RESTORATION",
     buttonLink: "/forest-restoration",
-    bg: "/waiting.jpg",
+    bg: "/Home/Starts-With-One-Tree.jpg.jpeg",
   },
   {
     title: "FORESTS FOR THE PEOPLE",
     buttonText: "LOCAL LIVELIHOODS",
     buttonLink: "/local-livelihoods",
-    bg: "/waiting.jpg",
+    bg: "/Home/Lady-Selling-Bananas-Header.jpg.jpeg",
   },
   {
-    title: "PROTECTING WILDLIFE",
+    title: "BIODIVERSITY IS OUR MOST PRECIOUS RESOURCE",
     buttonText: "WILDLIFE CONSERVATION",
     buttonLink: "/wildlife-conservation",
-    bg: "/waiting.jpg",
+    bg: "/Home/Kamee-Sugar-Cane.jpg.jpeg",
   },
   {
-    title: "NATURE'S SERVICES",
+    title: "CLEAN AIR, PURE WATER, HEALTHY SOIL",
     buttonText: "ECOSYSTEM SERVICES",
     buttonLink: "/ecosystem-services",
-    bg: "/waiting.jpg",
+    bg: "/Home/Internship-Header.jpg.jpeg",
   },
   {
-    title: "VISIT OUR FOREST",
-    buttonText: "VISIT US",
+    title: "GET INVOLVED",
+    buttonText: "LEARN MORE",
     buttonLink: "/visit-us",
-    bg: "/waiting.jpg",
+    bg: "/Home/Helping-Hand.jpg",
   },
 ];
 
@@ -45,7 +45,7 @@ export default function HeroSlider() {
       setCurrent(index);
       setTimeout(() => setIsTransitioning(false), 700);
     },
-    [current, isTransitioning]
+    [current, isTransitioning],
   );
 
   const nextSlide = useCallback(() => {
@@ -62,7 +62,10 @@ export default function HeroSlider() {
   }, [nextSlide]);
 
   return (
-    <section className="relative w-full overflow-hidden" style={{ height: "100vh", minHeight: "600px" }}>
+    <section
+      className="relative w-full overflow-hidden"
+      style={{ height: "100vh", minHeight: "600px" }}
+    >
       {/* Slides */}
       {slides.map((slide, idx) => (
         <div
@@ -99,6 +102,7 @@ export default function HeroSlider() {
                   letterSpacing: "1px",
                   textShadow: "0em 0.1em 0.1em rgba(0,0,0,0.4)",
                   fontSize: "clamp(40px, 5vw, 66px)",
+                  lineHeight: 1.2,
                   color: "#ffffff",
                   marginBottom: "50px",
                 }}
@@ -171,7 +175,8 @@ export default function HeroSlider() {
               width: "12px",
               height: "12px",
               borderRadius: "50%",
-              backgroundColor: idx === current ? "#78c922" : "rgba(255,255,255,0.5)",
+              backgroundColor:
+                idx === current ? "#78c922" : "rgba(255,255,255,0.5)",
               transform: idx === current ? "scale(1.1)" : "scale(1)",
             }}
             aria-label={`Go to slide ${idx + 1}`}

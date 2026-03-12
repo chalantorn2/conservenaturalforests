@@ -173,7 +173,7 @@ export default function ContactDonateSection({ variant = "dark" }) {
         <div
           className="absolute inset-0"
           style={{
-            backgroundImage: "url(/waiting.jpg)",
+            backgroundImage: "url(/Home/Greenhouse.jpg.jpeg)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundAttachment: "fixed",
@@ -220,7 +220,7 @@ export default function ContactDonateSection({ variant = "dark" }) {
     return (
       <section
         className="relative bg-fixed bg-cover bg-center"
-        style={{ backgroundImage: "url(/waiting.jpg)" }}
+        style={{ backgroundImage: "url(/Home/Greenhouse.jpg.jpeg)" }}
       >
         <div
           className="absolute inset-0"
@@ -247,7 +247,7 @@ export default function ContactDonateSection({ variant = "dark" }) {
       >
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
-          style={{ backgroundImage: "url(/waiting.jpg)" }}
+          style={{ backgroundImage: "url(/Home/Greenhouse.jpg.jpeg)" }}
         />
         <div className="relative max-w-[1080px] mx-auto px-6">
           <div

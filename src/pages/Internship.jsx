@@ -5,8 +5,6 @@ import TuitionSection from "../components/internship/TuitionSection";
 import WhatsIncludedSection from "../components/internship/WhatsIncludedSection";
 import FaqSection from "../components/internship/FaqSection";
 import ApplyFormSection from "../components/internship/ApplyFormSection";
-import NetworkSection from "../components/home/NetworkSection";
-
 export default function Internship() {
   return (
     <>
@@ -17,7 +15,6 @@ export default function Internship() {
       <WhatsIncludedSection />
       <FaqSection />
       <ApplyFormSection />
-      <NetworkSection />
     </>
   );
 }

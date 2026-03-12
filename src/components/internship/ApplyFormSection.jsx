@@ -23,7 +23,7 @@ export default function ApplyFormSection() {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: "url(/waiting.jpg)",
+          backgroundImage: "url(/Internship/Greenhouse.jpg.jpeg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -43,7 +43,8 @@ export default function ApplyFormSection() {
               <h1
                 className="mb-4"
                 style={{
-                  fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+                  fontFamily:
+                    '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                   fontWeight: 700,
                   fontSize: "24px",
                   color: "#fff",
@@ -68,7 +69,8 @@ export default function ApplyFormSection() {
                       backgroundColor: "rgba(0,0,0,0.74)",
                       border: "2px solid #78c922",
                       borderRadius: "6px",
-                      fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+                      fontFamily:
+                        '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                       fontSize: "14px",
                       color: "#fff",
                       outline: "none",
@@ -87,7 +89,8 @@ export default function ApplyFormSection() {
                       backgroundColor: "rgba(0,0,0,0.74)",
                       border: "2px solid #78c922",
                       borderRadius: "6px",
-                      fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+                      fontFamily:
+                        '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                       fontSize: "14px",
                       color: "#fff",
                       outline: "none",
@@ -107,7 +110,8 @@ export default function ApplyFormSection() {
                     backgroundColor: "rgba(0,0,0,0.74)",
                     border: "2px solid #78c922",
                     borderRadius: "6px",
-                    fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+                    fontFamily:
+                      '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                     fontSize: "14px",
                     color: "#fff",
                     outline: "none",
@@ -143,11 +147,15 @@ export default function ApplyFormSection() {
             </div>
 
             {/* Right - Donate CTA */}
-            <div className="md:w-1/2 p-5 text-white" style={{ marginTop: "41px" }}>
+            <div
+              className="md:w-1/2 p-5 text-white"
+              style={{ marginTop: "41px" }}
+            >
               <h2
                 className="mb-4"
                 style={{
-                  fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+                  fontFamily:
+                    '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                   fontSize: "24px",
                   fontWeight: 700,
                   lineHeight: "1.2em",
@@ -158,17 +166,18 @@ export default function ApplyFormSection() {
               <p
                 className="text-justify mb-8"
                 style={{
-                  fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+                  fontFamily:
+                    '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                   fontSize: "16px",
                   lineHeight: "1.7em",
                 }}
               >
-                Conserve Natural Forests was built and continues to grow thanks to
-                the generosity of like-minded people who support our work. We would
-                not be where we are today without their help. If you would like to
-                know more about how you can contribute toward restoring Thailand's
-                beautiful ecosystems and saving endangered species, please consider
-                donating to one of our projects.
+                Conserve Natural Forests was built and continues to grow thanks
+                to the generosity of like-minded people who support our work. We
+                would not be where we are today without their help. If you would
+                like to know more about how you can contribute toward restoring
+                Thailand's beautiful ecosystems and saving endangered species,
+                please consider donating to one of our projects.
               </p>
               <div className="text-center">
                 <Link

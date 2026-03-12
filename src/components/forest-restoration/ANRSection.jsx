@@ -2,7 +2,7 @@ export default function ANRSection() {
   return (
     <section
       className="relative bg-fixed bg-cover bg-center"
-      style={{ backgroundImage: "url(/waiting.jpg)" }}
+      style={{ backgroundImage: "url(/Forest_Restoration/Outside-Nursery.jpg.jpeg)" }}
     >
       <div className="relative z-10 max-w-[1080px] mx-auto px-6 py-8">
         <div
