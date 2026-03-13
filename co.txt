@@ -1,0 +1,52 @@
+
+HOW WOULD YOU LIKE TO MEASURE YOUR IMPACT? *
+1. I know how much money I want to donate.
+DONATION AMOUNT
+100
+NUMBER OF TREES
+Total: 50
+AREA COVERED (m²)
+Total: 150
+AREA COVERED (hectares)
+Total: 0.015
+CO₂ CAPTURED (kg/year)
+Total: 1,125
+
+HOW WOULD YOU LIKE TO MEASURE YOUR IMPACT? *
+2. I know how many trees I want planted on my behalf.
+NUMBER OF TREES
+100
+AREA COVERED (m²)
+Total: 300
+AREA COVERED (hectares)
+Total: 0.03
+CO₂ CAPTURED (kg/year)
+Total: 2,250
+DONATION AMOUNT
+€Total: 100
+
+HOW WOULD YOU LIKE TO MEASURE YOUR IMPACT? *
+3. I know the area of land I want to restore.
+AREA COVERED (m²)
+100
+AREA COVERED (hectares)
+Total: 0.01
+NUMBER OF TREES
+Total: 33
+CO₂ CAPTURED (kg/year)
+Total: 742.5
+DONATION AMOUNT
+€Total: 33
+
+HOW WOULD YOU LIKE TO MEASURE YOUR IMPACT? *
+4. I know how much CO₂ I want to offset.
+CO₂ TO OFFSET (kg/year)
+100
+NUMBER OF TREES
+Total: 4
+AREA COVERED (m²)
+Total: 12
+AREA COVERED (hectares)
+Total: 0.001
+DONATION AMOUNT
+€Total: 4.00

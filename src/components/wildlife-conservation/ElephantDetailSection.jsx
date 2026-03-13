@@ -21,7 +21,7 @@ export default function ElephantDetailSection() {
   }, [next]);
 
   return (
-    <section style={{ paddingTop: "55px" }}>
+    <section data-aos="fade-up" style={{ paddingTop: "55px" }}>
       {/* Two columns: Gallery + Text */}
       <div
         className="max-w-[1080px] mx-auto px-6 flex flex-col lg:flex-row gap-8"

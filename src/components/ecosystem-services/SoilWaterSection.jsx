@@ -7,7 +7,7 @@ const textStyle = {
 
 export default function SoilWaterSection() {
   return (
-    <section id="soil" style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+    <section id="soil" data-aos="fade-up" style={{ paddingTop: "10px", paddingBottom: "10px" }}>
       {/* 2-column: text + gallery */}
       <div
         className="max-w-[1080px] mx-auto px-6"

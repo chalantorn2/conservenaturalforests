@@ -1,6 +1,6 @@
 export default function VideosSection() {
   return (
-    <section className="pb-20 px-[30px] bg-white">
+    <section className="pb-20 px-[30px] bg-white" data-aos="fade-up">
       <div className="max-w-[1080px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Video 1 */}

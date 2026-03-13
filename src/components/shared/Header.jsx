@@ -77,7 +77,7 @@ export default function Header() {
             alt="Conserve Natural Forests"
             className="transition-all duration-300"
             style={{
-              height: scrolled ? "54px" : "80px",
+              height: scrolled ? "70px" : "90px",
             }}
           />
         </Link>
@@ -108,7 +108,7 @@ export default function Header() {
                     color: item.children?.some((c) => isActive(c.path))
                       ? "#78c922"
                       : "#e8e8e8",
-                    fontSize: "16px",
+                    fontSize: scrolled ? "14px" : "16px",
                     fontWeight: "bold",
                     textTransform: "uppercase",
                     letterSpacing: "2px",
@@ -126,7 +126,7 @@ export default function Header() {
                   className="block transition-opacity duration-400"
                   style={{
                     color: isActive(item.path) ? "#78c922" : "#e8e8e8",
-                    fontSize: "16px",
+                    fontSize: scrolled ? "14px" : "16px",
                     fontWeight: "bold",
                     textTransform: "uppercase",
                     letterSpacing: "2px",
@@ -232,12 +232,30 @@ export default function Header() {
           {/* Donate Button */}
           <Link
             to="/donate"
-            className="btn-divi btn-divi-white"
             style={{
-              fontSize: "16px",
-              padding: "0.3em 1em",
+              fontSize: scrolled ? "14px" : "16px",
+              padding: "0.4em 1.2em",
               marginLeft: "10px",
-              marginBottom: scrolled ? "16px" : "24px",
+              marginBottom: scrolled ? "24px" : "32px",
+              backgroundColor: "#78c922",
+              color: "#fff",
+              fontFamily: '"Lato", Helvetica, Arial, Lucida, sans-serif',
+              fontWeight: 700,
+              textTransform: "uppercase",
+              letterSpacing: "2px",
+              borderRadius: "6px",
+              textDecoration: "none",
+              textShadow: "0 1px 3px rgba(0,0,0,0.4)",
+              transition: "all 300ms ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = "#7edd25";
+              e.currentTarget.style.boxShadow =
+                "0 2px 8px rgba(120,201,34,0.5)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "#78c922";
+              e.currentTarget.style.boxShadow = "none";
             }}
           >
             DONATE

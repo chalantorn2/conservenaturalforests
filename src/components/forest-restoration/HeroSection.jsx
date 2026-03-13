@@ -2,21 +2,26 @@ export default function HeroSection() {
   return (
     <section
       className="relative flex items-center justify-center text-center text-white"
-      style={{ minHeight: "100vh" }}
+      style={{ minHeight: "100vh", clipPath: "inset(0)" }}
     >
       <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url(/Forest_Restoration/9307411-1024x768.jpg.jpeg)" }}
+        className="fixed inset-0"
+        style={{
+          backgroundImage: "url(/Forest_Restoration/9307411-1024x768.jpg.jpeg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center 5%",
+          backgroundColor: "#7ebec5",
+        }}
       />
       <div
         className="absolute inset-0"
-        style={{ backgroundColor: "#7ebec5", mixBlendMode: "multiply" }}
+        style={{ backgroundColor: "rgba(0,0,0,0.42)" }}
       />
       <div
-        className="absolute inset-0"
-        style={{ backgroundColor: "rgba(0,0,0,0.31)" }}
-      />
-      <div className="relative z-10 px-6">
+        className="relative z-10 px-6"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <h1
           style={{
             fontFamily: '"Lato", Helvetica, Arial, Lucida, sans-serif',
@@ -30,8 +35,8 @@ export default function HeroSection() {
           FOREST RESTORATION
         </h1>
       </div>
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
-        <a href="#intro" style={{ color: "#78c922", fontSize: "32px" }}>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+        <a href="#intro" className="block animate-bounce" style={{ color: "#78c922", fontSize: "32px" }}>
           &#x25BC;
         </a>
       </div>

@@ -30,6 +30,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Lato", Helvetica, Arial, Lucida, sans-serif;
+  }
 }
 
 /* Component styles - in @layer components so utilities can still override */
@@ -63,6 +67,10 @@
 
   .btn-divi:hover::after {
     margin-left: 0.6em;
+  }
+
+  .btn-divi.no-arrow::after {
+    display: none;
   }
 
   /* Dark bg button (slider, contact form, donate) */

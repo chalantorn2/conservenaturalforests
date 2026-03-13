@@ -25,11 +25,12 @@ export default function IntroGallerySection() {
   return (
     <section
       id="intro"
-      style={{ paddingTop: "30px", paddingBottom: "30px" }}
+      data-aos="fade-up"
+      style={{ paddingTop: "54px", paddingBottom: "54px" }}
     >
       <div
         className="max-w-[1080px] mx-auto px-6 flex flex-col lg:flex-row gap-8"
-        style={{ paddingBottom: "42px" }}
+        style={{ paddingBottom: "0" }}
       >
         {/* Left: Intro Text */}
         <div className="lg:w-1/2">

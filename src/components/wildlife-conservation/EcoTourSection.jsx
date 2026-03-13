@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function EcoTourSection() {
   return (
-    <section className="relative" style={{ padding: "0" }}>
+    <section className="relative" data-aos="fade-up" style={{ padding: "0" }}>
       {/* Parallax Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"

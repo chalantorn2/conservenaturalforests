@@ -1,6 +1,6 @@
 export default function BiodiversitySection() {
   return (
-    <section id="biodiversity" className="relative" style={{ padding: 0 }}>
+    <section id="biodiversity" className="relative" data-aos="fade-up" style={{ padding: 0 }}>
       {/* Parallax Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"

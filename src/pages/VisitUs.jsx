@@ -5,6 +5,7 @@ import ParallaxInfoSection from "../components/visit-us/ParallaxInfoSection";
 import ReviewsSlider from "../components/visit-us/ReviewsSlider";
 import BookingFormSection from "../components/visit-us/BookingFormSection";
 import ContactDonateSection from "../components/shared/ContactDonateSection";
+import NetworkSection from "../components/home/NetworkSection";
 
 export default function VisitUs() {
   useEffect(() => {
@@ -18,6 +19,7 @@ export default function VisitUs() {
       <ParallaxInfoSection />
       <ReviewsSlider />
       <BookingFormSection />
+      <NetworkSection />
       <ContactDonateSection />
     </div>
   );

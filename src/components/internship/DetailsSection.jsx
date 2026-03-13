@@ -1,6 +1,6 @@
 export default function DetailsSection() {
   return (
-    <section className="relative py-8 px-[30px]">
+    <section className="relative py-8 px-[30px]" data-aos="fade-up">
       <div
         className="absolute inset-0"
         style={{

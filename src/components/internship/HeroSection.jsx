@@ -5,12 +5,18 @@ export default function HeroSection() {
       style={{
         minHeight: "625px",
         height: "100vh",
-        backgroundImage: "url(/Internship/Internship-Header.jpg.jpeg)",
-        backgroundSize: "cover",
-        backgroundPosition: "50%",
-        backgroundColor: "#7ebec5",
+        clipPath: "inset(0)",
       }}
     >
+      <div
+        className="fixed inset-0"
+        style={{
+          backgroundImage: "url(/Internship/Internship-Header.jpg.jpeg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center 5%",
+          backgroundColor: "#7ebec5",
+        }}
+      />
       <div
         className="absolute inset-0"
         style={{ backgroundColor: "rgba(0,0,0,0.42)" }}
@@ -18,6 +24,8 @@ export default function HeroSection() {
       <div
         className="relative z-10 text-center px-4"
         style={{ maxWidth: "800px" }}
+        data-aos="fade-up"
+        data-aos-duration="1000"
       >
         <h1
           style={{
@@ -57,13 +65,9 @@ export default function HeroSection() {
           </a>
         </div>
       </div>
-      {/* Scroll down indicator */}
-      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-10">
-        <a
-          href="#intro"
-          className="text-[#78c922] text-4xl animate-bounce block"
-        >
-          &#x2193;
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+        <a href="#intro" className="block animate-bounce" style={{ color: "#78c922", fontSize: "32px" }}>
+          &#x25BC;
         </a>
       </div>
     </section>

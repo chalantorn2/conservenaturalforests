@@ -23,7 +23,7 @@ export default function CarbonSection() {
     return () => clearInterval(timer);
   }, []);
   return (
-    <section id="carbon">
+    <section id="carbon" data-aos="fade-up">
       {/* Title + intro paragraph */}
       <div className="max-w-[1080px] mx-auto px-6" style={rowPadding}>
         <div style={textStyle}>

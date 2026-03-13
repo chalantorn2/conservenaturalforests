@@ -21,7 +21,7 @@ export default function ContactFooter() {
   return (
     <>
       {/* Footer section - Site Nav + Newsletter + Map + Logo */}
-      <section style={{ backgroundColor: "#2b2b2b" }} className="py-12 px-[30px]">
+      <section style={{ backgroundColor: "#2b2b2b" }} className="py-12 px-[30px]" data-aos="fade-in">
         <div className="max-w-[1080px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Col 1 - Site Navigation */}

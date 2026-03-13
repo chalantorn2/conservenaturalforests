@@ -9,7 +9,7 @@ const projects = [
 
 export default function ProjectCardsSection() {
   return (
-    <section style={{ paddingTop: "29px", paddingBottom: "29px" }}>
+    <section data-aos="fade-up" style={{ paddingTop: "29px", paddingBottom: "29px" }}>
       <div className="max-w-[1080px] mx-auto px-6">
         {/* Title */}
         <h1
@@ -19,7 +19,7 @@ export default function ProjectCardsSection() {
             fontWeight: 700,
             fontSize: "45px",
             color: "#333",
-            marginBottom: "8px",
+            marginBottom: "20px",
           }}
         >
           GET TO KNOW US BETTER

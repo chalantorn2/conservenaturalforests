@@ -9,10 +9,11 @@ export default function IntroSection() {
   return (
     <section
       id="donate-intro"
-      style={{ paddingTop: "4px", paddingBottom: "14px" }}
+      data-aos="fade-up"
+      style={{ paddingTop: "40px", paddingBottom: "40px" }}
     >
-      <div className="max-w-[1080px] mx-auto px-6 py-8">
-        <div style={{ ...textStyle, marginBottom: "-50px" }}>
+      <div className="max-w-[1080px] mx-auto px-6">
+        <div style={textStyle}>
           <p style={{ textAlign: "justify" }}>
             There are so many people around the world who want to see change
             but don&rsquo;t know where to start. Let us help! We are here to

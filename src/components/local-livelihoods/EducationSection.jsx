@@ -24,7 +24,7 @@ export default function EducationSection() {
   }, [next]);
 
   return (
-    <section id="education" style={{ paddingBottom: "20px" }}>
+    <section id="education" data-aos="fade-up" style={{ paddingBottom: "20px" }}>
       {/* Title + Intro */}
       <div className="max-w-[1080px] mx-auto px-6">
         <div

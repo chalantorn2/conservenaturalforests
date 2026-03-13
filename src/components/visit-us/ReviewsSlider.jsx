@@ -51,7 +51,10 @@ export default function ReviewsSlider() {
   }, []);
 
   return (
-    <section style={{ paddingTop: "22px", paddingBottom: "40px" }}>
+    <section
+      data-aos="fade-up"
+      style={{ paddingTop: "22px", paddingBottom: "40px" }}
+    >
       <div className="max-w-[1080px] mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-8 items-center">
           {/* Slider */}
@@ -66,7 +69,7 @@ export default function ReviewsSlider() {
                 position: "relative",
               }}
             >
-              <div style={{ padding: "14px 30px" }}>
+              <div style={{ padding: "30px 35px" }}>
                 <h2
                   style={{
                     fontFamily:
@@ -74,8 +77,10 @@ export default function ReviewsSlider() {
                     fontWeight: 600,
                     textTransform: "uppercase",
                     fontSize: "clamp(20px, 3vw, 31px)",
+                    lineHeight: "1.2em",
                     color: "#78c922",
                     marginBottom: "16px",
+                    textAlign: "center",
                   }}
                 >
                   {reviews[currentSlide].title}
@@ -92,7 +97,9 @@ export default function ReviewsSlider() {
                   <p style={{ textAlign: "justify" }}>
                     {reviews[currentSlide].quote}
                   </p>
-                  <p className="mt-3">{reviews[currentSlide].author}</p>
+                  <p className="mt-3" style={{ textAlign: "center" }}>
+                    {reviews[currentSlide].author}
+                  </p>
                 </div>
               </div>
 

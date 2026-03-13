@@ -1,9 +1,8 @@
 export default function FrameworkSection() {
   return (
-    <section style={{ padding: 0 }}>
+    <section data-aos="fade-up" style={{ paddingTop: "54px", paddingBottom: "54px" }}>
       <div
         className="max-w-[1080px] mx-auto px-6"
-        style={{ paddingBottom: "11px" }}
       >
         <h1
           style={{

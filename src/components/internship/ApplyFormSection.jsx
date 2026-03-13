@@ -19,7 +19,7 @@ export default function ApplyFormSection() {
   };
 
   return (
-    <section id="apply" className="relative py-12 px-[30px]">
+    <section id="apply" className="relative py-12 px-[30px]" data-aos="fade-up">
       <div
         className="absolute inset-0"
         style={{

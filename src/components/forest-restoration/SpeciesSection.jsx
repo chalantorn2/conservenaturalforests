@@ -277,25 +277,134 @@ export default function SpeciesSection() {
   const current = species[selected];
 
   return (
-    <section id="species" style={{ paddingTop: "24px" }}>
+    <section id="species" data-aos="fade-up" style={{ paddingTop: "54px", paddingBottom: "54px" }}>
       <div className="max-w-[1080px] mx-auto px-6">
-        <p
-          style={{
-            textAlign: "center",
-            fontWeight: 700,
-            fontSize: "20px",
-            color: "#000",
-            paddingTop: "21px",
-            paddingBottom: "21px",
-          }}
-        >
-          Here you can learn about some of the species we plant &ndash; take a
-          look!
-        </p>
+        {/* Mobile: stacked */}
+        <div className="flex flex-col gap-8 md:hidden">
+          <div>
+            <p
+              style={{
+                fontWeight: 700,
+                fontSize: "20px",
+                color: "#000",
+                marginBottom: "16px",
+              }}
+            >
+              Here you can learn about some of the species we plant &ndash; take
+              a look!
+            </p>
 
-        <div className="flex flex-col md:flex-row gap-8 items-start">
-          {/* Dropdown */}
-          <div className="w-full md:w-1/2">
+            <label
+              htmlFor="species-select-mobile"
+              style={{
+                display: "block",
+                fontWeight: 600,
+                marginBottom: "8px",
+                color: "#333",
+              }}
+            >
+              Species
+            </label>
+            <select
+              id="species-select-mobile"
+              value={selected}
+              onChange={(e) => setSelected(Number(e.target.value))}
+              style={{
+                width: "100%",
+                padding: "12px",
+                borderRadius: "6px",
+                border: "2px solid #78c922",
+                fontFamily: '"Open Sans", sans-serif',
+                fontSize: "16px",
+                backgroundColor: "#fff",
+                color: "#333",
+                cursor: "pointer",
+                marginBottom: "16px",
+              }}
+            >
+              {species.map((s, idx) => (
+                <option key={idx} value={idx}>
+                  {s.name}
+                </option>
+              ))}
+            </select>
+
+            <div
+              style={{
+                backgroundColor: "#f9f9f9",
+                borderRadius: "6px",
+                padding: "20px",
+                border: "1px solid #e0e0e0",
+              }}
+            >
+              <p>
+                <strong>Scientific name:</strong> <em>{current.scientific}</em>
+              </p>
+              <p style={{ marginTop: "4px" }}>
+                <strong>Thai name:</strong> {current.thai}
+              </p>
+              <p style={{ marginTop: "8px" }}>
+                <strong>Description:</strong>
+              </p>
+              <ul style={{ paddingLeft: "20px", marginTop: "4px", listStyleType: "disc" }}>
+                {current.facts.map((fact, idx) => (
+                  <li key={idx} style={{ marginBottom: "4px" }}>
+                    {fact}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          {current.image && (
+            <div style={{ textAlign: "center" }}>
+              <img
+                src={current.image}
+                alt={current.name}
+                style={{
+                  maxWidth: "100%",
+                  borderRadius: "6px",
+                  display: "inline-block",
+                }}
+              />
+            </div>
+          )}
+        </div>
+
+        {/* Desktop: image determines height, left scrolls */}
+        <div className="hidden md:block relative">
+          {/* Right image - normal flow, sets container height */}
+          <div style={{ width: "50%", marginLeft: "auto", textAlign: "center" }}>
+            {current.image && (
+              <img
+                src={current.image}
+                alt={current.name}
+                style={{
+                  maxWidth: "100%",
+                  borderRadius: "6px",
+                  display: "inline-block",
+                }}
+              />
+            )}
+          </div>
+
+          {/* Left info - absolute, constrained to image height */}
+          <div
+            className="absolute top-0 left-0 bottom-0 flex flex-col"
+            style={{ width: "calc(50% - 2rem)" }}
+          >
+            <p
+              style={{
+                fontWeight: 700,
+                fontSize: "20px",
+                color: "#000",
+                marginBottom: "16px",
+                flexShrink: 0,
+              }}
+            >
+              Here you can learn about some of the species we plant &ndash; take
+              a look!
+            </p>
+
             <label
               htmlFor="species-select"
               style={{
@@ -303,6 +412,7 @@ export default function SpeciesSection() {
                 fontWeight: 600,
                 marginBottom: "8px",
                 color: "#333",
+                flexShrink: 0,
               }}
             >
               Species
@@ -321,6 +431,8 @@ export default function SpeciesSection() {
                 backgroundColor: "#fff",
                 color: "#333",
                 cursor: "pointer",
+                marginBottom: "16px",
+                flexShrink: 0,
               }}
             >
               {species.map((s, idx) => (
@@ -329,29 +441,15 @@ export default function SpeciesSection() {
                 </option>
               ))}
             </select>
-          </div>
 
-          {/* Species Info */}
-          <div className="w-full md:w-1/2">
-            {current.image && (
-              <div style={{ textAlign: "center", marginBottom: "16px" }}>
-                <img
-                  src={current.image}
-                  alt={current.name}
-                  style={{
-                    maxHeight: "240px",
-                    borderRadius: "6px",
-                    display: "inline-block",
-                  }}
-                />
-              </div>
-            )}
             <div
+              className="flex-1 overflow-y-auto"
               style={{
                 backgroundColor: "#f9f9f9",
                 borderRadius: "6px",
                 padding: "20px",
                 border: "1px solid #e0e0e0",
+                minHeight: 0,
               }}
             >
               <p>
@@ -363,7 +461,7 @@ export default function SpeciesSection() {
               <p style={{ marginTop: "8px" }}>
                 <strong>Description:</strong>
               </p>
-              <ul style={{ paddingLeft: "20px", marginTop: "4px" }}>
+              <ul style={{ paddingLeft: "20px", marginTop: "4px", listStyleType: "disc" }}>
                 {current.facts.map((fact, idx) => (
                   <li key={idx} style={{ marginBottom: "4px" }}>
                     {fact}

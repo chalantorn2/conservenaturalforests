@@ -1,6 +1,6 @@
 export default function DegradationSection() {
   return (
-    <section style={{ paddingTop: "18px" }}>
+    <section data-aos="fade-up" style={{ paddingTop: "40px", paddingBottom: "40px" }}>
       <div className="max-w-[1080px] mx-auto px-6">
         {/* Desktop: horizontal image */}
         <img

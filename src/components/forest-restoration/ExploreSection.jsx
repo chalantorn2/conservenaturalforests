@@ -1,6 +1,6 @@
 export default function ExploreSection() {
   return (
-    <section style={{ paddingTop: 0, paddingBottom: "51px" }}>
+    <section data-aos="fade-up" style={{ paddingTop: "54px", paddingBottom: "54px" }}>
       <div className="max-w-[1080px] mx-auto px-6">
         <h1
           style={{

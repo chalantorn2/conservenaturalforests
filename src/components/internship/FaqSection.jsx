@@ -93,7 +93,14 @@ function FaqToggle({ question, answer, isOpen, onToggle }) {
           &#9660;
         </span>
       </div>
-      {isOpen && (
+      <div
+        style={{
+          maxHeight: isOpen ? "800px" : "0",
+          opacity: isOpen ? 1 : 0,
+          overflow: "hidden",
+          transition: "max-height 0.4s ease, opacity 0.3s ease",
+        }}
+      >
         <div
           className="mt-3"
           style={{
@@ -115,7 +122,7 @@ function FaqToggle({ question, answer, isOpen, onToggle }) {
             </p>
           ))}
         </div>
-      )}
+      </div>
     </div>
   );
 }
@@ -128,10 +135,10 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="py-12 px-[30px] bg-white">
+    <section className="py-12 px-[30px] bg-white" data-aos="fade-up">
       <div className="max-w-[1080px] mx-auto">
         <h1
-          className="text-center mb-8"
+          className="text-center mb-15 mt-5"
           style={{
             fontFamily: '"Lato", Helvetica, Arial, Lucida, sans-serif',
             fontWeight: 700,

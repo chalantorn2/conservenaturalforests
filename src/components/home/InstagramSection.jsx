@@ -39,7 +39,7 @@ const posts = [
 
 export default function InstagramSection() {
   return (
-    <section className="py-16 px-[30px] bg-white">
+    <section className="py-16 px-[30px] bg-white" data-aos="fade-up">
       <div className="max-w-[1080px] mx-auto text-center">
         {/* Header */}
         <div className="flex items-center justify-center gap-3 mb-8">

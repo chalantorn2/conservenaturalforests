@@ -37,7 +37,7 @@ export default function MapsSection() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section style={{ paddingTop: "7px", paddingBottom: "1px" }}>
+    <section data-aos="fade-up" style={{ paddingTop: "7px", paddingBottom: "1px" }}>
       <div className="max-w-[1080px] mx-auto px-6">
         {/* Intro quote */}
         <div

@@ -97,7 +97,6 @@ function TeamMemberCard({ member }) {
           borderRadius: "6px",
           overflow: "hidden",
           boxShadow: "6px 6px 18px 0 rgba(0,0,0,0.43)",
-          marginBottom: "16px",
           width: "100%",
         }}
       >
@@ -114,7 +113,7 @@ function TeamMemberCard({ member }) {
       </div>
 
       {/* Name & Role */}
-      <div style={{ textAlign: "center", marginBottom: "12px" }}>
+      <div style={{ textAlign: "center", padding: "30px 0" }}>
         <h1
           style={{
             fontWeight: 600,
@@ -140,6 +139,7 @@ function TeamMemberCard({ member }) {
             fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
             fontSize: "18px",
             color: "#000",
+            lineHeight: "2em",
             marginTop: "4px",
           }}
         >
@@ -224,7 +224,7 @@ function TeamMemberCard({ member }) {
 
 export default function TeamSection() {
   return (
-    <section style={{ padding: 0 }}>
+    <section style={{ paddingTop: "29px", paddingBottom: "29px" }}>
       <div className="max-w-[1080px] mx-auto px-6">
         {/* Title */}
         <h1
@@ -234,7 +234,7 @@ export default function TeamSection() {
             fontWeight: 700,
             fontSize: "45px",
             color: "#333",
-            marginBottom: "8px",
+            marginBottom: "20px",
           }}
         >
           OUR TEAM
@@ -249,31 +249,42 @@ export default function TeamSection() {
 
         {/* Row 1: 4 columns */}
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10"
-          style={{ paddingBottom: "27px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-start"
+          style={{ columnGap: "5.5%", rowGap: "30px", paddingBottom: "27px" }}
         >
           {teamRow1.map((member, idx) => (
-            <TeamMemberCard key={idx} member={member} />
+            <div key={idx} data-aos="fade-up" data-aos-delay={idx * 100}>
+              <TeamMemberCard member={member} />
+            </div>
           ))}
         </div>
 
         {/* Row 2: 4 columns */}
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10"
-          style={{ paddingBottom: "27px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-start"
+          style={{ columnGap: "5.5%", rowGap: "30px", paddingBottom: "27px" }}
         >
           {teamRow2.map((member, idx) => (
-            <TeamMemberCard key={idx} member={member} />
+            <div key={idx} data-aos="fade-up" data-aos-delay={idx * 100}>
+              <TeamMemberCard member={member} />
+            </div>
           ))}
         </div>
 
         {/* Row 3: 3 columns */}
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10"
-          style={{ paddingTop: "40px", paddingBottom: "27px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-start"
+          style={{
+            columnGap: "5.5%",
+            rowGap: "30px",
+            paddingTop: "40px",
+            paddingBottom: "27px",
+          }}
         >
           {teamRow3.map((member, idx) => (
-            <TeamMemberCard key={idx} member={member} />
+            <div key={idx} data-aos="fade-up" data-aos-delay={idx * 100}>
+              <TeamMemberCard member={member} />
+            </div>
           ))}
         </div>
       </div>

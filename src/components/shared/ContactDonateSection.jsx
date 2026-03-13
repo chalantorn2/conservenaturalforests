@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-// variant: "home" | "dark" | "dark-card" | "light"
-export default function ContactDonateSection({ variant = "dark" }) {
+// variant: "dark-card" | "light"
+export default function ContactDonateSection({ variant = "dark-card" }) {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleChange = (e) => {
@@ -117,8 +117,6 @@ export default function ContactDonateSection({ variant = "dark" }) {
     </>
   );
 
-  const donateAlignCenter = variant !== "dark";
-
   const donateBlock = (
     <>
       <h2
@@ -148,7 +146,7 @@ export default function ContactDonateSection({ variant = "dark" }) {
           donating to one of our projects.
         </p>
       </div>
-      <div className={`mt-6${donateAlignCenter ? " text-center" : ""}`}>
+      <div className="mt-6 text-center">
         <Link
           to="/donate"
           style={{
@@ -166,83 +164,12 @@ export default function ContactDonateSection({ variant = "dark" }) {
     </>
   );
 
-  // === Home: parallax bg + form in dark card ===
-  if (variant === "home") {
-    return (
-      <section className="relative py-20 px-[30px]">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "url(/Home/Greenhouse.jpg.jpeg)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-          }}
-        >
-          <div
-            className="absolute inset-0"
-            style={{ backgroundColor: "rgba(0,0,0,0.3)" }}
-          />
-        </div>
-        <div className="relative z-10 max-w-[1080px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div
-              className="p-6"
-              style={{
-                backgroundColor: "rgba(0,0,0,0.71)",
-                borderRadius: "6px",
-                overflow: "hidden",
-                marginLeft: "20px",
-                marginRight: "20px",
-              }}
-            >
-              {formBlock}
-            </div>
-            <div
-              className="flex flex-col justify-center"
-              style={{
-                color: "#fff",
-                marginTop: "41px",
-                marginLeft: "20px",
-                marginRight: "20px",
-              }}
-            >
-              {donateBlock}
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  // === Dark: parallax bg + overlay, no card ===
-  if (variant === "dark") {
-    return (
-      <section
-        className="relative bg-fixed bg-cover bg-center"
-        style={{ backgroundImage: "url(/Home/Greenhouse.jpg.jpeg)" }}
-      >
-        <div
-          className="absolute inset-0"
-          style={{ backgroundColor: "rgba(0,0,0,0.6)" }}
-        />
-        <div className="relative z-10 max-w-[1080px] mx-auto px-6 py-16">
-          <div className="flex flex-col lg:flex-row gap-8">
-            <div className="lg:w-1/2">{formBlock}</div>
-            <div className="lg:w-1/2" style={{ marginTop: "41px" }}>
-              {donateBlock}
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   // === Dark-card: parallax bg + both columns in dark card ===
   if (variant === "dark-card") {
     return (
       <section
         className="relative"
+        data-aos="fade-up"
         style={{ paddingTop: "32px", paddingBottom: "54px" }}
       >
         <div
@@ -272,6 +199,7 @@ export default function ContactDonateSection({ variant = "dark" }) {
   // === Light: no bg image, black text, white inputs ===
   return (
     <section
+      data-aos="fade-up"
       style={{
         paddingTop: "2px",
         paddingBottom: "54px",

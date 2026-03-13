@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function DonateCtaSection() {
   return (
-    <section className="relative py-20 px-[30px]">
+    <section className="relative py-20 px-[30px]" data-aos="fade-up">
       <div
         className="absolute inset-0"
         style={{

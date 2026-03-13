@@ -20,7 +20,7 @@ export default function FireManagementSection() {
   }, [next]);
 
   return (
-    <section style={{ paddingBottom: "20px" }}>
+    <section data-aos="fade-up" style={{ paddingBottom: "20px" }}>
       {/* Title + Intro */}
       <div className="max-w-[1080px] mx-auto px-6">
         <div

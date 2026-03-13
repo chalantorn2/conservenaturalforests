@@ -23,6 +23,7 @@ export default function IntroSection() {
   return (
     <section
       id="intro"
+      data-aos="fade-up"
       style={{ paddingTop: "27px", paddingBottom: "27px" }}
     >
       <div className="max-w-[1080px] mx-auto px-6 flex flex-col lg:flex-row gap-8">

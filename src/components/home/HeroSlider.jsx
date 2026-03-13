@@ -76,15 +76,16 @@ export default function HeroSlider() {
             zIndex: idx === current ? 10 : 0,
             display: idx === current ? "list-item" : "none",
             listStyle: "none",
+            clipPath: "inset(0)",
           }}
         >
           {/* Parallax Background */}
           <div
-            className="absolute inset-0"
+            className="fixed inset-0"
             style={{
               backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.41) 0%, rgba(0,0,0,0) 100%), url(${slide.bg})`,
               backgroundSize: "cover",
-              backgroundPosition: "50%",
+              backgroundPosition: "center 5%",
               backgroundColor: "#c1c1c1",
             }}
           />
@@ -94,7 +95,11 @@ export default function HeroSlider() {
             className="relative z-10 h-full flex items-center justify-center"
             style={{ paddingTop: "105px" }}
           >
-            <div className="text-center text-white px-4 w-full max-w-[1080px] mx-auto">
+            <div
+              className="text-center text-white px-4 w-full max-w-[1080px] mx-auto"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            >
               <h1
                 style={{
                   fontFamily: '"Lato", Helvetica, Arial, Lucida, sans-serif',
@@ -117,7 +122,7 @@ export default function HeroSlider() {
               <div>
                 <Link
                   to={slide.buttonLink}
-                  className="btn-divi btn-divi-white"
+                  className="btn-divi btn-divi-white no-arrow"
                   style={{ fontSize: "20px" }}
                 >
                   {slide.buttonText}

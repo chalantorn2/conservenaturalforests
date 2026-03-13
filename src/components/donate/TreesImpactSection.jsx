@@ -7,7 +7,7 @@ const textStyle = {
 
 export default function TreesImpactSection() {
   return (
-    <section style={{ paddingTop: "13px", paddingBottom: "14px" }}>
+    <section data-aos="fade-up" style={{ paddingTop: "40px", paddingBottom: "40px" }}>
       <div className="max-w-[1080px] mx-auto px-6">
         <div style={{ ...textStyle, marginTop: "2px" }}>
           <p style={{ textAlign: "justify" }}>

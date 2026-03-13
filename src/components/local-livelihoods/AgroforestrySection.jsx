@@ -2,6 +2,7 @@ export default function AgroforestrySection() {
   return (
     <section
       className="relative"
+      data-aos="fade-up"
       style={{ paddingTop: "32px", paddingBottom: "32px" }}
     >
       {/* Parallax Background */}

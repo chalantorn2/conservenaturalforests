@@ -1,6 +1,6 @@
 export default function TuitionSection() {
   return (
-    <section className="px-[30px] bg-white">
+    <section className="px-[30px] bg-white" data-aos="fade-up">
       <div className="max-w-[1080px] mx-auto" style={{ paddingBottom: "27px" }}>
         <div style={{ marginTop: "40px" }}>
           <h1

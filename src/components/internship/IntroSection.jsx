@@ -1,6 +1,6 @@
 export default function IntroSection() {
   return (
-    <section id="intro" className="py-10 px-[30px] bg-white">
+    <section id="intro" className="py-10 px-[30px] bg-white" data-aos="fade-up">
       <div className="max-w-[1080px] mx-auto">
         <div className="flex flex-col md:flex-row gap-8 items-start">
           {/* Left - Text */}

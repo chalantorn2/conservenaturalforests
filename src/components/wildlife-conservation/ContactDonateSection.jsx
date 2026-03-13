@@ -15,6 +15,7 @@ export default function ContactDonateSection() {
 
   return (
     <section
+      data-aos="fade-up"
       style={{
         paddingTop: "2px",
         paddingBottom: "54px",

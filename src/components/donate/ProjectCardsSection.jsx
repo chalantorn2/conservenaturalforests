@@ -29,11 +29,14 @@ const btnStyle = {
   color: "#000",
   border: "2px solid #78c922",
   borderRadius: "6px",
-  padding: "0.3em 1em",
+  padding: "0.8em 2em",
+  fontSize: "18px",
+  lineHeight: "1.6em",
   textDecoration: "none",
   display: "inline-block",
   textTransform: "uppercase",
   letterSpacing: "2px",
+  maxWidth: "220px",
   transition: "all 300ms ease",
   cursor: "pointer",
   backgroundColor: "transparent",
@@ -51,14 +54,14 @@ export default function ProjectCardsSection() {
   };
 
   return (
-    <section style={{ paddingTop: "2px", paddingBottom: "2px" }}>
+    <section style={{ paddingTop: "20px", paddingBottom: "40px" }}>
       <div
         className="max-w-[1080px] mx-auto px-6"
         style={{ paddingBottom: "27px" }}
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {projectCards.map((card) => (
-            <div key={card.title} className="text-center">
+          {projectCards.map((card, idx) => (
+            <div key={card.title} className="text-center" data-aos="fade-up" data-aos-delay={idx * 100}>
               <div
                 style={{
                   borderRadius: "6px",

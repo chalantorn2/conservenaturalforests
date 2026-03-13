@@ -27,7 +27,7 @@ export default function NetworkSection() {
       <div className="max-w-[1080px] mx-auto">
         {/* Section Title */}
         <h1
-          className="text-center mb-2"
+          className="text-center mb-10"
           style={{
             fontSize: "30px",
             fontWeight: 700,
@@ -37,7 +37,10 @@ export default function NetworkSection() {
           OUR NETWORK
         </h1>
         {/* Divider */}
-        <div className="relative mx-auto mb-12" style={{ maxWidth: "10%", height: "5px" }}>
+        <div
+          className="relative mx-auto mb-12"
+          style={{ maxWidth: "10%", height: "5px" }}
+        >
           <div style={{ borderTop: "5px solid #78c922", width: "100%" }} />
         </div>
 
@@ -50,11 +53,17 @@ export default function NetworkSection() {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:opacity-80 transition-opacity"
+              data-aos="fade-up"
+              data-aos-delay={idx * 100}
             >
               <img
                 src={partner.logo}
                 alt={partner.name}
-                style={{ width: "225px", height: "225px", objectFit: "contain" }}
+                style={{
+                  width: "225px",
+                  height: "225px",
+                  objectFit: "contain",
+                }}
               />
             </a>
           ))}

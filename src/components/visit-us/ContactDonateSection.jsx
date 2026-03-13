@@ -20,6 +20,7 @@ export default function ContactDonateSection() {
   return (
     <section
       className="relative bg-fixed bg-cover bg-center"
+      data-aos="fade-up"
       style={{ backgroundImage: "url(/Visit-Us/Greenhouse.jpg.jpeg)" }}
     >
       <div

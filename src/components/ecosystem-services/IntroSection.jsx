@@ -12,6 +12,7 @@ export default function IntroSection() {
     <section
       id="intro"
       className="max-w-[1080px] mx-auto px-6"
+      data-aos="fade-up"
       style={{ paddingTop: "9px", paddingBottom: "42px" }}
     >
       <div style={textStyle}>

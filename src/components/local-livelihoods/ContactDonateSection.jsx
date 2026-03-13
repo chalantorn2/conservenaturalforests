@@ -16,6 +16,7 @@ export default function ContactDonateSection() {
   return (
     <section
       className="relative"
+      data-aos="fade-up"
       style={{ paddingTop: "32px", paddingBottom: "54px" }}
     >
       {/* Parallax Background */}

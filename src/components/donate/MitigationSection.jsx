@@ -7,7 +7,7 @@ const textStyle = {
 
 export default function MitigationSection() {
   return (
-    <section style={{ paddingTop: "0", paddingBottom: "24px" }}>
+    <section data-aos="fade-up" style={{ paddingTop: "40px", paddingBottom: "40px" }}>
       <div className="max-w-[1080px] mx-auto px-6">
         <div style={{ paddingBottom: "4px" }}>
           <h1
@@ -21,7 +21,7 @@ export default function MitigationSection() {
           className="flex flex-col lg:flex-row gap-8 items-center"
           style={{ paddingTop: "48px" }}
         >
-          <div className="lg:w-1/2" style={textStyle}>
+          <div className="lg:w-2/5" style={textStyle}>
             <p style={{ textAlign: "justify" }}>
               Don&rsquo;t get us wrong: We love planting trees. But it&rsquo;s
               important to recognize that there is no single solution to fix the
@@ -33,7 +33,7 @@ export default function MitigationSection() {
               better than we found it.
             </p>
           </div>
-          <div className="lg:w-1/2">
+          <div className="lg:w-3/5">
             <img
               src="/Donate/Mitigation-Hierarchy-Template-1.jpg.jpeg"
               alt="Mitigation Hierarchy Pyramid"

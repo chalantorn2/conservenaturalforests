@@ -4,6 +4,7 @@ import VideosSection from "../components/home/VideosSection";
 import PrioritiesSection from "../components/home/PrioritiesSection";
 import ContactDonateSection from "../components/shared/ContactDonateSection";
 import InstagramSection from "../components/home/InstagramSection";
+import NetworkSection from "../components/home/NetworkSection";
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
       <WelcomeSection />
       <VideosSection />
       <PrioritiesSection />
-      <ContactDonateSection variant="home" />
+      <NetworkSection />
+      <ContactDonateSection variant="dark-card" />
       <InstagramSection />
     </>
   );

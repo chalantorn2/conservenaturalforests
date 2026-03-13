@@ -50,24 +50,24 @@ const priorities = [
 
 export default function PrioritiesSection() {
   return (
-    <section
-      className="py-20 px-[30px]"
-      style={{ backgroundColor: "#f7f7f7" }}
-    >
+    <section className="py-20 px-[30px]" style={{ backgroundColor: "#f7f7f7" }}>
       <div className="max-w-[1080px] mx-auto">
         {/* Section Title */}
         <h1
-          className="text-center mb-2"
+          className="text-center mb-10"
           style={{
             fontSize: "30px",
             color: "#333",
-            fontWeight: 300,
+            fontWeight: 700,
           }}
         >
           OUR PRIORITIES
         </h1>
         {/* Divider */}
-        <div className="relative mx-auto mb-12" style={{ maxWidth: "10%", height: "5px" }}>
+        <div
+          className="relative mx-auto mb-12"
+          style={{ maxWidth: "10%", height: "5px" }}
+        >
           <div style={{ borderTop: "5px solid #78c922", width: "100%" }} />
         </div>
 
@@ -76,6 +76,8 @@ export default function PrioritiesSection() {
           {priorities.map((item, idx) => (
             <div
               key={idx}
+              data-aos="fade-up"
+              data-aos-delay={idx * 150}
               className={`flex flex-col ${
                 item.layout === "text-left"
                   ? "md:flex-row"
@@ -98,10 +100,11 @@ export default function PrioritiesSection() {
                   className="text-justify mb-6"
                   style={{
                     fontSize: "14px",
-                    color: "#666",
+                    color: "#444",
                     lineHeight: "1.7em",
                     fontWeight: 400,
-                    fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+                    fontFamily:
+                      '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                   }}
                 >
                   {item.text}
@@ -109,7 +112,7 @@ export default function PrioritiesSection() {
                 <div className="text-center">
                   <Link
                     to={item.buttonLink}
-                    className="btn-divi btn-divi-green"
+                    className="btn-divi btn-divi-green no-arrow"
                     style={{ fontSize: "18px" }}
                   >
                     {item.buttonText}

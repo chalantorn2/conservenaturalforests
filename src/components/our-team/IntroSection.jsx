@@ -1,6 +1,6 @@
 export default function IntroSection() {
   return (
-    <section id="intro" style={{ paddingBottom: "48px" }}>
+    <section id="intro" data-aos="fade-up" style={{ paddingBottom: "48px" }}>
       <div className="max-w-[1080px] mx-auto px-6">
         <div
           style={{

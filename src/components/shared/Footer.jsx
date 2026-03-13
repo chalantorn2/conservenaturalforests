@@ -53,9 +53,12 @@ export default function Footer() {
                   style={{ borderTop: "5px solid #78c922", width: "100%" }}
                 />
               </div>
-              <ul className="space-y-2 list-none" style={{ marginTop: "15px" }}>
+              <ul className="space-y-2 list-disc pl-4" style={{ marginTop: "15px" }}>
                 {siteLinks.map((link, idx) => (
-                  <li key={idx}>
+                  <li
+                    key={idx}
+                    style={{ color: "#78c922", fontSize: "14px" }}
+                  >
                     <Link
                       to={link.path}
                       className="hover:text-[#78c922] transition-colors"

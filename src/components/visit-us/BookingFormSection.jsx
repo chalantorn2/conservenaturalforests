@@ -52,7 +52,7 @@ export default function BookingFormSection() {
   };
 
   return (
-    <section id="book-eco-tour" style={{ paddingTop: "16px", paddingBottom: "40px" }}>
+    <section id="book-eco-tour" data-aos="fade-up" style={{ paddingTop: "16px", paddingBottom: "40px" }}>
       <div className="max-w-[1080px] mx-auto px-6">
         <h1
           className="text-center"

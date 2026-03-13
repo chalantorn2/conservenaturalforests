@@ -1,3 +1,5 @@
+import { useState, useEffect, useCallback } from "react";
+
 const textStyle = {
   fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
   fontSize: "16px",
@@ -5,45 +7,65 @@ const textStyle = {
   color: "#000",
 };
 
+const galleryImages = [
+  { src: "/Visit-Us/Vistors-Planting.jpg.jpeg", alt: "Visitors Planting" },
+  { src: "/Visit-Us/Hippo-Cooking.jpg.jpeg", alt: "Hippo Cooking" },
+  { src: "/Visit-Us/Passionfruit.jpg.jpeg", alt: "Passionfruit" },
+  { src: "/Visit-Us/Fruit-on-Table-480x320.jpg.jpeg", alt: "Fruit on Table" },
+  { src: "/Visit-Us/Gin-Tray.jpg.jpeg", alt: "Gin Tray" },
+  { src: "/Visit-Us/Noodles.jpg.jpeg", alt: "Noodles" },
+];
+
 export default function AboutVisitSection() {
+  const [current, setCurrent] = useState(0);
+
+  const next = useCallback(() => {
+    setCurrent((c) => (c + 1) % galleryImages.length);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(next, 4000);
+    return () => clearInterval(timer);
+  }, [next]);
   return (
     <section
       id="about-visit"
+      data-aos="fade-up"
       style={{ paddingTop: "29px", paddingBottom: "43px" }}
     >
       <div
         className="max-w-[1080px] mx-auto px-6"
         style={{ paddingTop: "40px" }}
       >
-        {/* Title + Divider */}
-        <h1
-          className="text-center"
-          style={{
-            fontWeight: 700,
-            fontSize: "31px",
-            color: "#333",
-            marginTop: "20px",
-          }}
-        >
-          ABOUT THE VISIT
-        </h1>
-        <div
-          className="mx-auto"
-          style={{
-            borderTop: "2px solid #78c922",
-            maxWidth: "10%",
-            marginTop: "16px",
-            marginBottom: "20px",
-          }}
-        />
-
         {/* Intro text + Gallery row */}
         <div
-          className="flex flex-col lg:flex-row gap-8"
-          style={{ marginTop: "50px" }}
+          className="flex flex-col lg:flex-row gap-8 items-start"
+          style={{ marginTop: "10px" }}
         >
-          <div className="lg:w-3/5" style={textStyle}>
-            <p style={{ textAlign: "justify" }}>
+          {/* Left: Title + Divider + Text */}
+          <div className="lg:w-1/2">
+            <h1
+              style={{
+                fontWeight: 700,
+                fontSize: "31px",
+                color: "#333",
+                marginTop: "20px",
+                marginBottom: "0",
+                textAlign: "center",
+              }}
+            >
+              ABOUT THE VISIT
+            </h1>
+            <div
+              className="mx-auto"
+              style={{
+                borderTop: "2px solid #78c922",
+                width: "17%",
+                marginTop: "32px",
+                marginBottom: "20px",
+              }}
+            />
+            <p style={{ ...textStyle, textAlign: "justify" }}>
               Come join us for a day! Our original project site and tree nursery
               are tucked away in a quiet, beautiful valley with the Pai River
               running through it. CNF invites anyone who would like to learn
@@ -53,32 +75,48 @@ export default function AboutVisitSection() {
               get your hands dirty doing the good work.
             </p>
           </div>
-          <div className="lg:w-2/5">
-            {/* Gallery grid */}
-            <div className="grid grid-cols-3 gap-2">
-              {[
-                {
-                  src: "/Visit-Us/Vistors-Planting.jpg.jpeg",
-                  alt: "Visitors Planting",
-                },
-                {
-                  src: "/Visit-Us/Hippo-Cooking.jpg.jpeg",
-                  alt: "Hippo Cooking",
-                },
-                { src: "/Visit-Us/Passionfruit.jpg.jpeg", alt: "Passionfruit" },
-                {
-                  src: "/Visit-Us/Fruit-on-Table-480x320.jpg.jpeg",
-                  alt: "Fruit on Table",
-                },
-                { src: "/Visit-Us/Gin-Tray.jpg.jpeg", alt: "Gin Tray" },
-                { src: "/Visit-Us/Noodles.jpg.jpeg", alt: "Noodles" },
-              ].map((img, i) => (
+          {/* Right: Gallery Slider */}
+          <div className="lg:w-1/2">
+            <div
+              style={{
+                borderRadius: "6px",
+                overflow: "hidden",
+                position: "relative",
+                aspectRatio: "510/340",
+              }}
+            >
+              {galleryImages.map((img, idx) => (
                 <img
-                  key={i}
+                  key={idx}
                   src={img.src}
                   alt={img.alt}
-                  className="w-full aspect-square object-cover"
-                  style={{ borderRadius: "6px" }}
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    opacity: idx === current ? 1 : 0,
+                    transition: "opacity 600ms ease",
+                  }}
+                />
+              ))}
+            </div>
+            {/* Dots */}
+            <div className="flex justify-center gap-2 mt-3">
+              {galleryImages.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrent(idx)}
+                  style={{
+                    width: "10px",
+                    height: "10px",
+                    borderRadius: "50%",
+                    border: "none",
+                    backgroundColor: idx === current ? "#78c922" : "#ccc",
+                    cursor: "pointer",
+                    transition: "background-color 300ms",
+                  }}
                 />
               ))}
             </div>
@@ -104,36 +142,26 @@ export default function AboutVisitSection() {
 
       {/* Tour details */}
       <div
-        className="max-w-[1080px] mx-auto px-6"
+        className="max-w-[1080px] mx-auto px-6 font-bold"
         style={{ paddingBottom: "1px" }}
       >
-        <div style={{ ...textStyle, marginTop: "16px" }}>
-          <p style={{ textAlign: "justify" }}>
+        <div style={{ ...textStyle, marginTop: "60px" }}>
+          <p style={{ textAlign: "center" }}>
             Our tours run between 13:30 and 17:00 daily. While every day is
             different, the outline of the tour looks something like this:
           </p>
         </div>
 
         {/* Step 1 */}
-        <div className="flex flex-col lg:flex-row gap-8 mt-6">
-          <div className="lg:w-3/5" style={textStyle}>
-            <p style={{ textAlign: "justify" }}>
-              We begin by picking up visitors from outside Ped&rsquo;s Pai Pizza
-              by the Rim Pai Market (Wednesday Market) in Pai town at 13:00.
-              Transportation is included at no additional cost. You can also
-              follow the truck with your motorbike, or meet us at the land (17km
-              south of Pai) around 13:30. It&rsquo;s an adventurous road &ndash;
-              take your time and enjoy the beautiful mountain views!
-            </p>
-          </div>
-          <div className="lg:w-2/5">
-            <img
-              src="/Visit-Us/Rice-1.jpg.jpeg"
-              alt="Pick up point"
-              className="w-full object-cover"
-              style={{ borderRadius: "6px" }}
-            />
-          </div>
+        <div style={{ ...textStyle, marginTop: "24px" }}>
+          <p style={{ textAlign: "justify" }}>
+            We begin by picking up visitors from outside Ped&rsquo;s Pai Pizza
+            by the Rim Pai Market (Wednesday Market) in Pai town at 13:00.
+            Transportation is included at no additional cost. You can also
+            follow the truck with your motorbike, or meet us at the land (17km
+            south of Pai) around 13:30. It&rsquo;s an adventurous road &ndash;
+            take your time and enjoy the beautiful mountain views!
+          </p>
         </div>
 
         {/* Divider */}
@@ -146,27 +174,17 @@ export default function AboutVisitSection() {
         />
 
         {/* Step 2 */}
-        <div className="flex flex-col lg:flex-row gap-8">
-          <div className="lg:w-2/5">
-            <img
-              src="/Visit-Us/Pumpkin.jpg.jpeg"
-              alt="Project site"
-              className="w-full object-cover"
-              style={{ borderRadius: "6px" }}
-            />
-          </div>
-          <div className="lg:w-3/5" style={textStyle}>
-            <p style={{ textAlign: "justify" }}>
-              When you arrive at the project site, we will provide refreshments
-              and spend a few minutes explaining our work and context &ndash;
-              what we do and why we do it. This includes a brief history on
-              forest and wildlife conservation in Thailand and the ecology of
-              forest restoration &ndash; a forest is so much more than just the
-              trees! Education is perhaps the most important part of this
-              experience, and this introduction is meant to foster questions and
-              robust discussion for the rest of the tour.
-            </p>
-          </div>
+        <div style={textStyle}>
+          <p style={{ textAlign: "justify" }}>
+            When you arrive at the project site, we will provide refreshments
+            and spend a few minutes explaining our work and context &ndash; what
+            we do and why we do it. This includes a brief history on forest and
+            wildlife conservation in Thailand and the ecology of forest
+            restoration &ndash; a forest is so much more than just the trees!
+            Education is perhaps the most important part of this experience, and
+            this introduction is meant to foster questions and robust discussion
+            for the rest of the tour.
+          </p>
         </div>
 
         {/* Divider */}
@@ -202,7 +220,7 @@ export default function AboutVisitSection() {
         />
 
         {/* Elephant note */}
-        <div style={textStyle}>
+        <div style={textStyle} className="font-normal">
           <p style={{ textAlign: "justify" }}>
             <strong>IMPORTANT NOTE:</strong> There is an adult female elephant
             named Kamee who is free to roam the land and do as she pleases. She

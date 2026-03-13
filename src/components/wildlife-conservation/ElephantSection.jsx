@@ -1,6 +1,6 @@
 export default function ElephantSection() {
   return (
-    <section>
+    <section data-aos="fade-up">
       <div className="max-w-[1080px] mx-auto px-6">
         <div
           id="elephant"

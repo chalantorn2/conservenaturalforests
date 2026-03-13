@@ -26,20 +26,21 @@ export default function ContactFormSection() {
   };
 
   return (
-    <section style={{ paddingTop: "1px", paddingBottom: "4px" }}>
+    <section
+      data-aos="fade-up"
+      style={{ paddingTop: "40px", paddingBottom: "40px" }}
+    >
       <div
-        className="max-w-[1080px] mx-auto px-6"
+        className="max-w-[1080px] mx-auto "
         style={{
           paddingTop: "40px",
-          paddingBottom: "27px",
           borderRadius: "6px",
           overflow: "hidden",
         }}
       >
         <h1
           style={{
-            fontFamily:
-              '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+            fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
             fontSize: "24px",
             fontWeight: 700,
             color: "#2b2b2b",
@@ -99,18 +100,20 @@ export default function ContactFormSection() {
               resize: "vertical",
             }}
           />
-          <button
-            type="submit"
-            style={{
-              ...btnStyle,
-              fontSize: "18px",
-              textShadow: "0 0.1em 0.1em rgba(0,0,0,0.4)",
-            }}
-            onMouseEnter={(e) => handleBtnHover(e, true)}
-            onMouseLeave={(e) => handleBtnHover(e, false)}
-          >
-            Submit
-          </button>
+          <div className="flex justify-end">
+            <button
+              type="submit"
+              style={{
+                ...btnStyle,
+                fontSize: "18px",
+                textShadow: "0 0.1em 0.1em rgba(0,0,0,0.4)",
+              }}
+              onMouseEnter={(e) => handleBtnHover(e, true)}
+              onMouseLeave={(e) => handleBtnHover(e, false)}
+            >
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </section>

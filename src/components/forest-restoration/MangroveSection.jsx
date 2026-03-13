@@ -2,9 +2,10 @@ export default function MangroveSection() {
   return (
     <section
       className="relative bg-fixed bg-cover bg-center"
+      data-aos="fade-up"
       style={{ backgroundImage: "url(/Forest_Restoration/mangrove.jpg.jpeg)" }}
     >
-      <div className="relative z-10 max-w-[1080px] mx-auto px-6 py-8">
+      <div className="relative z-10 max-w-[1080px] mx-auto px-6" style={{ paddingTop: "54px", paddingBottom: "54px" }}>
         <div
           style={{
             fontFamily:
@@ -15,7 +16,7 @@ export default function MangroveSection() {
             backgroundColor: "rgba(0,0,0,0.71)",
             borderRadius: "6px",
             padding: "25px 10px 0",
-            marginTop: "50px",
+            marginTop: "0",
             textAlign: "justify",
           }}
         >
