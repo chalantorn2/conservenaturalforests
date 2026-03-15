@@ -71,7 +71,7 @@ export default function ContactFooter() {
                     <Link
                       to={link.path}
                       className="hover:text-[#78c922] transition-colors"
-                      style={{ color: "#b2b2b2", fontSize: "14px", textDecoration: "none" }}
+                      style={{ color: "#b2b2b2", fontSize: "16px", textDecoration: "none" }}
                     >
                       {link.label}
                     </Link>
@@ -113,7 +113,7 @@ export default function ContactFooter() {
                     border: "1px solid #78c922",
                     borderRadius: "6px",
                     fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
-                    fontSize: "14px",
+                    fontSize: "16px",
                     color: "#2b2b2b",
                     outline: "none",
                   }}
@@ -131,7 +131,7 @@ export default function ContactFooter() {
                     border: "1px solid #78c922",
                     borderRadius: "6px",
                     fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
-                    fontSize: "14px",
+                    fontSize: "16px",
                     color: "#2b2b2b",
                     outline: "none",
                   }}
@@ -149,7 +149,7 @@ export default function ContactFooter() {
                     border: "1px solid #78c922",
                     borderRadius: "6px",
                     fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
-                    fontSize: "14px",
+                    fontSize: "16px",
                     color: "#2b2b2b",
                     outline: "none",
                   }}
@@ -217,7 +217,7 @@ export default function ContactFooter() {
                 className="mx-auto mb-4"
                 style={{ width: "210px", height: "auto" }}
               />
-              <p style={{ fontSize: "14px", color: "#b2b2b2" }}>
+              <p style={{ fontSize: "16px", color: "#b2b2b2" }}>
                 Building a sustainable future, one tree at a time.
               </p>
               <p className="mt-6">

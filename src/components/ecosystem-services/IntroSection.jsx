@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 const textStyle = {
   fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
   fontSize: "16px",
+  fontWeight: 400,
   lineHeight: "2em",
   color: "#000",
 };
@@ -13,7 +14,7 @@ export default function IntroSection() {
       id="intro"
       className="max-w-[1080px] mx-auto px-6"
       data-aos="fade-up"
-      style={{ paddingTop: "9px", paddingBottom: "42px" }}
+      style={{ paddingTop: "40px", paddingBottom: "42px" }}
     >
       <div style={textStyle}>
         <p style={{ textAlign: "justify" }}>

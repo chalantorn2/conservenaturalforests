@@ -10,6 +10,7 @@ export default function IntroSection() {
               style={{
                 fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                 fontSize: "16px",
+                fontWeight: 400,
                 lineHeight: "2em",
                 color: "#000",
               }}

@@ -163,7 +163,7 @@ export default function Header() {
                         className="block transition-opacity duration-400"
                         style={{
                           color: isActive(child.path) ? "#78c922" : "#c1c1c1",
-                          fontSize: "14px",
+                          fontSize: "16px",
                           fontWeight: "bold",
                           textTransform: "uppercase",
                           letterSpacing: "2px",
@@ -201,7 +201,7 @@ export default function Header() {
                                   color: isActive(sub.path)
                                     ? "#78c922"
                                     : "#c1c1c1",
-                                  fontSize: "14px",
+                                  fontSize: "16px",
                                   fontWeight: "bold",
                                   textTransform: "uppercase",
                                   letterSpacing: "2px",
@@ -300,7 +300,7 @@ export default function Header() {
                     className="block w-full text-left py-3 border-b border-white/10"
                     style={{
                       color: "#e8e8e8",
-                      fontSize: "14px",
+                      fontSize: "16px",
                       fontWeight: "bold",
                       textTransform: "uppercase",
                       letterSpacing: "2px",
@@ -319,7 +319,7 @@ export default function Header() {
                     className="block py-3 border-b border-white/10"
                     style={{
                       color: isActive(item.path) ? "#78c922" : "#e8e8e8",
-                      fontSize: "14px",
+                      fontSize: "16px",
                       fontWeight: "bold",
                       textTransform: "uppercase",
                       letterSpacing: "2px",
@@ -374,7 +374,7 @@ export default function Header() {
             <Link
               to="/donate"
               className="block mt-4 text-center btn-divi btn-divi-white"
-              style={{ fontSize: "14px" }}
+              style={{ fontSize: "16px" }}
             >
               DONATE
             </Link>

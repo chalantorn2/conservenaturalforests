@@ -7,6 +7,8 @@ import BiodiversitySection from "../components/ecosystem-services/BiodiversitySe
 import SoilWaterSection from "../components/ecosystem-services/SoilWaterSection";
 import MapsSection from "../components/ecosystem-services/MapsSection";
 import ContactDonateSection from "../components/shared/ContactDonateSection";
+import NetworkSection from "../components/home/NetworkSection";
+import InstagramSection from "../components/home/InstagramSection";
 
 export default function EcosystemServices() {
   const { hash } = useLocation();
@@ -30,7 +32,9 @@ export default function EcosystemServices() {
       <BiodiversitySection />
       <SoilWaterSection />
       <MapsSection />
+      <NetworkSection />
       <ContactDonateSection variant="light" />
+      <InstagramSection />
     </div>
   );
 }

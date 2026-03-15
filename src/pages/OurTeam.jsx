@@ -4,6 +4,8 @@ import IntroSection from "../components/our-team/IntroSection";
 import ProjectCardsSection from "../components/our-team/ProjectCardsSection";
 import TeamSection from "../components/our-team/TeamSection";
 import ContactDonateSection from "../components/shared/ContactDonateSection";
+import NetworkSection from "../components/home/NetworkSection";
+import InstagramSection from "../components/home/InstagramSection";
 
 export default function OurTeam() {
   useEffect(() => {
@@ -16,7 +18,9 @@ export default function OurTeam() {
       <IntroSection />
       <ProjectCardsSection />
       <TeamSection />
+      <NetworkSection />
       <ContactDonateSection />
+      <InstagramSection />
     </div>
   );
 }

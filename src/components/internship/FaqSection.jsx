@@ -105,7 +105,7 @@ function FaqToggle({ question, answer, isOpen, onToggle }) {
           className="mt-3"
           style={{
             fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
-            fontSize: "14px",
+            fontSize: "16px",
             color: "#2b2b2b",
             lineHeight: "1.7em",
             textAlign: "left",

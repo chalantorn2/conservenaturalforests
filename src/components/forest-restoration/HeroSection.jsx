@@ -7,7 +7,7 @@ export default function HeroSection() {
       <div
         className="fixed inset-0"
         style={{
-          backgroundImage: "url(/Forest_Restoration/9307411-1024x768.jpg.jpeg)",
+          backgroundImage: "url(/Forest_Restoration/Outside-Nursery.jpg.jpeg)",
           backgroundSize: "cover",
           backgroundPosition: "center 5%",
           backgroundColor: "#7ebec5",
@@ -32,11 +32,15 @@ export default function HeroSection() {
             textShadow: "0 0.1em 0.1em rgba(0,0,0,0.4)",
           }}
         >
-          FOREST RESTORATION
+          FOREST<br></br> RESTORATION
         </h1>
       </div>
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
-        <a href="#intro" className="block animate-bounce" style={{ color: "#78c922", fontSize: "32px" }}>
+        <a
+          href="#intro"
+          className="block animate-bounce"
+          style={{ color: "#78c922", fontSize: "32px" }}
+        >
           &#x25BC;
         </a>
       </div>

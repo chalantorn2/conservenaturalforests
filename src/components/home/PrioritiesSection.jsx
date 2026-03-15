@@ -99,7 +99,7 @@ export default function PrioritiesSection() {
                 <p
                   className="text-justify mb-6"
                   style={{
-                    fontSize: "14px",
+                    fontSize: "16px",
                     color: "#444",
                     lineHeight: "1.7em",
                     fontWeight: 400,

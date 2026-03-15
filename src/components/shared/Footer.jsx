@@ -53,18 +53,18 @@ export default function Footer() {
                   style={{ borderTop: "5px solid #78c922", width: "100%" }}
                 />
               </div>
-              <ul className="space-y-2 list-disc pl-4" style={{ marginTop: "15px" }}>
+              <ul
+                className="space-y-2 list-disc pl-4"
+                style={{ marginTop: "15px" }}
+              >
                 {siteLinks.map((link, idx) => (
-                  <li
-                    key={idx}
-                    style={{ color: "#78c922", fontSize: "14px" }}
-                  >
+                  <li key={idx} style={{ color: "#78c922", fontSize: "16px" }}>
                     <Link
                       to={link.path}
                       className="hover:text-[#78c922] transition-colors"
                       style={{
                         color: "#c1c1c1",
-                        fontSize: "14px",
+                        fontSize: "16px",
                         textDecoration: "none",
                       }}
                     >
@@ -121,12 +121,12 @@ export default function Footer() {
                 src="/Logo.png"
                 alt="Conserve Natural Forests"
                 className="mx-auto mb-4"
-                style={{ width: "210px", height: "auto" }}
+                style={{ width: "180px", height: "auto" }}
               />
               <p
                 className="mb-4"
                 style={{
-                  fontSize: "14px",
+                  fontSize: "16px",
                   color: "#c1c1c1",
                   fontFamily:
                     '"Open Sans", Helvetica, Arial, Lucida, sans-serif',

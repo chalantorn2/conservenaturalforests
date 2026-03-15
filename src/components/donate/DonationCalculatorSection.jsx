@@ -157,7 +157,7 @@ export default function DonationCalculatorSection() {
                   <label
                     key={opt.value}
                     className="flex items-start gap-2 cursor-pointer"
-                    style={{ color: "#fff", fontSize: "14px" }}
+                    style={{ color: "#fff", fontSize: "16px" }}
                   >
                     <input
                       type="radio"
@@ -269,7 +269,7 @@ export default function DonationCalculatorSection() {
                       style={{
                         color: "#333",
                         fontWeight: 600,
-                        fontSize: "14px",
+                        fontSize: "16px",
                       }}
                     >
                       Name
@@ -290,7 +290,7 @@ export default function DonationCalculatorSection() {
                       style={{
                         color: "#333",
                         fontWeight: 600,
-                        fontSize: "14px",
+                        fontSize: "16px",
                       }}
                     >
                       Email
@@ -311,7 +311,7 @@ export default function DonationCalculatorSection() {
                       style={{
                         color: "#333",
                         fontWeight: 600,
-                        fontSize: "14px",
+                        fontSize: "16px",
                       }}
                     >
                       Message

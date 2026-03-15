@@ -43,7 +43,7 @@ const teamRow2 = [
     firstName: "NUKE",
     lastName: "NUMJAIANUKHRAO",
     role: "Elephant Keeper",
-    image: "/Our_Team/empty-profile-pic.png",
+    image: "/Our_Team/IMG_5784.jpg.jpeg",
     bio: null,
   },
   {
@@ -161,8 +161,7 @@ function TeamMemberCard({ member }) {
             onClick={() => setIsOpen(!isOpen)}
             className="w-full flex items-center justify-between"
             style={{
-              fontFamily:
-                '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+              fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
               textTransform: "uppercase",
               fontSize: "20px",
               textAlign: "center",
@@ -176,8 +175,7 @@ function TeamMemberCard({ member }) {
             <h5
               className="flex-1 text-center"
               style={{
-                fontFamily:
-                  '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+                fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                 textTransform: "uppercase",
                 fontSize: "20px",
               }}
@@ -205,10 +203,10 @@ function TeamMemberCard({ member }) {
             <div
               style={{
                 padding: "0 20px 20px",
-                fontFamily:
-                  '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+                fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+                fontWeight: 400,
                 textAlign: "center",
-                fontSize: "14px",
+                fontSize: "16px",
                 lineHeight: "1.7em",
                 color: "#666",
               }}
@@ -232,9 +230,10 @@ export default function TeamSection() {
           style={{
             fontFamily: '"Lato", Helvetica, Arial, Lucida, sans-serif',
             fontWeight: 700,
-            fontSize: "45px",
+            fontSize: "40px",
             color: "#333",
-            marginBottom: "20px",
+            marginBottom: "40px",
+            marginTop: "40px",
           }}
         >
           OUR TEAM
@@ -242,7 +241,7 @@ export default function TeamSection() {
         {/* Divider */}
         <div
           className="mx-auto"
-          style={{ maxWidth: "10%", height: "5px", marginBottom: "30px" }}
+          style={{ maxWidth: "10%", height: "5px", marginBottom: "50px" }}
         >
           <div style={{ borderTop: "5px solid #78c922", width: "100%" }} />
         </div>
@@ -271,18 +270,23 @@ export default function TeamSection() {
           ))}
         </div>
 
-        {/* Row 3: 3 columns */}
+        {/* Row 3: same card size as rows above, centered */}
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 items-start"
+          className="flex flex-wrap justify-center"
           style={{
-            columnGap: "5.5%",
+            gap: "5.5%",
             rowGap: "30px",
             paddingTop: "40px",
             paddingBottom: "27px",
           }}
         >
           {teamRow3.map((member, idx) => (
-            <div key={idx} data-aos="fade-up" data-aos-delay={idx * 100}>
+            <div
+              key={idx}
+              data-aos="fade-up"
+              data-aos-delay={idx * 100}
+              style={{ width: "calc((100% - 16.5%) / 4)" }}
+            >
               <TeamMemberCard member={member} />
             </div>
           ))}

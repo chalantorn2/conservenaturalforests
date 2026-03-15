@@ -38,6 +38,7 @@ export default function IntroGallerySection() {
             style={{
               fontFamily:
                 '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+              fontWeight: 400,
               fontSize: "16px",
               lineHeight: "2em",
               color: "#000",

@@ -37,13 +37,17 @@ export default function MapsSection() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section data-aos="fade-up" style={{ paddingTop: "7px", paddingBottom: "1px" }}>
+    <section
+      data-aos="fade-up"
+      style={{ paddingTop: "7px", paddingBottom: "1px" }}
+    >
       <div className="max-w-[1080px] mx-auto px-6">
         {/* Intro quote */}
         <div
           style={{
             fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
             fontSize: "16px",
+            fontWeight: 400,
             lineHeight: "2em",
             color: "#000",
             textAlign: "justify",
@@ -76,7 +80,8 @@ export default function MapsSection() {
               style={{
                 padding: "10px 16px",
                 fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
-                fontSize: "14px",
+                fontSize: "16px",
+                fontWeight: 300,
                 fontWeight: activeTab === idx ? 700 : 400,
                 color: activeTab === idx ? "#78c922" : "#666",
                 backgroundColor: activeTab === idx ? "#fff" : "transparent",
@@ -100,10 +105,13 @@ export default function MapsSection() {
 
         {/* Tab Content */}
         <div
+          key={activeTab}
+          className="map-tab-content"
           style={{
             padding: "24px 0",
             fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
             fontSize: "16px",
+            fontWeight: 400,
             lineHeight: "2em",
             color: "#000",
           }}
@@ -112,7 +120,14 @@ export default function MapsSection() {
             <img
               src={tabs[activeTab].image}
               alt={tabs[activeTab].label}
-              style={{ maxWidth: "100%", borderRadius: "6px" }}
+              style={{
+                maxWidth: "100%",
+                maxHeight: "500px",
+                objectFit: "contain",
+                borderRadius: "6px",
+                display: "block",
+                margin: "0 auto",
+              }}
             />
           </div>
           {tabs[activeTab].description && (

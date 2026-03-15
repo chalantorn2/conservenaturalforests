@@ -6,17 +6,20 @@ export default function EcoTourSection() {
       {/* Parallax Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: "url(/Wildlife_Conservation/Kamee-Behind.jpg.jpeg)" }}
+        style={{ backgroundImage: "url(/Wildlife_Conservation/Fern.jpg.jpeg)" }}
       />
 
-      <div className="relative max-w-[1080px] mx-auto px-6" style={{ paddingBottom: "27px" }}>
+      <div
+        className="relative max-w-[1080px] mx-auto px-6"
+        style={{ paddingBottom: "27px", paddingTop: "27px" }}
+      >
         <div
           className="text-center"
           style={{
             backgroundColor: "rgba(0,0,0,0.71)",
             borderRadius: "6px",
             padding: "40px 20px",
-            marginTop: "57px",
+            fontSize: "16px",
           }}
         >
           <h2
@@ -33,8 +36,8 @@ export default function EcoTourSection() {
           </h2>
           <div
             style={{
-              fontFamily:
-                '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+              fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+              fontWeight: 400,
               fontSize: "16px",
               color: "#fff",
             }}
@@ -51,8 +54,7 @@ export default function EcoTourSection() {
             <Link
               to="/visit-us"
               style={{
-                fontFamily:
-                  '"Lato", Helvetica, Arial, Lucida, sans-serif',
+                fontFamily: '"Lato", Helvetica, Arial, Lucida, sans-serif',
                 fontWeight: 700,
                 fontSize: "20px",
                 letterSpacing: "2px",
@@ -64,8 +66,7 @@ export default function EcoTourSection() {
                 padding: "0.3em 1em",
                 textDecoration: "none",
                 display: "inline-block",
-                transition:
-                  "font-size 300ms ease, background-color 300ms ease",
+                transition: "font-size 300ms ease, background-color 300ms ease",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = "#78c922";

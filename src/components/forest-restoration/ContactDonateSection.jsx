@@ -36,8 +36,7 @@ export default function ContactDonateSection() {
           <div className="lg:w-1/2 px-5">
             <h1
               style={{
-                fontFamily:
-                  '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+                fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                 fontSize: "24px",
                 fontWeight: 700,
                 color: "#000",
@@ -108,8 +107,7 @@ export default function ContactDonateSection() {
               <button
                 type="submit"
                 style={{
-                  fontFamily:
-                    '"Lato", Helvetica, Arial, Lucida, sans-serif',
+                  fontFamily: '"Lato", Helvetica, Arial, Lucida, sans-serif',
                   fontWeight: 700,
                   fontSize: "20px",
                   letterSpacing: "2px",
@@ -141,20 +139,19 @@ export default function ContactDonateSection() {
           <div className="lg:w-1/2 px-5" style={{ marginTop: "30px" }}>
             <h2
               style={{
-                fontFamily:
-                  '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+                fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                 fontSize: "24px",
                 lineHeight: "1.2em",
                 color: "#000",
                 marginBottom: "16px",
+                textAlign: "center",
               }}
             >
               Want to contribute to our cause?
             </h2>
             <div
               style={{
-                fontFamily:
-                  '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+                fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                 fontSize: "16px",
                 color: "#000",
               }}
@@ -172,8 +169,7 @@ export default function ContactDonateSection() {
               <Link
                 to="/donate"
                 style={{
-                  fontFamily:
-                    '"Lato", Helvetica, Arial, Lucida, sans-serif',
+                  fontFamily: '"Lato", Helvetica, Arial, Lucida, sans-serif',
                   fontWeight: 700,
                   fontSize: "20px",
                   letterSpacing: "2px",
@@ -185,8 +181,7 @@ export default function ContactDonateSection() {
                   padding: "0.3em 1em",
                   textDecoration: "none",
                   display: "inline-block",
-                  transition:
-                    "color 300ms ease, background-color 300ms ease",
+                  transition: "color 300ms ease, background-color 300ms ease",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = "#78c922";

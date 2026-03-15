@@ -4,7 +4,10 @@ const galleryImages = [
   { src: "/Wildlife_Conservation/Bee.jpg.jpeg", alt: "Bee" },
   { src: "/Wildlife_Conservation/Butterfly.jpg.jpeg", alt: "Butterfly" },
   { src: "/Wildlife_Conservation/Kamee-Closeup.jpg.jpeg", alt: "Kamee Front" },
-  { src: "/Wildlife_Conservation/Steady-Tortoise.jpg.jpeg", alt: "Steady Tortoise" },
+  {
+    src: "/Wildlife_Conservation/Steady-Tortoise.jpg.jpeg",
+    alt: "Steady Tortoise",
+  },
   { src: "/Wildlife_Conservation/Woodpecker.jpg.jpeg", alt: "Woodpecker" },
 ];
 
@@ -31,8 +34,8 @@ export default function IntroSection() {
         <div className="lg:w-1/2">
           <div
             style={{
-              fontFamily:
-                '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+              fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+              fontWeight: 400,
               fontSize: "16px",
               lineHeight: "2em",
               color: "#000",
@@ -42,11 +45,11 @@ export default function IntroSection() {
             <p style={{ textAlign: "justify" }}>
               A forest is more than just the trees. The health of a forest
               ecosystem depends on a vibrant and diverse animal community. CNF
-              strives to conserve and enhance biodiversity by improving landscape
-              connectivity through planting trees that attract animals and
-              actively promoting immediate intervention to protect critically
-              endangered species. Some of these – sometimes referred to as
-              keystone species – have a disproportionate effect on the
+              strives to conserve and enhance biodiversity by improving
+              landscape connectivity through planting trees that attract animals
+              and actively promoting immediate intervention to protect
+              critically endangered species. Some of these – sometimes referred
+              to as keystone species – have a disproportionate effect on the
               forest&rsquo;s well-being, such as earthworms, bees, and
               elephants.
             </p>

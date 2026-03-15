@@ -9,6 +9,7 @@ import TreesImpactSection from "../components/donate/TreesImpactSection";
 import DonationCalculatorSection from "../components/donate/DonationCalculatorSection";
 import ContactFormSection from "../components/donate/ContactFormSection";
 import NetworkSection from "../components/home/NetworkSection";
+import InstagramSection from "../components/home/InstagramSection";
 
 export default function Donate() {
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function Donate() {
       <DonationCalculatorSection />
       <ContactFormSection />
       <NetworkSection />
+      <InstagramSection />
     </div>
   );
 }

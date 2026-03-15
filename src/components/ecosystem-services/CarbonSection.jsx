@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 const textStyle = {
   fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
   fontSize: "16px",
+  fontWeight: 400,
   lineHeight: "2em",
   color: "#000",
 };
@@ -19,7 +20,10 @@ export default function CarbonSection() {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => setCurrent((c) => (c + 1) % slides.length), 4000);
+    const timer = setInterval(
+      () => setCurrent((c) => (c + 1) % slides.length),
+      4000,
+    );
     return () => clearInterval(timer);
   }, []);
   return (
@@ -29,10 +33,10 @@ export default function CarbonSection() {
         <div style={textStyle}>
           <h1
             style={{
+              textAlign: "center",
               fontWeight: 700,
               fontSize: "26px",
               lineHeight: "1.5em",
-              marginBottom: "16px",
             }}
           >
             CLIMATE CHANGE MITIGATION: CARBON SEQUESTRATION &amp; STORAGE
@@ -41,14 +45,14 @@ export default function CarbonSection() {
             We believe that climate change is the most pressing issue of our
             time. Greenhouse gas (GHG) emissions were the highest in human
             history between 2000 and 2010 at 49 GtCO2eq/yr. That&rsquo;s 49
-            billion tons per year, and this astronomical number is rising. Carbon
-            dioxide accounts for 76% of GHG emissions, which is mainly released
-            by burning fossil fuels. The average American car releases 4,700
-            kilos of CO2 per year. The average American home produces 7,500 of
-            CO2 per year. A one-way flight from San Francisco to Bangkok is
-            equivalent to 2,670 kilos of CO2 per passenger. Numbers like these
-            are enough to diminish hope and discourage change. What can be done
-            against such overwhelming odds?
+            billion tons per year, and this astronomical number is rising.
+            Carbon dioxide accounts for 76% of GHG emissions, which is mainly
+            released by burning fossil fuels. The average American car releases
+            4,700 kilos of CO2 per year. The average American home produces
+            7,500 of CO2 per year. A one-way flight from San Francisco to
+            Bangkok is equivalent to 2,670 kilos of CO2 per passenger. Numbers
+            like these are enough to diminish hope and discourage change. What
+            can be done against such overwhelming odds?
           </p>
         </div>
       </div>
@@ -59,11 +63,11 @@ export default function CarbonSection() {
           <div className="lg:w-1/2" style={textStyle}>
             <p style={{ textAlign: "justify" }}>
               One answer: Plant trees! Here at CNF, we believe that every little
-              effort makes a difference. Or in this case, every little tree. With
-              enough trees we have a forest, and forests provide a wealth of
-              critical resources to our world, including medicines, timber, food,
-              and clean water. They also function as carbon sinks, meaning they
-              pull carbon from the atmosphere and store it in their trunks,
+              effort makes a difference. Or in this case, every little tree.
+              With enough trees we have a forest, and forests provide a wealth
+              of critical resources to our world, including medicines, timber,
+              food, and clean water. They also function as carbon sinks, meaning
+              they pull carbon from the atmosphere and store it in their trunks,
               branches, leaves, and roots for decades or even centuries. Carbon
               is the basis for 50% of the dry weight of most trees. Every gram
               of carbon stored in trees as they grow is a gram that is not
@@ -76,7 +80,10 @@ export default function CarbonSection() {
             </p>
           </div>
           <div className="lg:w-1/2" style={{ marginTop: "60px" }}>
-            <div className="relative overflow-hidden" style={{ borderRadius: "6px" }}>
+            <div
+              className="relative overflow-hidden"
+              style={{ borderRadius: "6px" }}
+            >
               {slides.map((src, i) => (
                 <img
                   key={i}
@@ -97,7 +104,8 @@ export default function CarbonSection() {
                     style={{
                       width: "10px",
                       height: "10px",
-                      backgroundColor: i === current ? "#78c922" : "rgba(255,255,255,0.6)",
+                      backgroundColor:
+                        i === current ? "#78c922" : "rgba(255,255,255,0.6)",
                       border: "none",
                       cursor: "pointer",
                       transition: "background-color 300ms",
@@ -113,15 +121,16 @@ export default function CarbonSection() {
       {/* Continuation text */}
       <div className="max-w-[1080px] mx-auto px-6" style={rowPadding}>
         <div style={textStyle}>
-          <p style={{ textAlign: "justify" }}>
+          <p style={{ textAlign: "justify", marginBottom: "24px" }}>
             Most scientists agree that a certain amount of global warming is
-            already locked in, and we must prepare for change. The most important
-            consideration of warming temperatures is the disruption of the
-            Intertropical Convergence Zone (ITCZ) and monsoon weather systems.
-            Current climate change models predict less frequent but more intense
-            precipitation as temperature increases, translating to prolonged
-            droughts and higher risk of flooding. The delayed onset of the rainy
-            season may contribute to more frequent and more intense wildfires.
+            already locked in, and we must prepare for change. The most
+            important consideration of warming temperatures is the disruption of
+            the Intertropical Convergence Zone (ITCZ) and monsoon weather
+            systems. Current climate change models predict less frequent but
+            more intense precipitation as temperature increases, translating to
+            prolonged droughts and higher risk of flooding. The delayed onset of
+            the rainy season may contribute to more frequent and more intense
+            wildfires.
           </p>
           <p style={{ textAlign: "justify" }}>
             We select for hardy, drought-tolerant species in anticipation of

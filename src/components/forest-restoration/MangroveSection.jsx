@@ -5,11 +5,14 @@ export default function MangroveSection() {
       data-aos="fade-up"
       style={{ backgroundImage: "url(/Forest_Restoration/mangrove.jpg.jpeg)" }}
     >
-      <div className="relative z-10 max-w-[1080px] mx-auto px-6" style={{ paddingTop: "54px", paddingBottom: "54px" }}>
+      <div
+        className="relative z-10 max-w-[1080px] mx-auto px-6"
+        style={{ paddingTop: "54px", paddingBottom: "54px" }}
+      >
         <div
           style={{
-            fontFamily:
-              '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+            fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+            fontWeight: 400,
             fontSize: "16px",
             lineHeight: "2em",
             color: "#fff",
@@ -23,6 +26,7 @@ export default function MangroveSection() {
           <h1
             style={{
               fontWeight: 700,
+              fontSize: "32px",
               color: "#fff",
               textAlign: "center",
               marginBottom: "16px",
@@ -41,9 +45,9 @@ export default function MangroveSection() {
           <p style={{ marginTop: "1em" }}>
             Communities along the coast of southern Thailand depend on mangrove
             forests, as it protects their livelihood by maintaining healthy
-            supplies of fish and shellfish while also functioning as a protective
-            barrier from the ocean. Mangroves operate as hatcheries for
-            invertebrates and a wide variety of fish species. They provide
+            supplies of fish and shellfish while also functioning as a
+            protective barrier from the ocean. Mangroves operate as hatcheries
+            for invertebrates and a wide variety of fish species. They provide
             shelter for young fish from predators and a warm, calm aquatic
             environment for them to grow in. This, in turn, safeguards a steady
             population of fish that can be caught by the local fisherman.
@@ -84,6 +88,16 @@ export default function MangroveSection() {
           <p style={{ marginTop: "1em", paddingBottom: "20px" }}>
             Ensuring the conservation of mangrove forests is ensuring our own
             safety and livelihoods.
+          </p>
+          <p style={{ marginTop: "1em", paddingBottom: "20px" }}>
+            Click{" "}
+            <a
+              href="https://drive.google.com/file/d/1wyqA0QGcvNgjKp6T3NHcwKTZnatThedS/view"
+              style={{ color: "#78c922", textDecoration: "underline" }}
+            >
+              here
+            </a>{" "}
+            to read our planting report from Krabi, February 2022.
           </p>
         </div>
       </div>

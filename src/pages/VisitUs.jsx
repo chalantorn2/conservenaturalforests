@@ -6,6 +6,7 @@ import ReviewsSlider from "../components/visit-us/ReviewsSlider";
 import BookingFormSection from "../components/visit-us/BookingFormSection";
 import ContactDonateSection from "../components/shared/ContactDonateSection";
 import NetworkSection from "../components/home/NetworkSection";
+import InstagramSection from "../components/home/InstagramSection";
 
 export default function VisitUs() {
   useEffect(() => {
@@ -21,6 +22,7 @@ export default function VisitUs() {
       <BookingFormSection />
       <NetworkSection />
       <ContactDonateSection />
+      <InstagramSection />
     </div>
   );
 }

@@ -1,9 +1,10 @@
 export default function FrameworkSection() {
   return (
-    <section data-aos="fade-up" style={{ paddingTop: "54px", paddingBottom: "54px" }}>
-      <div
-        className="max-w-[1080px] mx-auto px-6"
-      >
+    <section
+      data-aos="fade-up"
+      style={{ paddingTop: "54px", paddingBottom: "54px" }}
+    >
+      <div className="max-w-[1080px] mx-auto px-6">
         <h1
           style={{
             textAlign: "center",
@@ -17,11 +18,11 @@ export default function FrameworkSection() {
         </h1>
         <div
           style={{
-            fontFamily:
-              '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+            fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+            fontWeight: 400,
             fontSize: "16px",
             lineHeight: "2em",
-            color: "#000",
+            color: "#333",
             borderRadius: "6px",
             padding: "25px 10px 0",
             marginTop: "21px",

@@ -71,7 +71,7 @@ export default function ApplyFormSection() {
                       borderRadius: "6px",
                       fontFamily:
                         '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
-                      fontSize: "14px",
+                      fontSize: "16px",
                       color: "#fff",
                       outline: "none",
                     }}
@@ -91,7 +91,7 @@ export default function ApplyFormSection() {
                       borderRadius: "6px",
                       fontFamily:
                         '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
-                      fontSize: "14px",
+                      fontSize: "16px",
                       color: "#fff",
                       outline: "none",
                     }}
@@ -112,37 +112,41 @@ export default function ApplyFormSection() {
                     borderRadius: "6px",
                     fontFamily:
                       '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
-                    fontSize: "14px",
+                    fontSize: "16px",
                     color: "#fff",
                     outline: "none",
                     resize: "vertical",
                     marginBottom: "16px",
                   }}
                 />
-                <button
-                  type="submit"
-                  className="btn-divi"
-                  style={{
-                    color: "#fff",
-                    borderColor: "#78c922",
-                    borderRadius: "6px",
-                    letterSpacing: "2px",
-                    fontSize: "18px",
-                    fontFamily: '"Lato", Helvetica, Arial, Lucida, sans-serif',
-                    fontWeight: 700,
-                    textTransform: "uppercase",
-                    backgroundColor: "rgba(0,0,0,0.62)",
-                    textShadow: "0em 0.1em 0.1em rgba(0,0,0,0.4)",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = "#78c922";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "rgba(0,0,0,0.62)";
-                  }}
-                >
-                  Submit
-                </button>
+                <div className="text-right">
+                  <button
+                    type="submit"
+                    className="btn-divi"
+                    style={{
+                      color: "#fff",
+                      borderColor: "#78c922",
+                      borderRadius: "6px",
+                      letterSpacing: "2px",
+                      fontSize: "18px",
+                      fontFamily:
+                        '"Lato", Helvetica, Arial, Lucida, sans-serif',
+                      fontWeight: 700,
+                      textTransform: "uppercase",
+                      backgroundColor: "rgba(0,0,0,0.62)",
+                      textShadow: "0em 0.1em 0.1em rgba(0,0,0,0.4)",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = "#78c922";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor =
+                        "rgba(0,0,0,0.62)";
+                    }}
+                  >
+                    Submit
+                  </button>
+                </div>
               </form>
             </div>
 
@@ -159,6 +163,7 @@ export default function ApplyFormSection() {
                   fontSize: "24px",
                   fontWeight: 700,
                   lineHeight: "1.2em",
+                  textAlign: "center",
                 }}
               >
                 Want to contribute to our cause?

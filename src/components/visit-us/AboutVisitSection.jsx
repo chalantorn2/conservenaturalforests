@@ -59,13 +59,14 @@ export default function AboutVisitSection() {
             <div
               className="mx-auto"
               style={{
+                fontWeight: 400,
                 borderTop: "2px solid #78c922",
                 width: "17%",
                 marginTop: "32px",
                 marginBottom: "20px",
               }}
             />
-            <p style={{ ...textStyle, textAlign: "justify" }}>
+            <p style={{ ...textStyle, textAlign: "justify", fontWeight: 400 }}>
               Come join us for a day! Our original project site and tree nursery
               are tucked away in a quiet, beautiful valley with the Pai River
               running through it. CNF invites anyone who would like to learn

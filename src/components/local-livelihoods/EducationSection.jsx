@@ -3,12 +3,27 @@ import { useState, useEffect, useCallback } from "react";
 const galleryImages = [
   { src: "/Local_Livelihoods/Kids-Writing-1.jpg.jpeg", alt: "Kids Writing" },
   { src: "/Local_Livelihoods/Kids-in-Hut-1.jpg.jpeg", alt: "Kids in Hut" },
-  { src: "/Local_Livelihoods/Kids-Watching-Tortoises-1.jpg.jpeg", alt: "Kids Watching Tortoises" },
-  { src: "/Local_Livelihoods/Hippo-and-Kids-with-Tortoises-1.jpg.jpeg", alt: "Hippo and Kids with Tortoises" },
-  { src: "/Local_Livelihoods/Hippo-Kids-Tour-1.jpg.jpeg", alt: "Hippo Kids Tour" },
+  {
+    src: "/Local_Livelihoods/Kids-Watching-Tortoises-1.jpg.jpeg",
+    alt: "Kids Watching Tortoises",
+  },
+  {
+    src: "/Local_Livelihoods/Hippo-and-Kids-with-Tortoises-1.jpg.jpeg",
+    alt: "Hippo and Kids with Tortoises",
+  },
+  {
+    src: "/Local_Livelihoods/Hippo-Kids-Tour-1.jpg.jpeg",
+    alt: "Hippo Kids Tour",
+  },
   { src: "/Local_Livelihoods/Kids-and-Monk-1.jpg.jpeg", alt: "Kids and Monk" },
-  { src: "/Local_Livelihoods/Lady-Collecting-Leaves-1.jpg.jpeg", alt: "Lady Collecting Leaves" },
-  { src: "/Local_Livelihoods/Lady-Selling-Bananas-1.jpg.jpeg", alt: "Lady Selling Bananas" },
+  {
+    src: "/Local_Livelihoods/Lady-Collecting-Leaves-1.jpg.jpeg",
+    alt: "Lady Collecting Leaves",
+  },
+  {
+    src: "/Local_Livelihoods/Lady-Selling-Bananas-1.jpg.jpeg",
+    alt: "Lady Selling Bananas",
+  },
 ];
 
 export default function EducationSection() {
@@ -24,12 +39,17 @@ export default function EducationSection() {
   }, [next]);
 
   return (
-    <section id="education" data-aos="fade-up" style={{ paddingBottom: "20px" }}>
+    <section
+      id="education"
+      data-aos="fade-up"
+      style={{ paddingBottom: "20px" }}
+    >
       {/* Title + Intro */}
       <div className="max-w-[1080px] mx-auto px-6">
         <div
           style={{
             fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+            fontWeight: 400,
             fontSize: "16px",
             lineHeight: "2em",
             color: "#000",
@@ -38,7 +58,12 @@ export default function EducationSection() {
         >
           <h1
             className="text-center"
-            style={{ fontWeight: 700, lineHeight: "1.5em" }}
+            style={{
+              fontWeight: 700,
+              fontSize: "32px",
+              marginBottom: "16px",
+              lineHeight: "1.5em",
+            }}
           >
             EDUCATION
           </h1>
@@ -63,8 +88,8 @@ export default function EducationSection() {
         <div className="lg:w-1/2">
           <div
             style={{
-              fontFamily:
-                '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+              fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+              fontWeight: 400,
               fontSize: "16px",
               lineHeight: "2em",
               color: "#000",

@@ -6,6 +6,7 @@ import WhatsIncludedSection from "../components/internship/WhatsIncludedSection"
 import FaqSection from "../components/internship/FaqSection";
 import ApplyFormSection from "../components/internship/ApplyFormSection";
 import NetworkSection from "../components/home/NetworkSection";
+import InstagramSection from "../components/home/InstagramSection";
 
 export default function Internship() {
   return (
@@ -18,6 +19,7 @@ export default function Internship() {
       <FaqSection />
       <NetworkSection />
       <ApplyFormSection />
+      <InstagramSection />
     </>
   );
 }

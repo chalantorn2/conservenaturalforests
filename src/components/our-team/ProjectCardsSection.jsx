@@ -1,15 +1,34 @@
 import { Link } from "react-router-dom";
 
 const projects = [
-  { name: "FOREST RESTORATION", to: "/forest-restoration", image: "/Our_Team/Topdown-Nursery.jpg.jpeg" },
-  { name: "LOCAL LIVELIHOODS", to: "/local-livelihoods", image: "/Our_Team/Kids-Learning.jpg.jpeg" },
-  { name: "WILDLIFE CONSERVATION", to: "/wildlife-conservation", image: "/Our_Team/Steady-Tortoise.jpg.jpeg" },
-  { name: "ECOSYSTEM SERVICES", to: "/ecosystem-services", image: "/Our_Team/Waterfall.jpg.jpeg" },
+  {
+    name: "FOREST RESTORATION",
+    to: "/forest-restoration",
+    image: "/Our_Team/Topdown-Nursery.jpg.jpeg",
+  },
+  {
+    name: "LOCAL LIVELIHOODS",
+    to: "/local-livelihoods",
+    image: "/Our_Team/Kids-Learning.jpg.jpeg",
+  },
+  {
+    name: "WILDLIFE CONSERVATION",
+    to: "/wildlife-conservation",
+    image: "/Our_Team/Steady-Tortoise.jpg.jpeg",
+  },
+  {
+    name: "ECOSYSTEM SERVICES",
+    to: "/ecosystem-services",
+    image: "/Our_Team/Waterfall.jpg.jpeg",
+  },
 ];
 
 export default function ProjectCardsSection() {
   return (
-    <section data-aos="fade-up" style={{ paddingTop: "29px", paddingBottom: "29px" }}>
+    <section
+      data-aos="fade-up"
+      style={{ paddingTop: "29px", paddingBottom: "29px" }}
+    >
       <div className="max-w-[1080px] mx-auto px-6">
         {/* Title */}
         <h1
@@ -17,9 +36,9 @@ export default function ProjectCardsSection() {
           style={{
             fontFamily: '"Lato", Helvetica, Arial, Lucida, sans-serif',
             fontWeight: 700,
-            fontSize: "45px",
+            fontSize: "40px",
             color: "#333",
-            marginBottom: "20px",
+            marginBottom: "40px",
           }}
         >
           GET TO KNOW US BETTER
@@ -27,7 +46,7 @@ export default function ProjectCardsSection() {
         {/* Divider */}
         <div
           className="mx-auto"
-          style={{ maxWidth: "10%", height: "5px", marginBottom: "30px" }}
+          style={{ maxWidth: "10%", height: "5px", marginBottom: "50px" }}
         >
           <div style={{ borderTop: "5px solid #78c922", width: "100%" }} />
         </div>
@@ -59,8 +78,7 @@ export default function ProjectCardsSection() {
               <Link
                 to={project.to}
                 style={{
-                  fontFamily:
-                    '"Lato", Helvetica, Arial, Lucida, sans-serif',
+                  fontFamily: '"Lato", Helvetica, Arial, Lucida, sans-serif',
                   fontWeight: 700,
                   color: "#000",
                   border: "2px solid #78c922",

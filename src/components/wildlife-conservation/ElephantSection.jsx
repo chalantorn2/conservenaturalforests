@@ -5,8 +5,8 @@ export default function ElephantSection() {
         <div
           id="elephant"
           style={{
-            fontFamily:
-              '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+            fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+            fontWeight: 400,
             fontSize: "16px",
             lineHeight: "2em",
             color: "#000",
@@ -15,11 +15,16 @@ export default function ElephantSection() {
         >
           <h1
             className="text-center"
-            style={{ fontWeight: 700, lineHeight: "1.5em" }}
+            style={{
+              fontWeight: 700,
+              fontSize: "32px",
+              marginBottom: "16px",
+              lineHeight: "1.5em",
+            }}
           >
             ASIAN ELEPHANT CONSERVATION
           </h1>
-          <p style={{ textAlign: "justify" }}>
+          <p style={{ textAlign: "justify", marginBottom: "16px" }}>
             Loss and fragmentation of habitat is likely the biggest threat to
             Elephas Maximus throughout Southeast Asia today. Deforestation rates
             in Thailand exceeded 1.4% annually for most of the 20th century,
@@ -29,7 +34,7 @@ export default function ElephantSection() {
             discontinuously in small, isolated pockets of protected areas and
             wildlife sanctuaries.
           </p>
-          <p style={{ textAlign: "justify" }}>
+          <p style={{ textAlign: "justify", marginBottom: "16px" }}>
             At the same time, the wild elephant population is declining as their
             range habitats fragment and constrict. Ascertaining a precise figure
             for the total population of Asian elephants in Thailand is difficult
@@ -39,7 +44,7 @@ export default function ElephantSection() {
             elephants to less than 7000. Urgent action is needed to ensure a
             healthy, self-sustaining Asian elephant population.
           </p>
-          <p style={{ textAlign: "justify" }}>
+          <p style={{ textAlign: "justify", marginBottom: "16px" }}>
             Elephants are often called the gardeners of the forest. This
             keystone species&rsquo; reduced presence in our tropical forests
             upsets the natural equilibrium, contributing to the unchecked growth

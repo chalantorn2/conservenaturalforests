@@ -2,9 +2,15 @@ import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 
 const galleryImages = [
-  { src: "/Wildlife_Conservation/Kamee-and-Mahout.jpg.jpeg", alt: "Kamee and Mahout" },
+  {
+    src: "/Wildlife_Conservation/Kamee-and-Mahout.jpg.jpeg",
+    alt: "Kamee and Mahout",
+  },
   { src: "/Wildlife_Conservation/Kamee-Behind.jpg.jpeg", alt: "Kamee Behind" },
-  { src: "/Wildlife_Conservation/Kamee-Closeup.jpg.jpeg", alt: "Kamee Closeup" },
+  {
+    src: "/Wildlife_Conservation/Kamee-Closeup.jpg.jpeg",
+    alt: "Kamee Closeup",
+  },
   { src: "/Wildlife_Conservation/vt.jpeg", alt: "Kamee Front" },
 ];
 
@@ -28,13 +34,14 @@ export default function ElephantDetailSection() {
         style={{ paddingBottom: "42px" }}
       >
         {/* Left: Gallery Slider */}
-        <div className="lg:w-1/2" style={{ marginTop: "40px" }}>
+        <div className="lg:w-1/2" style={{ marginTop: "20px" }}>
           <div
             style={{
               borderRadius: "6px",
               overflow: "hidden",
               position: "relative",
               aspectRatio: "510/340",
+              maxWidth: "85%",
               boxShadow: "6px 6px 18px 0px rgba(0,0,0,0.71)",
             }}
           >
@@ -78,8 +85,8 @@ export default function ElephantDetailSection() {
         <div className="lg:w-1/2">
           <div
             style={{
-              fontFamily:
-                '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+              fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+              fontWeight: 400,
               fontSize: "16px",
               lineHeight: "2em",
               color: "#000",
@@ -108,8 +115,8 @@ export default function ElephantDetailSection() {
       <div className="max-w-[1080px] mx-auto px-6">
         <div
           style={{
-            fontFamily:
-              '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+            fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+            fontWeight: 400,
             fontSize: "16px",
             lineHeight: "2em",
             color: "#000",
@@ -118,8 +125,8 @@ export default function ElephantDetailSection() {
           }}
         >
           <p style={{ textAlign: "justify" }}>
-            We believe as many elephants as possible should return to the forest.
-            To date, there have only been two well-documented cases of
+            We believe as many elephants as possible should return to the
+            forest. To date, there have only been two well-documented cases of
             successful reintroduction in Asia. The Elephant Reintroduction
             Foundation in Thailand has released over 100 elephants since they
             began their project in 1996. By all accounts, the project has been
@@ -136,7 +143,7 @@ export default function ElephantDetailSection() {
             organizations to follow suit before the wild Asian elephant has been
             extirpated from Thailand entirely.
           </p>
-          <p style={{ textAlign: "justify" }}>
+          <p style={{ textAlign: "justify", marginTop: "20px" }}>
             This work will not be easy and it will require cooperation from many
             different stakeholders. CNF wants to replant trees and reforest
             areas that can sustain large wild elephant herds and reduce
@@ -145,12 +152,14 @@ export default function ElephantDetailSection() {
         </div>
 
         {/* HOW CAN I HELP? Button */}
-        <div className="text-center" style={{ marginTop: "20px", marginBottom: "30px" }}>
+        <div
+          className="text-center"
+          style={{ marginTop: "20px", marginBottom: "30px" }}
+        >
           <Link
             to="/donate"
             style={{
-              fontFamily:
-                '"Lato", Helvetica, Arial, Lucida, sans-serif',
+              fontFamily: '"Lato", Helvetica, Arial, Lucida, sans-serif',
               fontWeight: 700,
               fontSize: "20px",
               letterSpacing: "2px",

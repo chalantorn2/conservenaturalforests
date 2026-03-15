@@ -89,6 +89,7 @@ export default function ReviewsSlider() {
                   style={{
                     fontFamily:
                       '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+                    fontWeight: 400,
                     fontSize: "16px",
                     color: "#000",
                     lineHeight: "1.7em",

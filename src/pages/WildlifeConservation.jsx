@@ -5,6 +5,8 @@ import ElephantSection from "../components/wildlife-conservation/ElephantSection
 import EcoTourSection from "../components/wildlife-conservation/EcoTourSection";
 import ElephantDetailSection from "../components/wildlife-conservation/ElephantDetailSection";
 import ContactDonateSection from "../components/shared/ContactDonateSection";
+import NetworkSection from "../components/home/NetworkSection";
+import InstagramSection from "../components/home/InstagramSection";
 
 export default function WildlifeConservation() {
   useEffect(() => {
@@ -18,7 +20,9 @@ export default function WildlifeConservation() {
       <ElephantSection />
       <EcoTourSection />
       <ElephantDetailSection />
+      <NetworkSection />
       <ContactDonateSection variant="light" />
+      <InstagramSection />
     </div>
   );
 }

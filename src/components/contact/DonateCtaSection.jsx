@@ -29,6 +29,7 @@ export default function DonateCtaSection() {
                 fontSize: "24px",
                 fontWeight: 700,
                 lineHeight: "1.2em",
+                textAlign: "center",
               }}
             >
               Want to contribute to our cause?

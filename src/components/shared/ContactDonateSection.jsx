@@ -105,14 +105,16 @@ export default function ContactDonateSection({ variant = "dark-card" }) {
           className="w-full mb-4"
           style={{ ...inputStyle, resize: "vertical" }}
         />
-        <button
-          type="submit"
-          style={{ ...btnBase, backgroundColor: submitBg }}
-          onMouseEnter={handleHoverIn(submitBg)}
-          onMouseLeave={handleHoverOut(submitBg)}
-        >
-          Submit
-        </button>
+        <div className="text-right">
+          <button
+            type="submit"
+            style={{ ...btnBase, backgroundColor: submitBg }}
+            onMouseEnter={handleHoverIn(submitBg)}
+            onMouseLeave={handleHoverOut(submitBg)}
+          >
+            Submit
+          </button>
+        </div>
       </form>
     </>
   );
@@ -126,6 +128,7 @@ export default function ContactDonateSection({ variant = "dark-card" }) {
           lineHeight: "1.2em",
           color: textColor,
           marginBottom: "16px",
+          textAlign: "center",
         }}
       >
         Want to contribute to our cause?

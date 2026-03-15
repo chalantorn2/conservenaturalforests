@@ -59,7 +59,7 @@ export default function ContactFormSection() {
                     fontFamily:
                       '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                     fontWeight: 400,
-                    fontSize: "14px",
+                    fontSize: "16px",
                     color: "#999",
                     outline: "none",
                   }}
@@ -86,7 +86,7 @@ export default function ContactFormSection() {
                     fontFamily:
                       '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                     fontWeight: 400,
-                    fontSize: "14px",
+                    fontSize: "16px",
                     color: "#999",
                     outline: "none",
                   }}
@@ -114,7 +114,7 @@ export default function ContactFormSection() {
                   fontFamily:
                     '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                   fontWeight: 400,
-                  fontSize: "14px",
+                  fontSize: "16px",
                   color: "#999",
                   outline: "none",
                   resize: "vertical",

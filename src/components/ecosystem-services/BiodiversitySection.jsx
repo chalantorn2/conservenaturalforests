@@ -1,6 +1,11 @@
 export default function BiodiversitySection() {
   return (
-    <section id="biodiversity" className="relative" data-aos="fade-up" style={{ padding: 0 }}>
+    <section
+      id="biodiversity"
+      className="relative"
+      data-aos="fade-up"
+      style={{ padding: 0 }}
+    >
       {/* Parallax Background */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
@@ -9,7 +14,7 @@ export default function BiodiversitySection() {
 
       <div
         className="max-w-[1080px] mx-auto px-6 relative"
-        style={{ paddingBottom: "27px" }}
+        style={{ paddingBottom: "27px", paddingTop: "27px" }}
       >
         <div
           style={{
@@ -17,10 +22,10 @@ export default function BiodiversitySection() {
             borderRadius: "6px",
             overflow: "hidden",
             padding: "25px 20px",
-            marginTop: "50px",
             color: "#fff",
             fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
             fontSize: "16px",
+            fontWeight: 400,
           }}
         >
           <h1
@@ -52,29 +57,29 @@ export default function BiodiversitySection() {
             }}
           >
             <li style={{ textAlign: "justify", marginBottom: "12px" }}>
-              Variations in height and rooting depth stratify the aboveground and
-              belowground forest structure, allowing the consumption of water,
-              nutrients, and light at multiple levels. This diversity also
-              maximizes carbon sequestration and storage in the long term.
+              Variations in height and rooting depth stratify the aboveground
+              and belowground forest structure, allowing the consumption of
+              water, nutrients, and light at multiple levels. This diversity
+              also maximizes carbon sequestration and storage in the long term.
             </li>
             <li style={{ textAlign: "justify", marginBottom: "12px" }}>
               Other traits &ndash; including nitrogen-fixation, rooting depth,
-              seed size, dispersal mechanism, and more &ndash; are represented by
-              multiple species to improve functional redundancy and increase the
-              resilience of the ecosystem.
+              seed size, dispersal mechanism, and more &ndash; are represented
+              by multiple species to improve functional redundancy and increase
+              the resilience of the ecosystem.
             </li>
             <li style={{ textAlign: "justify", marginBottom: "12px" }}>
               Improved habitat and the planting of fruiting and flowering trees
               are meant to extend and strengthen trophic structures, first by
               attracting pollinators such as fig wasps, followed by other
               heterotrophs at each tier. Multiple seed sizes attract different
-              dispersers, including birds, bats, insects, and even larger mammals
-              for large fruits like durian or mango.
+              dispersers, including birds, bats, insects, and even larger
+              mammals for large fruits like durian or mango.
             </li>
             <li style={{ textAlign: "justify" }}>
               The species we plant are not only meant to capture a fraction of
-              the surrounding forest composition, but also depend upon attracting
-              seed dispersers for further species recruitment.
+              the surrounding forest composition, but also depend upon
+              attracting seed dispersers for further species recruitment.
             </li>
           </ul>
 

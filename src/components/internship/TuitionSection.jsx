@@ -20,17 +20,18 @@ export default function TuitionSection() {
             style={{
               fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
               fontSize: "16px",
+              fontWeight: 400,
               lineHeight: "2em",
               color: "#000",
             }}
           >
-            The fee for the internship is 900 euros per month. This includes food,
-            accommodation, and one motorbike for every two interns. It also covers
-            the costs for the necessary documents for applicants to acquire a visa
-            abroad, as well as the costs associated with extending their stay past
-            90 days. However, you have the option of arranging your own
-            accommodation, as well as providing for your own meals and
-            transportation.
+            The fee for the internship is 900 euros per month. This includes
+            food, accommodation, and one motorbike for every two interns. It
+            also covers the costs for the necessary documents for applicants to
+            acquire a visa abroad, as well as the costs associated with
+            extending their stay past 90 days. However, you have the option of
+            arranging your own accommodation, as well as providing for your own
+            meals and transportation.
           </p>
         </div>
       </div>

@@ -1,14 +1,25 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 const galleryImages = [
   { src: "/Local_Livelihoods/Burning-Hills.jpg.jpeg", alt: "Burning Hills" },
   { src: "/Local_Livelihoods/Roadside-Fire.jpg.jpeg", alt: "Roadside Fire" },
-  { src: "/Local_Livelihoods/Motorbike-in-Smoke.jpg.jpeg", alt: "Motorbike in Smoke" },
+  {
+    src: "/Local_Livelihoods/Motorbike-in-Smoke.jpg.jpeg",
+    alt: "Motorbike in Smoke",
+  },
   { src: "/Local_Livelihoods/Burnt-Ground.jpg.jpeg", alt: "Burnt Ground" },
 ];
 
 export default function FireManagementSection() {
   const [current, setCurrent] = useState(0);
+  const [chartHeight, setChartHeight] = useState("auto");
+  const rightChartRef = useRef(null);
+
+  const handleRightChartLoad = () => {
+    if (rightChartRef.current) {
+      setChartHeight(rightChartRef.current.clientHeight + "px");
+    }
+  };
 
   const next = useCallback(() => {
     setCurrent((c) => (c + 1) % galleryImages.length);
@@ -26,6 +37,7 @@ export default function FireManagementSection() {
         <div
           style={{
             fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+            fontWeight: 400,
             fontSize: "16px",
             lineHeight: "2em",
             color: "#000",
@@ -34,7 +46,12 @@ export default function FireManagementSection() {
         >
           <h1
             className="text-center"
-            style={{ fontWeight: 700, lineHeight: "1.5em" }}
+            style={{
+              fontWeight: 700,
+              fontSize: "32px",
+              marginBottom: "16px",
+              lineHeight: "1.5em",
+            }}
           >
             COMMUNITY-BASED FIRE MANAGEMENT
           </h1>
@@ -57,20 +74,22 @@ export default function FireManagementSection() {
 
       {/* Charts row */}
       <div
-        className="max-w-[1080px] mx-auto px-6 hidden lg:flex gap-8"
-        style={{ marginTop: "30px" }}
+        className="max-w-[1080px] mx-auto px-6 hidden lg:flex gap-8 items-center"
+        style={{ marginTop: "30px", marginBottom: "16px" }}
       >
         <div className="w-1/2">
           <img
             src="/Local_Livelihoods/Particulate-Matter-Pai.png"
             alt="Particulate Matter Pai"
-            style={{ width: "100%", height: "auto" }}
+            style={{ width: "100%", height: chartHeight, objectFit: "contain" }}
           />
         </div>
         <div className="w-1/2">
           <img
+            ref={rightChartRef}
             src="/Local_Livelihoods/Daily-Fire-Count.png"
             alt="Daily Fire Count"
+            onLoad={handleRightChartLoad}
             style={{ width: "100%", height: "auto" }}
           />
         </div>
@@ -81,6 +100,7 @@ export default function FireManagementSection() {
         <div
           style={{
             fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+            fontWeight: 400,
             fontSize: "16px",
             lineHeight: "2em",
             color: "#000",
@@ -108,8 +128,8 @@ export default function FireManagementSection() {
         <div className="lg:w-1/2">
           <div
             style={{
-              fontFamily:
-                '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+              fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
+              fontWeight: 400,
               fontSize: "16px",
               lineHeight: "2em",
               color: "#000",
@@ -123,6 +143,7 @@ export default function FireManagementSection() {
               and DNP representatives, including:
             </p>
             <ul
+              className="list-disc"
               style={{
                 paddingLeft: "20px",
                 textAlign: "justify",
