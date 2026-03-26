@@ -138,10 +138,10 @@ export default function ParallaxInfoSection() {
               </a>{" "}
               or email us at{" "}
               <a
-                href="mailto:info@conservenaturalforests.org"
+                href="mailto:noreply@conservenaturalforests.org"
                 style={{ color: "#78c922", fontWeight: 700 }}
               >
-                info@conservenaturalforests.org
+                noreply@conservenaturalforests.org
               </a>{" "}
               to confirm. If you have any other questions or require further
               clarification regarding our visitor policy &ndash; don&rsquo;t

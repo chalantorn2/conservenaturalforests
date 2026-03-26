@@ -14,7 +14,7 @@ export default function Home() {
       <VideosSection />
       <PrioritiesSection />
       <NetworkSection />
-      <ContactDonateSection variant="dark-card" />
+      <ContactDonateSection variant="dark-card" page="Home" />
       <InstagramSection />
     </>
   );

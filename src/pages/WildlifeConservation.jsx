@@ -21,7 +21,7 @@ export default function WildlifeConservation() {
       <EcoTourSection />
       <ElephantDetailSection />
       <NetworkSection />
-      <ContactDonateSection variant="light" />
+      <ContactDonateSection variant="light" page="Wildlife Conservation" />
       <InstagramSection />
     </div>
   );

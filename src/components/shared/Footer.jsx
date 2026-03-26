@@ -142,7 +142,7 @@ export default function Footer() {
                   marginTop: "24px",
                 }}
               >
-                info@conservenaturalforests.org
+                noreply@conservenaturalforests.org
               </p>
               {/* Social Icons */}
               <div className="flex justify-center gap-2">

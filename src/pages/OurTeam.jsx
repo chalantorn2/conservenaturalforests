@@ -19,7 +19,7 @@ export default function OurTeam() {
       <ProjectCardsSection />
       <TeamSection />
       <NetworkSection />
-      <ContactDonateSection />
+      <ContactDonateSection page="Our Team" />
       <InstagramSection />
     </div>
   );

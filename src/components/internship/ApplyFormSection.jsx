@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { sendForm } from "../../utils/sendForm";
 
 export default function ApplyFormSection() {
   const [formData, setFormData] = useState({
@@ -7,15 +8,25 @@ export default function ApplyFormSection() {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState("idle");
+  const [statusMsg, setStatusMsg] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Thank you for your application! We will get back to you soon.");
-    setFormData({ name: "", email: "", message: "" });
+    setStatus("sending");
+    try {
+      await sendForm("internship", formData);
+      setStatus("success");
+      setStatusMsg("Thank you for your application! We will get back to you soon.");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (err) {
+      setStatus("error");
+      setStatusMsg(err.message || "Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -122,6 +133,7 @@ export default function ApplyFormSection() {
                 <div className="text-right">
                   <button
                     type="submit"
+                    disabled={status === "sending"}
                     className="btn-divi"
                     style={{
                       color: "#fff",
@@ -135,6 +147,7 @@ export default function ApplyFormSection() {
                       textTransform: "uppercase",
                       backgroundColor: "rgba(0,0,0,0.62)",
                       textShadow: "0em 0.1em 0.1em rgba(0,0,0,0.4)",
+                      opacity: status === "sending" ? 0.6 : 1,
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.backgroundColor = "#78c922";
@@ -144,8 +157,14 @@ export default function ApplyFormSection() {
                         "rgba(0,0,0,0.62)";
                     }}
                   >
-                    Submit
+                    {status === "sending" ? "Sending..." : "Submit"}
                   </button>
+                  {status === "success" && (
+                    <p style={{ color: "#78c922", marginTop: "8px", fontSize: "14px" }}>{statusMsg}</p>
+                  )}
+                  {status === "error" && (
+                    <p style={{ color: "#ee4444", marginTop: "8px", fontSize: "14px" }}>{statusMsg}</p>
+                  )}
                 </div>
               </form>
             </div>

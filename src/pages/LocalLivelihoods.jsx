@@ -19,7 +19,7 @@ export default function LocalLivelihoods() {
       <AgroforestrySection />
       <FireManagementSection />
       <NetworkSection />
-      <ContactDonateSection variant="dark-card" />
+      <ContactDonateSection variant="dark-card" page="Local Livelihoods" />
       <InstagramSection />
     </div>
   );

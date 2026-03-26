@@ -1,16 +1,28 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { sendForm } from "../../utils/sendForm";
 
 export default function ContactDonateSection() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("idle");
+  const [statusMsg, setStatusMsg] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Thank you for your message! We will get back to you soon.");
+    setStatus("sending");
+    try {
+      await sendForm("general", { ...form, page: "Local Livelihoods" });
+      setStatus("success");
+      setStatusMsg("Thank you for your message! We will get back to you soon.");
+      setForm({ name: "", email: "", message: "" });
+    } catch (err) {
+      setStatus("error");
+      setStatusMsg(err.message || "Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -108,6 +120,7 @@ export default function ContactDonateSection() {
               />
               <button
                 type="submit"
+                disabled={status === "sending"}
                 style={{
                   fontFamily: '"Lato", Helvetica, Arial, Lucida, sans-serif',
                   fontWeight: 700,
@@ -122,6 +135,7 @@ export default function ContactDonateSection() {
                   cursor: "pointer",
                   textShadow: "0 0.1em 0.1em rgba(0,0,0,0.4)",
                   transition: "background-color 300ms ease",
+                  opacity: status === "sending" ? 0.6 : 1,
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.backgroundColor = "#78c922";
@@ -130,8 +144,14 @@ export default function ContactDonateSection() {
                   e.currentTarget.style.backgroundColor = "rgba(0,0,0,0.62)";
                 }}
               >
-                Submit
+                {status === "sending" ? "Sending..." : "Submit"}
               </button>
+              {status === "success" && (
+                <p style={{ color: "#78c922", marginTop: "8px", fontSize: "14px" }}>{statusMsg}</p>
+              )}
+              {status === "error" && (
+                <p style={{ color: "#ee4444", marginTop: "8px", fontSize: "14px" }}>{statusMsg}</p>
+              )}
             </form>
           </div>
 

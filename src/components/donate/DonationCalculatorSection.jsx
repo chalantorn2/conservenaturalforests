@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { sendForm } from "../../utils/sendForm";
 
 const impactOptions = [
   { value: "money", label: "I know how much money I want to donate." },
@@ -105,13 +106,25 @@ export default function DonationCalculatorSection() {
     co2: { label: "CO\u2082 to Offset (kg/year)" },
   };
 
+  const [contactStatus, setContactStatus] = useState("idle");
+  const [contactStatusMsg, setContactStatusMsg] = useState("");
+
   const handleContactChange = (e) => {
     setContactForm({ ...contactForm, [e.target.name]: e.target.value });
   };
 
-  const handleContactSubmit = (e) => {
+  const handleContactSubmit = async (e) => {
     e.preventDefault();
-    alert("Thank you for your message! We will get back to you soon.");
+    setContactStatus("sending");
+    try {
+      await sendForm("donate", contactForm);
+      setContactStatus("success");
+      setContactStatusMsg("Thank you for your message! We will get back to you soon.");
+      setContactForm({ name: "", email: "", message: "" });
+    } catch (err) {
+      setContactStatus("error");
+      setContactStatusMsg(err.message || "Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -331,9 +344,11 @@ export default function DonationCalculatorSection() {
                   </div>
                   <button
                     type="submit"
+                    disabled={contactStatus === "sending"}
                     style={{
                       ...btnStyle,
                       color: "#333",
+                      opacity: contactStatus === "sending" ? 0.6 : 1,
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.backgroundColor = "#78c922";
@@ -344,8 +359,14 @@ export default function DonationCalculatorSection() {
                       e.currentTarget.style.color = "#333";
                     }}
                   >
-                    Submit
+                    {contactStatus === "sending" ? "Sending..." : "Submit"}
                   </button>
+                  {contactStatus === "success" && (
+                    <p style={{ color: "#78c922", marginTop: "8px", fontSize: "14px" }}>{contactStatusMsg}</p>
+                  )}
+                  {contactStatus === "error" && (
+                    <p style={{ color: "#ee4444", marginTop: "8px", fontSize: "14px" }}>{contactStatusMsg}</p>
+                  )}
                 </form>
               </div>
 

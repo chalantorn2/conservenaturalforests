@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { sendForm } from "../../utils/sendForm";
 
 const countries = [
   "Afghanistan","Albania","Algeria","American Samoa","Andorra","Angola","Anguilla","Antarctica",
@@ -42,13 +43,28 @@ export default function BookingFormSection() {
     hearAbout: "",
   });
 
+  const [status, setStatus] = useState("idle");
+  const [statusMsg, setStatusMsg] = useState("");
+
   const handleBookingChange = (e) => {
     setBookingForm({ ...bookingForm, [e.target.name]: e.target.value });
   };
 
-  const handleBookingSubmit = (e) => {
+  const handleBookingSubmit = async (e) => {
     e.preventDefault();
-    alert("Thank you for your booking request! We will confirm your visit shortly.");
+    setStatus("sending");
+    try {
+      await sendForm("booking", bookingForm);
+      setStatus("success");
+      setStatusMsg("Thank you for your booking request! We will confirm your visit shortly.");
+      setBookingForm({
+        firstName: "", lastName: "", email: "", dateOfVisit: "",
+        country: "", adults: 1, children: 0, transportation: "", hearAbout: "",
+      });
+    } catch (err) {
+      setStatus("error");
+      setStatusMsg(err.message || "Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -334,6 +350,7 @@ export default function BookingFormSection() {
           <div className="text-right">
             <button
               type="submit"
+              disabled={status === "sending"}
               style={{
                 padding: "10px 20px",
                 borderRadius: "6px",
@@ -344,6 +361,7 @@ export default function BookingFormSection() {
                 border: "2px solid #78c922",
                 cursor: "pointer",
                 transition: "all 0.3s ease-in-out",
+                opacity: status === "sending" ? 0.6 : 1,
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = "#78c922";
@@ -356,8 +374,14 @@ export default function BookingFormSection() {
                 e.currentTarget.style.color = "#2b2b2b";
               }}
             >
-              SUBMIT
+              {status === "sending" ? "SENDING..." : "SUBMIT"}
             </button>
+            {status === "success" && (
+              <p style={{ color: "#78c922", marginTop: "8px", fontSize: "14px" }}>{statusMsg}</p>
+            )}
+            {status === "error" && (
+              <p style={{ color: "#ee4444", marginTop: "8px", fontSize: "14px" }}>{statusMsg}</p>
+            )}
           </div>
         </form>
       </div>

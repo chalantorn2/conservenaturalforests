@@ -21,8 +21,8 @@ export default function ExploreSection() {
           }}
         >
           <iframe
-            title="Global Forest Watch"
-            src="https://www.globalforestwatch.org/embed/map/country/THA/23/5/?mainMap=eyJzaG93QW5hbHlzaXMiOnRydWV9&map=eyJjZW50ZXIiOnsibGF0IjoxOS4zNjIyNDMxOTY1OTk4NSwibG5nIjo5OC4zODkzNTQ3MDQ5ODIwOH0sInpvb20iOjguNzkxOTA2MjM0MTU2MDcsImNhbkJvdW5kIjpmYWxzZSwiZGF0YXNldHMiOlt7ImRhdGFzZXQiOiJwb2xpdGljYWwtYm91bmRhcmllcyIsImxheWVycyI6WyJkaXNwdXRlZC1wb2xpdGljYWwtYm91bmRhcmllcyIsInBvbGl0aWNhbC1ib3VuZGFyaWVzIl0sIm9wYWNpdHkiOjEsInZpc2liaWxpdHkiOnRydWV9LHsiZGF0YXNldCI6InRyZWUtY292ZXItbG9zcyIsImxheWVycyI6WyJ0cmVlLWNvdmVyLWxvc3MiXSwib3BhY2l0eSI6MSwidmlzaWJpbGl0eSI6dHJ1ZX0seyJkYXRhc2V0IjoidHJlZS1jb3Zlci1nYWluIiwibGF5ZXJzIjpbInRyZWUtY292ZXItZ2Fpbi0yMDAxLTIwMTIiXSwib3BhY2l0eSI6MSwidmlzaWJpbGl0eSI6dHJ1ZX0seyJkYXRhc2V0IjoidHJlZS1jb3ZlciIsImxheWVycyI6WyJ0cmVlLWNvdmVyLTIwMTAiXSwib3BhY2l0eSI6MSwidmlzaWJpbGl0eSI6dHJ1ZX1dfQ%3D%3D"
+            title="ArcGIS Map - Conserve Natural Forests"
+            src="https://www.arcgis.com/apps/mapviewer/index.html?configurableview=true&webmap=f4f6e81c4d994cdb8e613fbfb9ef5157&theme=light&center=106.93792849266306,12.43964694432577&scale=18489297.737236"
             style={{
               width: "100%",
               height: "500px",

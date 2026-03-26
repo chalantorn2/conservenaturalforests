@@ -68,10 +68,10 @@ export default function DetailsSection() {
             life, we invite you to apply for this internship! For more
             information please feel free to email us at:{" "}
             <a
-              href="mailto:info@conservenaturalforests.org"
+              href="mailto:noreply@conservenaturalforests.org"
               style={{ color: "#78c922", textDecoration: "underline" }}
             >
-              info@conservenaturalforests.org
+              noreply@conservenaturalforests.org
             </a>
             . Don't forget to submit a resume and cover letter telling us how
             your background and education will contribute to our program.

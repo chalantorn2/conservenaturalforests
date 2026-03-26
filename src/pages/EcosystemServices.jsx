@@ -33,7 +33,7 @@ export default function EcosystemServices() {
       <SoilWaterSection />
       <MapsSection />
       <NetworkSection />
-      <ContactDonateSection variant="light" />
+      <ContactDonateSection variant="light" page="Ecosystem Services" />
       <InstagramSection />
     </div>
   );

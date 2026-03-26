@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { sendForm } from "../../utils/sendForm";
 
 export default function ContactFormSection() {
   const [formData, setFormData] = useState({
@@ -7,15 +8,25 @@ export default function ContactFormSection() {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState("idle");
+  const [statusMsg, setStatusMsg] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Thank you for your message! We will get back to you soon.");
-    setFormData({ name: "", email: "", message: "" });
+    setStatus("sending");
+    try {
+      await sendForm("contact", formData);
+      setStatus("success");
+      setStatusMsg("Thank you for your message! We will get back to you soon.");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (err) {
+      setStatus("error");
+      setStatusMsg(err.message || "Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -127,9 +138,10 @@ export default function ContactFormSection() {
                   e.currentTarget.style.borderColor = "#bbb";
                 }}
               />
-              <div className="flex justify-end">
+              <div className="flex justify-end flex-wrap items-center gap-3">
                 <button
                   type="submit"
+                  disabled={status === "sending"}
                   className="btn-divi"
                   style={{
                     color: "#000",
@@ -141,6 +153,7 @@ export default function ContactFormSection() {
                     fontWeight: 700,
                     fontSize: "16px",
                     backgroundColor: "transparent",
+                    opacity: status === "sending" ? 0.6 : 1,
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = "#78c922";
@@ -151,8 +164,14 @@ export default function ContactFormSection() {
                     e.currentTarget.style.color = "#000";
                   }}
                 >
-                  SUBMIT
+                  {status === "sending" ? "SENDING..." : "SUBMIT"}
                 </button>
+                {status === "success" && (
+                  <span style={{ color: "#78c922", fontSize: "14px" }}>{statusMsg}</span>
+                )}
+                {status === "error" && (
+                  <span style={{ color: "#ee4444", fontSize: "14px" }}>{statusMsg}</span>
+                )}
               </div>
             </form>
           </div>
@@ -185,10 +204,10 @@ export default function ContactFormSection() {
                 us, click below to find out more and complete our booking form.
                 &nbsp;You can also contact us via email at{" "}
                 <a
-                  href="mailto:info@conservenaturalforests.org"
+                  href="mailto:noreply@conservenaturalforests.org"
                   style={{ color: "#78c922", textDecoration: "underline" }}
                 >
-                  info@conservenaturalforests.org
+                  noreply@conservenaturalforests.org
                 </a>
                 &nbsp;or send us a message over Facebook.
               </p>

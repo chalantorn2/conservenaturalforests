@@ -81,7 +81,6 @@ export default function MapsSection() {
                 padding: "10px 16px",
                 fontFamily: '"Open Sans", Helvetica, Arial, Lucida, sans-serif',
                 fontSize: "16px",
-                fontWeight: 300,
                 fontWeight: activeTab === idx ? 700 : 400,
                 color: activeTab === idx ? "#78c922" : "#666",
                 backgroundColor: activeTab === idx ? "#fff" : "transparent",

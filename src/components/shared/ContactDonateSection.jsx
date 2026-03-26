@@ -1,18 +1,29 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { sendForm } from "../../utils/sendForm";
 
 // variant: "dark-card" | "light"
-export default function ContactDonateSection({ variant = "dark-card" }) {
+export default function ContactDonateSection({ variant = "dark-card", page = "Home" }) {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+  const [statusMsg, setStatusMsg] = useState("");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Thank you for your message! We will get back to you soon.");
-    setForm({ name: "", email: "", message: "" });
+    setStatus("sending");
+    try {
+      await sendForm("general", { ...form, page });
+      setStatus("success");
+      setStatusMsg("Thank you for your message! We will get back to you soon.");
+      setForm({ name: "", email: "", message: "" });
+    } catch (err) {
+      setStatus("error");
+      setStatusMsg(err.message || "Something went wrong. Please try again.");
+    }
   };
 
   const isDark = variant !== "light";
@@ -108,12 +119,19 @@ export default function ContactDonateSection({ variant = "dark-card" }) {
         <div className="text-right">
           <button
             type="submit"
-            style={{ ...btnBase, backgroundColor: submitBg }}
+            disabled={status === "sending"}
+            style={{ ...btnBase, backgroundColor: submitBg, opacity: status === "sending" ? 0.6 : 1 }}
             onMouseEnter={handleHoverIn(submitBg)}
             onMouseLeave={handleHoverOut(submitBg)}
           >
-            Submit
+            {status === "sending" ? "Sending..." : "Submit"}
           </button>
+          {status === "success" && (
+            <p style={{ color: "#78c922", marginTop: "8px", fontSize: "14px" }}>{statusMsg}</p>
+          )}
+          {status === "error" && (
+            <p style={{ color: "#ee4444", marginTop: "8px", fontSize: "14px" }}>{statusMsg}</p>
+          )}
         </div>
       </form>
     </>

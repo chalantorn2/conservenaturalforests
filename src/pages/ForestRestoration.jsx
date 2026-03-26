@@ -27,7 +27,7 @@ export default function ForestRestoration() {
       <MangroveSection />
       <ExploreSection />
       <NetworkSection />
-      <ContactDonateSection variant="dark-card" />
+      <ContactDonateSection variant="dark-card" page="Forest Restoration" />
       <InstagramSection />
     </div>
   );

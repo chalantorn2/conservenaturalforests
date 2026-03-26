@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { sendForm } from "../../utils/sendForm";
 
 export default function ContactFooter() {
   const [newsletter, setNewsletter] = useState({
@@ -7,15 +8,25 @@ export default function ContactFooter() {
     lastName: "",
     email: "",
   });
+  const [nlStatus, setNlStatus] = useState("idle");
+  const [nlMsg, setNlMsg] = useState("");
 
   const handleNewsletterChange = (e) => {
     setNewsletter({ ...newsletter, [e.target.name]: e.target.value });
   };
 
-  const handleNewsletterSubmit = (e) => {
+  const handleNewsletterSubmit = async (e) => {
     e.preventDefault();
-    alert("Thank you for subscribing!");
-    setNewsletter({ firstName: "", lastName: "", email: "" });
+    setNlStatus("sending");
+    try {
+      await sendForm("newsletter", newsletter);
+      setNlStatus("success");
+      setNlMsg("Thank you for subscribing!");
+      setNewsletter({ firstName: "", lastName: "", email: "" });
+    } catch (err) {
+      setNlStatus("error");
+      setNlMsg(err.message || "Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -156,6 +167,7 @@ export default function ContactFooter() {
                 />
                 <button
                   type="submit"
+                  disabled={nlStatus === "sending"}
                   className="btn-divi w-full text-center"
                   style={{
                     color: "#fff",
@@ -165,6 +177,7 @@ export default function ContactFooter() {
                     textTransform: "uppercase",
                     backgroundColor: "rgba(0,0,0,0.49)",
                     display: "block",
+                    opacity: nlStatus === "sending" ? 0.6 : 1,
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = "#78c922";
@@ -173,8 +186,14 @@ export default function ContactFooter() {
                     e.currentTarget.style.backgroundColor = "rgba(0,0,0,0.49)";
                   }}
                 >
-                  Subscribe
+                  {nlStatus === "sending" ? "Sending..." : "Subscribe"}
                 </button>
+                {nlStatus === "success" && (
+                  <p style={{ color: "#78c922", fontSize: "13px", marginTop: "6px" }}>{nlMsg}</p>
+                )}
+                {nlStatus === "error" && (
+                  <p style={{ color: "#ee4444", fontSize: "13px", marginTop: "6px" }}>{nlMsg}</p>
+                )}
               </form>
             </div>
 
@@ -222,11 +241,11 @@ export default function ContactFooter() {
               </p>
               <p className="mt-6">
                 <a
-                  href="mailto:info@conservenaturalforests.org"
+                  href="mailto:noreply@conservenaturalforests.org"
                   style={{ fontSize: "12px", color: "#b2b2b2", textDecoration: "none" }}
                   className="hover:text-[#78c922] transition-colors"
                 >
-                  info@conservenaturalforests.org
+                  noreply@conservenaturalforests.org
                 </a>
               </p>
               <div className="flex justify-center gap-2 mt-6">

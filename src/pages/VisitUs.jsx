@@ -21,7 +21,7 @@ export default function VisitUs() {
       <ReviewsSlider />
       <BookingFormSection />
       <NetworkSection />
-      <ContactDonateSection />
+      <ContactDonateSection page="Visit Us" />
       <InstagramSection />
     </div>
   );
